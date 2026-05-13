@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryDetailTableViewCell" rowHeight="105" id="KGk-i7-Jjw" customClass="HistoryDetailTableViewCell" customModule="BIVN" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="385" height="105"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="385" height="105"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Grx-Od-X8a">
+                        <rect key="frame" x="28" y="16" width="260.66666666666669" height="81"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wcR-bY-cvV">
+                                <rect key="frame" x="0.0" y="0.0" width="260.66666666666669" height="81"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dem-W6-vsY" userLabel="Stack Malinhkien">
+                                        <rect key="frame" x="0.0" y="0.0" width="260.66666666666669" height="9.6666666666666661"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thời gian cập nhật:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vDX-oV-Os7">
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="9.6666666666666661"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="130" id="akq-oY-AHg"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" name="textDefault"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="27/10/2023 11:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bDz-Vq-zUX">
+                                                <rect key="frame" x="130" y="0.0" width="130.66666666666663" height="9.6666666666666661"/>
+                                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="41q-fs-Y2P" userLabel="Stack Thongtin">
+                                        <rect key="frame" x="0.0" y="17.666666666666664" width="260.66666666666669" height="10"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Người giám sát:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c4e-Bm-Zj7">
+                                                <rect key="frame" x="0.0" y="0.0" width="110" height="10"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="110" id="H1A-zu-BaV"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" name="textDefault"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REGIST " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8g-95-OUR">
+                                                <rect key="frame" x="109.99999999999999" y="0.0" width="150.66666666666663" height="10"/>
+                                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="14"/>
+                                                <color key="textColor" name="textDefault"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9QN-P7-rGW" userLabel="Stack Thongtin">
+                                        <rect key="frame" x="0.0" y="35.666666666666664" width="260.66666666666669" height="9.6666666666666643"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cập nhật tổng Sl:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJh-On-hES">
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="9.6666666666666661"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="120" id="Q17-zG-qnr"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" name="textDefault"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REGIST " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4kS-c9-hg9">
+                                                <rect key="frame" x="119.99999999999999" y="0.0" width="140.66666666666663" height="9.6666666666666661"/>
+                                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="14"/>
+                                                <color key="textColor" name="textDefault"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a4n-zd-Xlb" userLabel="Stack Thongtin">
+                                        <rect key="frame" x="0.0" y="53.333333333333329" width="260.66666666666669" height="10"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cập nhật trạng thái:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1h5-rm-IWT">
+                                                <rect key="frame" x="0.0" y="0.0" width="135" height="10"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="135" id="lXi-Rb-b8N"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" name="textDefault"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giám sát không đạt " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ln4-Vr-ZUk">
+                                                <rect key="frame" x="135" y="0.0" width="125.66666666666669" height="10"/>
+                                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="14"/>
+                                                <color key="textColor" name="textOrange"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HJ7-QE-eDM" userLabel="Stack Thongtin">
+                                        <rect key="frame" x="0.0" y="71.333333333333329" width="260.66666666666669" height="9.6666666666666714"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cập nhật trạng thái:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCB-fC-HOJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="260.66666666666669" height="9.6666666666666661"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="135" id="z8h-hU-4Tf"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" name="textDefault"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" name="white"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="wcR-bY-cvV" secondAttribute="bottom" id="7sQ-TC-iZW"/>
+                            <constraint firstItem="wcR-bY-cvV" firstAttribute="leading" secondItem="Grx-Od-X8a" secondAttribute="leading" id="YeD-qB-lHI"/>
+                            <constraint firstItem="wcR-bY-cvV" firstAttribute="top" secondItem="Grx-Od-X8a" secondAttribute="top" id="cVC-CY-Rer"/>
+                            <constraint firstAttribute="trailing" secondItem="wcR-bY-cvV" secondAttribute="trailing" id="ete-S1-QCD"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" name="white"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Grx-Od-X8a" secondAttribute="bottom" constant="8" id="2bB-UD-fa5"/>
+                    <constraint firstItem="Grx-Od-X8a" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="gz4-3t-NHK"/>
+                    <constraint firstAttribute="trailing" secondItem="Grx-Od-X8a" secondAttribute="trailing" id="kZh-wu-BxV"/>
+                    <constraint firstItem="Grx-Od-X8a" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="28" id="yx6-Qq-GpD"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="personLabel" destination="E8g-95-OUR" id="MVO-Rf-c4f"/>
+                <outlet property="statusLabel" destination="Ln4-Vr-ZUk" id="R9R-f1-B5E"/>
+                <outlet property="statusView" destination="a4n-zd-Xlb" id="b54-pl-m8N"/>
+                <outlet property="timeLabel" destination="bDz-Vq-zUX" id="ZfR-Zi-rxL"/>
+                <outlet property="titlePersonLabel" destination="c4e-Bm-Zj7" id="cfz-MJ-eaI"/>
+                <outlet property="titleTimeLabel" destination="vDX-oV-Os7" id="Dwl-cy-FXM"/>
+                <outlet property="titleTotalLabel" destination="DJh-On-hES" id="WpJ-uB-y9v"/>
+                <outlet property="titleUpdateLable" destination="OCB-fC-HOJ" id="JCF-KD-SDT"/>
+                <outlet property="titleUpdateStatusLabel" destination="1h5-rm-IWT" id="WTL-ka-1Na"/>
+                <outlet property="totalLabel" destination="4kS-c9-hg9" id="CJF-er-gSv"/>
+                <outlet property="totalView" destination="9QN-P7-rGW" id="YgI-s8-WNM"/>
+                <outlet property="widthConstraint" destination="Q17-zG-qnr" id="3BE-uL-m69"/>
+            </connections>
+            <point key="canvasLocation" x="179.38931297709922" y="9.5070422535211279"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="textDefault">
+            <color red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="textOrange">
+            <color red="0.92941176470588238" green="0.44705882352941179" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

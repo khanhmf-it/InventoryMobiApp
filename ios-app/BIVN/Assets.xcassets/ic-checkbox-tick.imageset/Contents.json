@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "ic-checkbox-tick.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -1,0 +1,13 @@
+//
+//  Dev.xcconfig
+//  BIVN
+//
+//  Created by Luyện Đào on 07/11/2023.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+//Root_URL = http:/$()/bivn.tinhvan.com:9121
+Root_URL = http:/$()/192.168.50.152:9121
+//Root_URL = http:/$()/192.168.50.64/gateway

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TitleInventoryCell" rowHeight="39" id="KGk-i7-Jjw" customClass="TitleInventoryCell" customModule="BIVN" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="373" height="39"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="373" height="39"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Wx-yI-e1M" userLabel="ViewContainer">
+                        <rect key="frame" x="28" y="0.0" width="317" height="39"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Số thùng" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3L-4v-aIM">
+                                <rect key="frame" x="228.66666666666671" y="0.0" width="79.333333333333343" height="39"/>
+                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
+                                <color key="textColor" name="textDefault"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sp1-SW-0Yf" userLabel="ViewLineCenter">
+                                <rect key="frame" x="220.66666666666666" y="0.0" width="1" height="39"/>
+                                <color key="backgroundColor" name="lineColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="1" id="1kE-5X-pHh"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Số lượng/ thùng" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y4w-D5-up1">
+                                <rect key="frame" x="9" y="0.0" width="211.66666666666666" height="39"/>
+                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
+                                <color key="textColor" name="textDefault"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xor-IO-Y2z" userLabel="ViewLineRight">
+                                <rect key="frame" x="316" y="0.0" width="1" height="39"/>
+                                <color key="backgroundColor" name="lineColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="1" id="PaI-4d-qta"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V9c-iW-LOG" userLabel="ViewLineLeft">
+                                <rect key="frame" x="0.0" y="0.0" width="1" height="39"/>
+                                <color key="backgroundColor" name="lineColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="1" id="yZb-iA-0Z8"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" name="tvColor"/>
+                        <constraints>
+                            <constraint firstItem="Xor-IO-Y2z" firstAttribute="top" secondItem="0Wx-yI-e1M" secondAttribute="top" id="5Bz-DW-7nn"/>
+                            <constraint firstItem="V9c-iW-LOG" firstAttribute="top" secondItem="0Wx-yI-e1M" secondAttribute="top" id="6Mw-eH-wbG"/>
+                            <constraint firstItem="y4w-D5-up1" firstAttribute="leading" secondItem="V9c-iW-LOG" secondAttribute="trailing" constant="8" id="71C-hh-jHe"/>
+                            <constraint firstItem="sp1-SW-0Yf" firstAttribute="top" secondItem="0Wx-yI-e1M" secondAttribute="top" id="7eZ-B7-Gj6"/>
+                            <constraint firstItem="H3L-4v-aIM" firstAttribute="width" secondItem="0Wx-yI-e1M" secondAttribute="width" multiplier="0.25" id="AXZ-Fx-p3c"/>
+                            <constraint firstItem="Xor-IO-Y2z" firstAttribute="leading" secondItem="H3L-4v-aIM" secondAttribute="trailing" constant="8" id="EkY-Lo-vAN"/>
+                            <constraint firstItem="y4w-D5-up1" firstAttribute="top" secondItem="0Wx-yI-e1M" secondAttribute="top" id="NsW-6y-X2g"/>
+                            <constraint firstAttribute="trailing" secondItem="Xor-IO-Y2z" secondAttribute="trailing" id="Rnq-Rf-3JO"/>
+                            <constraint firstAttribute="bottom" secondItem="y4w-D5-up1" secondAttribute="bottom" id="exI-xS-AJw"/>
+                            <constraint firstItem="V9c-iW-LOG" firstAttribute="leading" secondItem="0Wx-yI-e1M" secondAttribute="leading" id="gk4-lg-w0n"/>
+                            <constraint firstAttribute="bottom" secondItem="H3L-4v-aIM" secondAttribute="bottom" id="lQg-IU-TPD"/>
+                            <constraint firstItem="H3L-4v-aIM" firstAttribute="top" secondItem="0Wx-yI-e1M" secondAttribute="top" id="n4Q-ez-e0l"/>
+                            <constraint firstAttribute="bottom" secondItem="Xor-IO-Y2z" secondAttribute="bottom" id="p14-28-hil"/>
+                            <constraint firstAttribute="bottom" secondItem="sp1-SW-0Yf" secondAttribute="bottom" id="rc7-Ys-ng5"/>
+                            <constraint firstItem="H3L-4v-aIM" firstAttribute="leading" secondItem="sp1-SW-0Yf" secondAttribute="trailing" constant="7" id="vnL-di-gsk"/>
+                            <constraint firstItem="sp1-SW-0Yf" firstAttribute="leading" secondItem="y4w-D5-up1" secondAttribute="trailing" id="wh6-1P-xsX"/>
+                            <constraint firstAttribute="bottom" secondItem="V9c-iW-LOG" secondAttribute="bottom" id="yDo-8H-U07"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eEW-md-0Sx" userLabel="ViewLeft">
+                        <rect key="frame" x="0.0" y="0.0" width="28" height="39"/>
+                        <color key="backgroundColor" name="white"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="28" id="DCp-Q0-kDe"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P0V-WA-8KD" userLabel="ViewLineTop">
+                        <rect key="frame" x="28" y="0.0" width="317" height="1"/>
+                        <color key="backgroundColor" name="lineColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="Fhp-tl-pfO"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" name="white"/>
+                <constraints>
+                    <constraint firstItem="eEW-md-0Sx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="5VZ-4u-ZTJ"/>
+                    <constraint firstItem="P0V-WA-8KD" firstAttribute="width" secondItem="0Wx-yI-e1M" secondAttribute="width" id="97o-wY-8dj"/>
+                    <constraint firstItem="P0V-WA-8KD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="FBY-UL-PjI"/>
+                    <constraint firstAttribute="bottom" secondItem="eEW-md-0Sx" secondAttribute="bottom" id="QeL-Bf-yH5"/>
+                    <constraint firstItem="P0V-WA-8KD" firstAttribute="centerX" secondItem="0Wx-yI-e1M" secondAttribute="centerX" id="TtN-4m-wIk"/>
+                    <constraint firstItem="0Wx-yI-e1M" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="VIr-65-Uwc"/>
+                    <constraint firstItem="eEW-md-0Sx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="XWZ-MB-xet"/>
+                    <constraint firstAttribute="bottom" secondItem="0Wx-yI-e1M" secondAttribute="bottom" id="keO-5R-BoY"/>
+                    <constraint firstAttribute="bottom" secondItem="0Wx-yI-e1M" secondAttribute="bottom" id="qss-WO-ppU"/>
+                    <constraint firstItem="0Wx-yI-e1M" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="tGV-Fw-yBT"/>
+                    <constraint firstItem="0Wx-yI-e1M" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="u62-aC-NMY"/>
+                    <constraint firstItem="0Wx-yI-e1M" firstAttribute="leading" secondItem="eEW-md-0Sx" secondAttribute="trailing" id="zz1-2A-6Cc"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="numberOfBoxLabel" destination="H3L-4v-aIM" id="BiY-4A-4r3"/>
+                <outlet property="qualityPerBoxLabel" destination="y4w-D5-up1" id="jt6-fy-d8M"/>
+            </connections>
+            <point key="canvasLocation" x="-426.71755725190837" y="-13.028169014084508"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="lineColor">
+            <color red="0.85500001907348633" green="0.85500001907348633" blue="0.85500001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="textDefault">
+            <color red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="tvColor">
+            <color red="0.94499999284744263" green="0.94099998474121094" blue="0.9570000171661377" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

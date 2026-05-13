@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "1C3EA038-492B-4978-9E1F-39848C707CC3"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7ECEC915-0A7B-49AB-8DBA-E631CEA492B5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BIVN/Common/BaseViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "247"
+            endingLineNumber = "247"
+            landmarkName = "showAlertExpiredToken(isLogin:code:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7ECEC915-0A7B-49AB-8DBA-E631CEA492B5 - 99337a93ae021853"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BIVN.BaseViewController.showAlertExpiredToken(isLogin: Swift.Bool, code: Swift.Optional&lt;Swift.Int&gt;, completion: (Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "BIVN"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tinhvan/ios-app/BIVN/Common/BaseViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "247"
+                  endingLineNumber = "247">
+               </Location>
+               <Location
+                  uuid = "7ECEC915-0A7B-49AB-8DBA-E631CEA492B5 - 743d298c8076a2b3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #4 () -&gt; () in BIVN.BaseViewController.showAlertExpiredToken(isLogin: Swift.Bool, code: Swift.Optional&lt;Swift.Int&gt;, completion: (Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "BIVN"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tinhvan/ios-app/BIVN/Common/BaseViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "248"
+                  endingLineNumber = "248">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E238CC32-E961-4376-9ACF-D365FA2CF40E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BIVN/MainModules/ScanCodesMC/ScanCodeMCViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "534"
+            endingLineNumber = "534"
+            landmarkName = "getDetailMonitor(inventoryId:accountId:componentCode:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E238CC32-E961-4376-9ACF-D365FA2CF40E - f3acf729b935f329"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;BIVN.AuditCondensedModel, Swift.Error&gt;) -&gt; () in BIVN.ScanCodeMCViewController.getDetailMonitor(inventoryId: Swift.String, accountId: Swift.String, componentCode: Swift.String) -&gt; ()"
+                  moduleName = "BIVN"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tinhvan/ios-app/BIVN/MainModules/ScanCodesMC/ScanCodeMCViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "535"
+                  endingLineNumber = "535">
+               </Location>
+               <Location
+                  uuid = "E238CC32-E961-4376-9ACF-D365FA2CF40E - f3acf729b935f329"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;BIVN.AuditCondensedModel, Swift.Error&gt;) -&gt; () in BIVN.ScanCodeMCViewController.getDetailMonitor(inventoryId: Swift.String, accountId: Swift.String, componentCode: Swift.String) -&gt; ()"
+                  moduleName = "BIVN"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tinhvan/ios-app/BIVN/MainModules/ScanCodesMC/ScanCodeMCViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "535"
+                  endingLineNumber = "535">
+               </Location>
+               <Location
+                  uuid = "E238CC32-E961-4376-9ACF-D365FA2CF40E - f3acf729b935f329"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;BIVN.AuditCondensedModel, Swift.Error&gt;) -&gt; () in BIVN.ScanCodeMCViewController.getDetailMonitor(inventoryId: Swift.String, accountId: Swift.String, componentCode: Swift.String) -&gt; ()"
+                  moduleName = "BIVN"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tinhvan/ios-app/BIVN/MainModules/ScanCodesMC/ScanCodeMCViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "535"
+                  endingLineNumber = "535">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4611F582-1498-4CE6-9C33-28B531BD44C9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BIVN/MainModules/ScanCodesMC/ScanCodeMCViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "553"
+            endingLineNumber = "553"
+            landmarkName = "getDetailMonitor(inventoryId:accountId:componentCode:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4611F582-1498-4CE6-9C33-28B531BD44C9 - f3acf729b935f547"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;BIVN.AuditCondensedModel, Swift.Error&gt;) -&gt; () in BIVN.ScanCodeMCViewController.getDetailMonitor(inventoryId: Swift.String, accountId: Swift.String, componentCode: Swift.String) -&gt; ()"
+                  moduleName = "BIVN"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tinhvan/ios-app/BIVN/MainModules/ScanCodesMC/ScanCodeMCViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "553"
+                  endingLineNumber = "553">
+               </Location>
+               <Location
+                  uuid = "4611F582-1498-4CE6-9C33-28B531BD44C9 - 2a4765eee500c539"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (Swift.Result&lt;BIVN.AuditCondensedModel, Swift.Error&gt;) -&gt; () in BIVN.ScanCodeMCViewController.getDetailMonitor(inventoryId: Swift.String, accountId: Swift.String, componentCode: Swift.String) -&gt; ()"
+                  moduleName = "BIVN"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tinhvan/ios-app/BIVN/MainModules/ScanCodesMC/ScanCodeMCViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "554"
+                  endingLineNumber = "554">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

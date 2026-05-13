@@ -1,0 +1,216 @@
+
+/* Class = "UITextField"; placeholder = "Nhập mã linh kiện..."; ObjectID = "0KS-lx-Wkw"; */
+"0KS-lx-Wkw.placeholder" = "Nhập mã linh kiện...";
+
+/* Class = "UIButton"; normalTitle = "Xác nhận"; ObjectID = "25Z-f4-ir7"; */
+"25Z-f4-ir7.normalTitle" = "Xác nhận";
+
+/* Class = "UILabel"; text = "Chưa kiểm kê"; ObjectID = "2E4-gz-L6m"; */
+"2E4-gz-L6m.text" = "Chưa kiểm kê";
+
+/* Class = "UIButton"; normalTitle = "Đồng ý"; ObjectID = "2Mi-jZ-m8z"; */
+"2Mi-jZ-m8z.normalTitle" = "Đồng ý";
+
+/* Class = "UITextView"; text = "LK1178CC1"; ObjectID = "2ko-8N-IFl"; */
+"2ko-8N-IFl.text" = "LK1178CC1";
+
+/* Class = "UILabel"; text = "Chọn vị trí"; ObjectID = "4sB-EI-rWe"; */
+"4sB-EI-rWe.text" = "Chọn vị trí";
+
+/* Class = "UITextField"; placeholder = "Nhập số lượng..."; ObjectID = "5yn-6v-dad"; */
+"5yn-6v-dad.placeholder" = "Nhập số lượng...";
+
+/* Class = "UILabel"; text = "Nhập mã linh kiện"; ObjectID = "6PU-Bc-gsD"; */
+"6PU-Bc-gsD.text" = "Nhập mã linh kiện";
+
+/* Class = "UIButton"; configuration.title = "Đồng ý"; ObjectID = "7hc-cH-czl"; */
+"7hc-cH-czl.configuration.title" = "Đồng ý";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "7hc-cH-czl"; */
+"7hc-cH-czl.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "Nhập số lượng..."; ObjectID = "7qW-e7-1FT"; */
+"7qW-e7-1FT.placeholder" = "Nhập số lượng...";
+
+/* Class = "UILabel"; text = "Bộ lọc"; ObjectID = "7yM-eE-PbE"; */
+"7yM-eE-PbE.text" = "Bộ lọc";
+
+/* Class = "UILabel"; text = "Tài khoản đăng nhập"; ObjectID = "8Ls-dW-c5r"; */
+"8Ls-dW-c5r.text" = "Tài khoản đăng nhập";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "8r4-tD-IGB"; */
+"8r4-tD-IGB.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Cập nhật"; ObjectID = "9LP-rA-4jE"; */
+"9LP-rA-4jE.normalTitle" = "Cập nhật";
+
+/* Class = "UILabel"; text = "Mật khẩu"; ObjectID = "AZh-7g-lHQ"; */
+"AZh-7g-lHQ.text" = "Mật khẩu";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "B9Q-Yw-w6d"; */
+"B9Q-Yw-w6d.text" = "Name";
+
+/* Class = "UIButton"; normalTitle = "Cài đặt lại"; ObjectID = "BrW-4A-Zx9"; */
+"BrW-4A-Zx9.normalTitle" = "Cài đặt lại";
+
+/* Class = "UITextField"; placeholder = "Nhập tài khoản đăng nhâp..."; ObjectID = "CcH-Lw-ygB"; */
+"CcH-Lw-ygB.placeholder" = "Nhập tài khoản đăng nhâp...";
+
+/* Class = "UILabel"; text = "Vị trí:"; ObjectID = "DGX-bF-1BH"; */
+"DGX-bF-1BH.text" = "Vị trí:";
+
+/* Class = "UIButton"; configuration.title = "Hủy bỏ"; ObjectID = "DUN-lu-lvN"; */
+"DUN-lu-lvN.configuration.title" = "Hủy bỏ";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "DUN-lu-lvN"; */
+"DUN-lu-lvN.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Quét tem linh kiện"; ObjectID = "DvI-RC-e1u"; */
+"DvI-RC-e1u.text" = "Quét tem linh kiện";
+
+/* Class = "UITextField"; placeholder = "Nhập mật khẩu..."; ObjectID = "GHp-bx-cef"; */
+"GHp-bx-cef.placeholder" = "Nhập mật khẩu...";
+
+/* Class = "UITextView"; text = "REGIST FR SENSOR PCB ASSY DLL"; ObjectID = "GNr-rF-pOb"; */
+"GNr-rF-pOb.text" = "REGIST FR SENSOR PCB ASSY DLL";
+
+/* Class = "UIButton"; configuration.title = "Danh sách phiếu cần giám sát"; ObjectID = "GS6-Yf-owE"; */
+"GS6-Yf-owE.configuration.title" = "Danh sách phiếu cần giám sát";
+
+/* Class = "UIButton"; normalTitle = "Danh sách phiếu cần giám sát"; ObjectID = "GS6-Yf-owE"; */
+"GS6-Yf-owE.normalTitle" = "Danh sách phiếu cần giám sát";
+
+/* Class = "UIButton"; normalTitle = "Xác nhận"; ObjectID = "HhY-li-4eY"; */
+"HhY-li-4eY.normalTitle" = "Xác nhận";
+
+/* Class = "UILabel"; text = "bivnioswifim01"; ObjectID = "Hkt-6J-0RA"; */
+"Hkt-6J-0RA.text" = "bivnioswifim01";
+
+/* Class = "UIButton"; normalTitle = "Đăng nhập"; ObjectID = "JFB-Ns-CI1"; */
+"JFB-Ns-CI1.normalTitle" = "Đăng nhập";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "M1b-uD-JHO"; */
+"M1b-uD-JHO.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Mlf-9M-XOU"; */
+"Mlf-9M-XOU.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "*"; ObjectID = "NSX-3N-zp8"; */
+"NSX-3N-zp8.text" = "*";
+
+/* Class = "UILabel"; text = "Đưa camera hướng về mã linh kiện"; ObjectID = "Nu0-W6-eKR"; */
+"Nu0-W6-eKR.text" = "Đưa camera hướng về mã linh kiện";
+
+/* Class = "UILabel"; text = "NT3F3-14-1"; ObjectID = "PaU-Vc-NEv"; */
+"PaU-Vc-NEv.text" = "NT3F3-14-1";
+
+/* Class = "UILabel"; text = "Quét mã linh kiện"; ObjectID = "QUC-MJ-48J"; */
+"QUC-MJ-48J.text" = "Quét mã linh kiện";
+
+/* Class = "UILabel"; text = "Mã linh kiện:"; ObjectID = "R0e-X8-ju8"; */
+"R0e-X8-ju8.text" = "Mã linh kiện:";
+
+/* Class = "UIButton"; normalTitle = "Từ chối"; ObjectID = "RcL-mm-BsH"; */
+"RcL-mm-BsH.normalTitle" = "Từ chối";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "TFh-og-IuX"; */
+"TFh-og-IuX.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Đưa camera về tem linh kiện"; ObjectID = "Tac-w6-aKf"; */
+"Tac-w6-aKf.text" = "Đưa camera về tem linh kiện";
+
+/* Class = "UILabel"; text = "Đã giám sát: 10/30 phiếu"; ObjectID = "Um9-mS-Lmn"; */
+"Um9-mS-Lmn.text" = "Đã giám sát: 10/30 phiếu";
+
+/* Class = "UILabel"; text = "Nhập số lượng xuất kho"; ObjectID = "Uvq-o0-TMW"; */
+"Uvq-o0-TMW.text" = "Nhập số lượng xuất kho";
+
+/* Class = "UILabel"; text = "ID"; ObjectID = "WhW-j8-IV3"; */
+"WhW-j8-IV3.text" = "ID";
+
+/* Class = "UILabel"; text = "LK1178CC1"; ObjectID = "XT9-BT-Kn3"; */
+"XT9-BT-Kn3.text" = "LK1178CC1";
+
+/* Class = "UIButton"; configuration.title = "Gửi"; ObjectID = "Xo1-mE-ZVn"; */
+"Xo1-mE-ZVn.configuration.title" = "Gửi";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Xo1-mE-ZVn"; */
+"Xo1-mE-ZVn.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Seoul Metal Vietnam"; ObjectID = "Ye5-c9-typ"; */
+"Ye5-c9-typ.text" = "Seoul Metal Vietnam";
+
+/* Class = "UILabel"; text = "Số lượng xuất"; ObjectID = "auf-kQ-Tuj"; */
+"auf-kQ-Tuj.text" = "Số lượng xuất";
+
+/* Class = "UILabel"; text = "Vị trí:"; ObjectID = "b1j-Su-Cwh"; */
+"b1j-Su-Cwh.text" = "Vị trí:";
+
+/* Class = "UILabel"; text = "Vui lòng nhập lý do."; ObjectID = "b3B-Y2-oJd"; */
+"b3B-Y2-oJd.text" = "Vui lòng nhập lý do.";
+
+/* Class = "UILabel"; text = "Seoul Metal Vietnam"; ObjectID = "btu-Lo-mfJ"; */
+"btu-Lo-mfJ.text" = "Seoul Metal Vietnam";
+
+/* Class = "UILabel"; text = "Trạng thái:"; ObjectID = "byK-Ec-oDa"; */
+"byK-Ec-oDa.text" = "Trạng thái:";
+
+/* Class = "UILabel"; text = "REGIST FR SENSOR PCB ASSY DLL"; ObjectID = "c3y-FU-cAA"; */
+"c3y-FU-cAA.text" = "REGIST FR SENSOR PCB ASSY DLL";
+
+/* Class = "UITextView"; text = "5T2C1 - 02003"; ObjectID = "cBg-iO-h8v"; */
+"cBg-iO-h8v.text" = "5T2C1 - 02003";
+
+/* Class = "UIButton"; normalTitle = "Xác nhận"; ObjectID = "cDI-7j-4Ya"; */
+"cDI-7j-4Ya.normalTitle" = "Xác nhận";
+
+/* Class = "UILabel"; text = "Mã linh kiện:"; ObjectID = "gPI-uh-PTG"; */
+"gPI-uh-PTG.text" = "Mã linh kiện:";
+
+/* Class = "UILabel"; text = "Tên NCC"; ObjectID = "jNQ-Dg-JHj"; */
+"jNQ-Dg-JHj.text" = "Tên NCC";
+
+/* Class = "UILabel"; text = "Xuất toàn bộ"; ObjectID = "jXe-yH-wBp"; */
+"jXe-yH-wBp.text" = "Xuất toàn bộ";
+
+/* Class = "UILabel"; text = " Lý do"; ObjectID = "lHh-lJ-SFb"; */
+"lHh-lJ-SFb.text" = " Lý do";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "lyL-dU-ICk"; */
+"lyL-dU-ICk.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "+ Thêm dòng"; ObjectID = "pGt-If-h3r"; */
+"pGt-If-h3r.normalTitle" = "+ Thêm dòng";
+
+/* Class = "UITextField"; placeholder = "Nhập số lượng..."; ObjectID = "qWH-f0-6Dw"; */
+"qWH-f0-6Dw.placeholder" = "Nhập số lượng...";
+
+/* Class = "UIButton"; normalTitle = "Từ chối"; ObjectID = "qar-Hy-OH8"; */
+"qar-Hy-OH8.normalTitle" = "Từ chối";
+
+/* Class = "UIButton"; normalTitle = "Hủy bỏ"; ObjectID = "tMg-Fu-FRa"; */
+"tMg-Fu-FRa.normalTitle" = "Hủy bỏ";
+
+/* Class = "UILabel"; text = "Vui lòng nhập số lượng linh kiện."; ObjectID = "tWc-1d-n5e"; */
+"tWc-1d-n5e.text" = "Vui lòng nhập số lượng linh kiện.";
+
+/* Class = "UILabel"; text = "Tên linh kiện:"; ObjectID = "uPa-hM-a3r"; */
+"uPa-hM-a3r.text" = "Tên linh kiện:";
+
+/* Class = "UIButton"; normalTitle = "Gửi"; ObjectID = "vo6-VI-DiK"; */
+"vo6-VI-DiK.normalTitle" = "Gửi";
+
+/* Class = "UILabel"; text = "Seoul Metal Vietnam Company"; ObjectID = "wr0-bq-wuc"; */
+"wr0-bq-wuc.text" = "Seoul Metal Vietnam Company";
+
+/* Class = "UILabel"; text = "B-WINS"; ObjectID = "xFU-24-XWf"; */
+"xFU-24-XWf.text" = "B-WINS";
+
+/* Class = "UIButton"; normalTitle = "Xác nhận"; ObjectID = "xWs-1n-gX7"; */
+"xWs-1n-gX7.normalTitle" = "Xác nhận";
+
+/* Class = "UILabel"; text = "Vui lòng nhập mã linh kiện."; ObjectID = "xmx-vn-feQ"; */
+"xmx-vn-feQ.text" = "Vui lòng nhập mã linh kiện.";
+
+/* Class = "UILabel"; text = "Tên linh kiện:"; ObjectID = "zaK-VE-BQ2"; */
+"zaK-VE-BQ2.text" = "Tên linh kiện:";

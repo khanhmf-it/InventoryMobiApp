@@ -1,0 +1,11 @@
+//
+//  Production.xcconfig
+//  BIVN
+//
+//  Created by Luyện Đào on 07/11/2023.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+Root_URL = http:/$()/apbivnap12/gateway_inv

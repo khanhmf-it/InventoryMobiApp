@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--AccepticketC Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="AccepticketCController" id="Y6W-OH-hqX" customClass="AccepticketCController" customModule="BIVN" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gr7-v0-Pai">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ey7-yZ-Ypg">
+                                <rect key="frame" x="0.0" y="59" width="393" height="1"/>
+                                <color key="backgroundColor" name="lineColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="9ZS-PK-Jbd"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="II2-vD-FLm" userLabel="ViewBottom">
+                                <rect key="frame" x="0.0" y="748" width="393" height="70"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8aU-rh-ibW">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1"/>
+                                        <color key="backgroundColor" name="lineColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="QJ4-fs-zeW"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="JWG-nm-vvK">
+                                        <rect key="frame" x="16" y="13" width="361" height="49"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eez-Z7-xZr">
+                                                <rect key="frame" x="0.0" y="0.0" width="172.66666666666666" height="49"/>
+                                                <color key="backgroundColor" red="0.86274509803921573" green="0.86274509803921573" blue="0.86274509803921573" alpha="1" colorSpace="calibratedRGB"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Từ chối" image="ic_close_black">
+                                                    <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" name="greyDC"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="deniedTicket:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="OQz-uu-gu3"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fMg-Tp-Rey">
+                                                <rect key="frame" x="188.66666666666663" y="0.0" width="172.33333333333337" height="49"/>
+                                                <color key="backgroundColor" name="greenColor"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Xác nhận" image="ic_tick">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" name="greyDC"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="ontapSubmitInventory:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="eAR-De-PyO"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="E2a-nd-vFn">
+                                        <rect key="frame" x="16" y="13" width="361" height="49"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="II5-5d-WWG">
+                                                <rect key="frame" x="0.0" y="0.0" width="361" height="49"/>
+                                                <color key="backgroundColor" name="greenColor"/>
+                                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Cập nhật">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" name="greyDC"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="onTapUpdate:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="g7U-Dl-7c0"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" name="white"/>
+                                <constraints>
+                                    <constraint firstItem="E2a-nd-vFn" firstAttribute="leading" secondItem="II2-vD-FLm" secondAttribute="leading" constant="16" id="0dd-70-tnc"/>
+                                    <constraint firstItem="8aU-rh-ibW" firstAttribute="leading" secondItem="II2-vD-FLm" secondAttribute="leading" id="1b8-xS-eIU"/>
+                                    <constraint firstItem="E2a-nd-vFn" firstAttribute="top" secondItem="8aU-rh-ibW" secondAttribute="bottom" constant="12" id="2jb-2F-Slj"/>
+                                    <constraint firstAttribute="trailing" secondItem="JWG-nm-vvK" secondAttribute="trailing" constant="16" id="6d4-TV-ESN"/>
+                                    <constraint firstAttribute="height" constant="70" id="7Eo-Ue-LWy"/>
+                                    <constraint firstAttribute="trailing" secondItem="8aU-rh-ibW" secondAttribute="trailing" id="BzE-tj-F3d"/>
+                                    <constraint firstAttribute="trailing" secondItem="E2a-nd-vFn" secondAttribute="trailing" constant="16" id="EIW-vZ-flg"/>
+                                    <constraint firstItem="JWG-nm-vvK" firstAttribute="top" secondItem="8aU-rh-ibW" secondAttribute="bottom" constant="12" id="Ljf-Yj-Syy"/>
+                                    <constraint firstAttribute="bottom" secondItem="JWG-nm-vvK" secondAttribute="bottom" constant="8" id="WSP-bc-gIC"/>
+                                    <constraint firstAttribute="bottom" secondItem="E2a-nd-vFn" secondAttribute="bottom" constant="8" id="qYQ-eK-gdd"/>
+                                    <constraint firstItem="JWG-nm-vvK" firstAttribute="leading" secondItem="II2-vD-FLm" secondAttribute="leading" constant="16" id="ud3-Me-K6G"/>
+                                    <constraint firstItem="8aU-rh-ibW" firstAttribute="top" secondItem="II2-vD-FLm" secondAttribute="top" id="xkz-lz-4aP"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="R5L-bn-aru">
+                                <rect key="frame" x="0.0" y="60" width="393" height="688"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="d0C-HL-pbZ"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="R5L-bn-aru" firstAttribute="top" secondItem="ey7-yZ-Ypg" secondAttribute="bottom" id="F3R-yP-XYK"/>
+                            <constraint firstItem="ey7-yZ-Ypg" firstAttribute="trailing" secondItem="d0C-HL-pbZ" secondAttribute="trailing" id="F4Y-O3-TLn"/>
+                            <constraint firstItem="ey7-yZ-Ypg" firstAttribute="top" secondItem="d0C-HL-pbZ" secondAttribute="top" id="JaL-7I-8vS"/>
+                            <constraint firstItem="R5L-bn-aru" firstAttribute="leading" secondItem="d0C-HL-pbZ" secondAttribute="leading" id="K7V-ss-pe0"/>
+                            <constraint firstItem="ey7-yZ-Ypg" firstAttribute="leading" secondItem="d0C-HL-pbZ" secondAttribute="leading" id="NbC-c4-7tk"/>
+                            <constraint firstItem="R5L-bn-aru" firstAttribute="trailing" secondItem="d0C-HL-pbZ" secondAttribute="trailing" id="Ndq-UQ-gaq"/>
+                            <constraint firstItem="II2-vD-FLm" firstAttribute="leading" secondItem="gr7-v0-Pai" secondAttribute="leading" id="c3U-7k-v9L"/>
+                            <constraint firstItem="d0C-HL-pbZ" firstAttribute="bottom" secondItem="II2-vD-FLm" secondAttribute="bottom" id="gVF-Lm-mhe"/>
+                            <constraint firstItem="II2-vD-FLm" firstAttribute="top" secondItem="R5L-bn-aru" secondAttribute="bottom" id="lwa-l1-ZYs"/>
+                            <constraint firstItem="d0C-HL-pbZ" firstAttribute="trailing" secondItem="II2-vD-FLm" secondAttribute="trailing" id="w8k-K7-H4y"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buttonAccept" destination="fMg-Tp-Rey" id="NeB-hp-PCn"/>
+                        <outlet property="buttonDeined" destination="eez-Z7-xZr" id="w2E-sy-btk"/>
+                        <outlet property="buttonUpdate" destination="II5-5d-WWG" id="KQb-dJ-zX4"/>
+                        <outlet property="tableView" destination="R5L-bn-aru" id="vvh-bJ-nQT"/>
+                        <outlet property="uiViewAccept" destination="JWG-nm-vvK" id="MQI-mB-uHq"/>
+                        <outlet property="uiViewUpdate" destination="E2a-nd-vFn" id="d2Y-YB-Dfg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="-34"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_close_black" width="17" height="17"/>
+        <image name="ic_tick" width="24" height="24"/>
+        <namedColor name="greenColor">
+            <color red="0.090000003576278687" green="0.68199998140335083" blue="0.36100000143051147" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="greyDC">
+            <color red="0.86299997568130493" green="0.86299997568130493" blue="0.86299997568130493" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="lineColor">
+            <color red="0.85500001907348633" green="0.85500001907348633" blue="0.85500001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
