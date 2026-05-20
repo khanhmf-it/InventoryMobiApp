@@ -42,7 +42,7 @@ class SideMenuViewController: UIViewController {
                 url = Environment.rootURL
             } else {
                     if ssid == "bivnioswifim01" {
-                        url = URL(string: "http://172.26.248.30/gateway_inv")
+                        url = URL(string: "http://172.26.248.26/gateway_inv_test")
                     } else if ssid == "B-WINS" {
                         url = Environment.rootURL
                     } else {

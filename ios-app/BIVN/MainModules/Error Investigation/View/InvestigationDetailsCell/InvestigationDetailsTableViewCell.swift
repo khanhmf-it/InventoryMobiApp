@@ -118,7 +118,7 @@ class InvestigationDetailsTableViewCell: UITableViewCell, UITextViewDelegate {
             if Environment.rootURL.description.contains("tinhvan") {
                 return Environment.rootURL
             } else if ssid == "bivnioswifim01" {
-                return URL(string: "http://172.26.248.30/gateway_inv")
+                return URL(string: "http://172.26.248.26/gateway_inv_test")
             } else {
                 return Environment.rootURL
             }
