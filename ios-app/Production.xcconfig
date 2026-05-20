@@ -1,0 +1,7 @@
+// Production build overrides to avoid Swift frontend SIL crashes
+// Workaround: disable Release optimization and whole-module optimization
+SWIFT_OPTIMIZATION_LEVEL = -Onone
+SWIFT_WHOLE_MODULE_OPTIMIZATION = NO
+
+// Keep any existing inherited settings
+OTHER_SWIFT_FLAGS = $(inherited)

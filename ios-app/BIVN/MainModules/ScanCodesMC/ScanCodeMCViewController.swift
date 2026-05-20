@@ -456,42 +456,7 @@ class ScanCodeMCViewController: BaseViewController {
                         self.showPopUpAlert(title: "Chọn vị trí".localized(), array: arrayString, status: arrayStatus) {
                             self.captureSession.startRunning()
                         } accept: { indexValue in
-                            let listHistory = self.listDataTicket[indexValue].histories ?? []
-                            _ = self.listDataTicket[indexValue].inventoryDoc
-                            
-                            var isShowPopupInventory = false
-                            for item in listHistory {
-                                if self.isConfirmScan {
-                                    if item.status == 3 || item.status == 5 {
-                                        isShowPopupInventory = true
-                                    }
-                                } else {
-                                    if item.status == 3 || item.status == 5 {
-                                        isShowPopupInventory = true
-                                    }
-                                }
-                            }
-                            
-                            if isShowPopupInventory {
-                                if self.jobIndex == 0 {
-                                    self.showAlertNoti(title: "Thông báo".localized(), message: "Đã được kiểm kê. Bạn có muốn kiểm kê lại không".localized(), cancelButton: "Hủy bỏ".localized(), acceptButton: "Đồng ý".localized(), acceptOnTap:  {
-                                        // go to detail
-                                        self.navigateInventoryDetailVC(dataTicket: self.listDataTicket[indexValue], resetInventory: true)
-                                    }) {
-                                        self.captureSession.startRunning()
-                                    }
-                                } else {
-                                    if UserDefault.shared.getUserID() == self.listDataTicket.first?.inventoryDoc?.inventoryBy {
-                                        self.showAlertNoti(title: "Thông báo".localized(), message: "Bạn không được xác nhận phiếu này".localized(),acceptButton: "Đồng ý".localized(), acceptOnTap:  {
-                                            self.captureSession.startRunning()
-                                        })
-                                    } else {
-                                        self.navigateInventoryDetailVC(dataTicket: self.listDataTicket[indexValue], resetInventory: false)
-                                    }
-                                }
-                            } else {
-                                self.navigateInventoryDetailVC(dataTicket: self.listDataTicket[indexValue], resetInventory: false)
-                            }
+                            self.handleSelectedTicket(indexValue: indexValue)
                         }
                     }
                     
@@ -519,6 +484,36 @@ class ScanCodeMCViewController: BaseViewController {
                 print(error.localizedDescription)
                 self?.captureSession.startRunning()
             }
+        }
+    }
+
+    private func shouldShowPopupInventory(ticket: DetailResponseDataTicket) -> Bool {
+        let histories = ticket.histories ?? []
+        return histories.contains { $0.status == 3 || $0.status == 5 }
+    }
+
+    private func handleSelectedTicket(indexValue: Int) {
+        guard self.listDataTicket.indices.contains(indexValue) else { return }
+        let selectedTicket = self.listDataTicket[indexValue]
+
+        if shouldShowPopupInventory(ticket: selectedTicket) {
+            if self.jobIndex == 0 {
+                self.showAlertNoti(title: "Thông báo".localized(), message: "Đã được kiểm kê. Bạn có muốn kiểm kê lại không".localized(), cancelButton: "Hủy bỏ".localized(), acceptButton: "Đồng ý".localized(), acceptOnTap:  {
+                    self.navigateInventoryDetailVC(dataTicket: selectedTicket, resetInventory: true)
+                }) {
+                    self.captureSession.startRunning()
+                }
+            } else {
+                if UserDefault.shared.getUserID() == selectedTicket.inventoryDoc?.inventoryBy {
+                    self.showAlertNoti(title: "Thông báo".localized(), message: "Bạn không được xác nhận phiếu này".localized(),acceptButton: "Đồng ý".localized(), acceptOnTap:  {
+                        self.captureSession.startRunning()
+                    })
+                } else {
+                    self.navigateInventoryDetailVC(dataTicket: selectedTicket, resetInventory: false)
+                }
+            }
+        } else {
+            self.navigateInventoryDetailVC(dataTicket: selectedTicket, resetInventory: false)
         }
     }
     

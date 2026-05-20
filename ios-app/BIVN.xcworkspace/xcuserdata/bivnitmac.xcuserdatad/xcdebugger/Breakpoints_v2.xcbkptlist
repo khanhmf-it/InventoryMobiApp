@@ -24,7 +24,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "39ED77FE-9E77-402E-A0A5-7039743358D8"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BIVN/MainModules/Login/Controller/LoginViewController.swift"
@@ -34,36 +34,6 @@
             endingLineNumber = "309"
             landmarkName = "loginRequest(isOverride:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "39ED77FE-9E77-402E-A0A5-7039743358D8 - 8575615fa95d57d0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BIVN.LoginViewController.loginRequest(isOverride: Swift.Bool) -&gt; ()"
-                  moduleName = "BIVN.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bivnitmac/Downloads/New%20App%20Invent%202025/Invent%20Equipment%20v10/ios-app/BIVN/MainModules/Login/Controller/LoginViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "309"
-                  endingLineNumber = "309">
-               </Location>
-               <Location
-                  uuid = "39ED77FE-9E77-402E-A0A5-7039743358D8 - 63029ffac4686e48"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;BIVN.LoginModel, Swift.Error&gt;) -&gt; () in BIVN.LoginViewController.loginRequest(isOverride: Swift.Bool) -&gt; ()"
-                  moduleName = "BIVN.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bivnitmac/Downloads/New%20App%20Invent%202025/Invent%20Equipment%20v10/ios-app/BIVN/MainModules/Login/Controller/LoginViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "309"
-                  endingLineNumber = "309">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -118,7 +88,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "B0A97897-EE6F-431C-BD90-4BDB129D833F"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BIVN/Shared/UserDefaultManager.swift"
@@ -134,7 +104,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "C9E2F7E1-54FE-4030-A261-86461DA902C3"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BIVN/Shared/UserDefaultManager.swift"
@@ -150,7 +120,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "9C17D00F-0391-4BE5-88C1-BC4DCFC9FB07"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BIVN/MainModules/InventoryUser/Controller/ScanUserIDController.swift"
@@ -166,7 +136,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "1B349BC2-2A41-42A1-A480-D81F3C0475D8"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BIVN/MainModules/InventoryUser/Controller/ScanUserIDController.swift"
@@ -190,8 +160,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "32"
             endingLineNumber = "32"
-            landmarkName = "fetchUserDetail(completion:)"
-            landmarkType = "7">
+            landmarkName = "NetworkManager"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -214,7 +184,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "C683EBE4-698E-45C8-859A-A6EDBB7A4686"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BIVN/MainModules/InventoryUser/Controller/ScanUserIDController.swift"
@@ -224,43 +194,13 @@
             endingLineNumber = "137"
             landmarkName = "saveAction(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "C683EBE4-698E-45C8-859A-A6EDBB7A4686 - 4f03ffad7b5a6d2b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BIVN.ScanUserIDController.saveAction(Any) -&gt; ()"
-                  moduleName = "BIVN.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bivnitmac/Downloads/New%20App%20Invent%202025/Invent%20Equipment%20v10/ios-app/BIVN/MainModules/InventoryUser/Controller/ScanUserIDController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "137"
-                  endingLineNumber = "137">
-               </Location>
-               <Location
-                  uuid = "C683EBE4-698E-45C8-859A-A6EDBB7A4686 - 4f03ffad7b5a6d2b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BIVN.ScanUserIDController.saveAction(Any) -&gt; ()"
-                  moduleName = "BIVN.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bivnitmac/Downloads/New%20App%20Invent%202025/Invent%20Equipment%20v10/ios-app/BIVN/MainModules/InventoryUser/Controller/ScanUserIDController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "137"
-                  endingLineNumber = "137">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "230C7A93-E256-4693-AB9B-9463A0C148D3"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BIVN/MainModules/InventoryUser/Controller/ScanUserIDController.swift"
@@ -286,50 +226,6 @@
             endingLineNumber = "32"
             landmarkName = "MainViewController"
             landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "FE94343F-0D79-4F56-BB44-90912048D3C9 - 1329a9996715f035"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BIVN.MainViewController.networkManager.getter : BIVN.NetworkManager"
-                  moduleName = "BIVN.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bivnitmac/Downloads/New%20App%20Invent%202025/Invent%20Equipment%20v10/ios-app/BIVN/MainModules/MainMC/Controller/MainViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0">
-               </Location>
-               <Location
-                  uuid = "FE94343F-0D79-4F56-BB44-90912048D3C9 - d546d8330482f803"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BIVN.MainViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; BIVN.MainViewController"
-                  moduleName = "BIVN.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bivnitmac/Downloads/New%20App%20Invent%202025/Invent%20Equipment%20v10/ios-app/BIVN/MainModules/MainMC/Controller/MainViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34">
-               </Location>
-               <Location
-                  uuid = "FE94343F-0D79-4F56-BB44-90912048D3C9 - e94964d99b5e87d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BIVN.MainViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;BIVN.MainViewController&gt;"
-                  moduleName = "BIVN.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bivnitmac/Downloads/New%20App%20Invent%202025/Invent%20Equipment%20v10/ios-app/BIVN/MainModules/MainMC/Controller/MainViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

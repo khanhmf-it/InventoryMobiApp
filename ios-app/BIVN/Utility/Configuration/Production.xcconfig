@@ -8,4 +8,4 @@
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
 
-Root_URL = http:/$()/apbivnap12/gateway_inv
+Root_URL = http:/$()/apbivnap12/gateway_inv_test

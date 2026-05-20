@@ -7,7 +7,8 @@
 
 import UIKit
 import Localize_Swift
-import SwiftUICore
+//import SwiftUICore
+import SwiftUI
 
 class ListErrorTableViewCell: UITableViewCell {
     @IBOutlet weak var partNumberLabel: UILabel!
