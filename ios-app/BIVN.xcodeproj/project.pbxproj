@@ -1525,7 +1525,6 @@
 				B7855DF82B1480FF00963A0D /* AccessoryMonitor.storyboard in Resources */,
 				A43B6AA62AB311C200818CF6 /* HomeMCTableViewCell.xib in Resources */,
 				A4DC33EA2B0DFB7500C39759 /* PartCodeTableViewCell.xib in Resources */,
-				A4DC33EA2B0DFB7500C39759 /* PartCodeTableViewCell.xib in Resources */,
 				F0635C1C2D2E1B2500B13792 /* AccessoryCell.xib in Resources */,
 				F0CB54042B217A3500B9F719 /* AccepticketC.storyboard in Resources */,
 				A4F48A0F2AB052C4007D7A82 /* Main.storyboard in Resources */,
@@ -1763,8 +1762,6 @@
 				B7429A092B0DE718009F7600 /* AccessoryModel.swift in Sources */,
 				A48E32892B10AEC900E567CF /* SheetPresentationViewController.swift in Sources */,
 				B76886372BECABED001DD4F0 /* ListDocAEModel.swift in Sources */,
-				A48E32892B10AEC900E567CF /* SheetPresentationViewController.swift in Sources */,
-				B7429A092B0DE718009F7600 /* AccessoryModel.swift in Sources */,
 				B7DB15292AB30216008A37F6 /* SideMenuModel.swift in Sources */,
 				50A56CDC2D34FCD900263DA3 /* InvestigationDetailsTableViewCell.swift in Sources */,
 				B7B23FF72B199E22009245A0 /* HistoryInventoryDetailViewController.swift in Sources */,
@@ -1966,7 +1963,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "FST-BIVN-PCMC";
 				INFOPLIST_KEY_NSCameraUsageDescription = "To scan QR code";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = 6.0;
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location is used to support inventory and scanning workflows.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -2104,7 +2101,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "FST-BIVN-PCMC";
 				INFOPLIST_KEY_NSCameraUsageDescription = "To scan QR code";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = 6.0;
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location is used to support inventory and scanning workflows.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -2236,7 +2233,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "FST-BIVN-PCMC";
 				INFOPLIST_KEY_NSCameraUsageDescription = "To scan QR code";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = 6.0;
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location is used to support inventory and scanning workflows.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -2368,7 +2365,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "FST-BIVN-PCMC";
 				INFOPLIST_KEY_NSCameraUsageDescription = "To scan QR code";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = 6.0;
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location is used to support inventory and scanning workflows.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -2560,7 +2557,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "FST-BIVN-PCMC";
 				INFOPLIST_KEY_NSCameraUsageDescription = "To scan QR code";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = 6.0;
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location is used to support inventory and scanning workflows.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -2596,7 +2593,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "FST-BIVN-PCMC";
 				INFOPLIST_KEY_NSCameraUsageDescription = "To scan QR code";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = 6.0;
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location is used to support inventory and scanning workflows.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

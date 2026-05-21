@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 import Moya
 import Localize_Swift
 
@@ -527,13 +528,14 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func navigateChooseModelDoc(jobIndex: Int, titleJob: String, docType: String) {
-        guard let vc = Storyboards.chooseModelDoc.instantiate() as? ChooseModelDocViewController else {return}
         self.title = ""
-        vc.titleString = UserDefault.shared.getUserID()
-        vc.jobIndex = jobIndex
-        vc.isAcpect = jobIndex == 0 ? false : true
-        vc.docType = docType
-        vc.titleJob = titleJob
+        let view = ChooseModelDocSwiftUIView(
+            titleString: UserDefault.shared.getUserID(),
+            jobIndex: jobIndex,
+            docType: docType,
+            titleJob: titleJob
+        )
+        let vc = UIHostingController(rootView: view)
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
