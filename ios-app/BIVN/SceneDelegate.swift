@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import SwiftUI
+import Moya
+import Localize_Swift
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
@@ -13,50 +16,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        
-        let token = UserDefault.shared.getDataLoginModel().token ?? ""
-        if token.count > 0 {
-            if scene is UIWindowScene {
-                let storyboard = UIStoryboard(name: R.storyboard.main.name, bundle: nil)
-                let navigationController = storyboard.instantiateInitialViewController() as! UINavigationController
-                if "TaiKhoanChung" == UserDefault.shared.getDataLoginModel().accountType && UserDefault.shared.getDataLoginModel().inventoryLoggedInfo != nil {
-                    
-                    if UserDefault.shared.getUserID() == "" {
-                        let vc : LoginViewController = storyboard.instantiateViewController(withIdentifier: R.storyboard.main.loginViewController.identifier) as! LoginViewController
-                        let navigationController = UINavigationController(rootViewController: vc)
-                        navigationController.modalTransitionStyle = .crossDissolve
-                        navigationController.modalPresentationStyle = .fullScreen
-                        navigationController.viewControllers = [vc]
-                        self.window?.rootViewController = navigationController
-                        self.window?.makeKeyAndVisible()
-                    } else {
-                        let rootViewController: MainViewController = storyboard.instantiateViewController(withIdentifier: R.storyboard.main.mainViewController.identifier) as! MainViewController
-                        rootViewController.isCheckType = UserDefault.shared.getDataLoginModel().mobileAccess == TypeRole.mc.value ? .mc : .pcb
-                        if UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.inventoryRoleType == 2 {
-                            rootViewController.isCheckType = .inventory
-                        } else {
-                            rootViewController.isCheckType = UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.inventoryRoleType == 0 ? .inventory : .monitor
-                        }
-                        
-                        navigationController.viewControllers = [rootViewController]
-                        self.window?.rootViewController = navigationController
-                        self.window?.makeKeyAndVisible()
-                    }
-                } else {
-                    let rootViewController: MainViewController = storyboard.instantiateViewController(withIdentifier: R.storyboard.main.mainViewController.identifier) as! MainViewController
-                    print(UserDefault.shared.getDataLoginModel().mobileAccess)
-                    rootViewController.isCheckType = UserDefault.shared.getDataLoginModel().mobileAccess == TypeRole.mc.value ? .mc : .pcb
-                    navigationController.viewControllers = [rootViewController]
-                    self.window?.rootViewController = navigationController
-                    self.window?.makeKeyAndVisible()
-                }
-            }
-        }
-        
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+
+        let window = UIWindow(windowScene: windowScene)
+        window.rootViewController = UIHostingController(rootView: RootSwiftUIView())
+        self.window = window
+        window.makeKeyAndVisible()
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -89,4 +54,82 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     
 }
+
+enum LaunchDestination {
+    case login
+    case inventoryUser
+    case main(role: TypeRole)
+}
+
+final class AppLaunchRouter: ObservableObject {
+    @Published var destination: LaunchDestination = .login
+
+    init() {
+        destination = resolveDestination()
+    }
+
+    private func resolveDestination() -> LaunchDestination {
+        let loginModel = UserDefault.shared.getDataLoginModel()
+        let token = loginModel.token ?? ""
+
+        guard !token.isEmpty else {
+            return .login
+        }
+
+        if AccountType.generalAccount.rawValue == loginModel.accountType,
+           loginModel.inventoryLoggedInfo != nil {
+            if UserDefault.shared.getUserID().isEmpty {
+                return .login
+            }
+
+            if loginModel.inventoryLoggedInfo?.inventoryRoleType == 2 {
+                return .main(role: .inventory)
+            }
+
+            let isInventory = loginModel.inventoryLoggedInfo?.inventoryRoleType == 0
+            return .main(role: isInventory ? .inventory : .monitor)
+        }
+
+        let isMC = loginModel.mobileAccess == TypeRole.mc.value
+        return .main(role: isMC ? .mc : .pcb)
+    }
+
+    func navigateToLogin() {
+        destination = .login
+    }
+
+    func navigateToInventoryUser() {
+        destination = .inventoryUser
+    }
+
+    func navigateToMain(role: TypeRole) {
+        destination = .main(role: role)
+    }
+}
+
+struct RootSwiftUIView: View {
+    @ObservedObject private var router: AppLaunchRouter
+
+    init(initialDestination: LaunchDestination? = nil) {
+        let appRouter = AppLaunchRouter()
+        if let initialDestination {
+            appRouter.destination = initialDestination
+        }
+        router = appRouter
+    }
+
+    var body: some View {
+        Group {
+            switch router.destination {
+            case .login:
+                LoginSwiftUIView(router: router)
+            case .inventoryUser:
+                InventoryUserSwiftUIView(router: router)
+            case .main(let role):
+                MainSwiftUIView(role: role, router: router)
+            }
+        }
+    }
+}
+
 

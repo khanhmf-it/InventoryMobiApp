@@ -5,6 +5,7 @@
 //  Created by Luyện Đào on 14/09/2023.
 //
 import UIKit
+import SwiftUI
 
 let LocalizeUserDefaultKey = "LocalizeUserDefaultKey"
 var LocalizeUserDefautLanguage = "en"
@@ -84,6 +85,21 @@ extension UIViewController {
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+
+    func switchToInventoryUserFlow() {
+        DispatchQueue.main.async {
+            guard let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                  let sceneDelegate = scene.delegate as? SceneDelegate,
+                  let window = sceneDelegate.window else {
+                return
+            }
+
+            window.rootViewController = UIHostingController(
+                rootView: RootSwiftUIView(initialDestination: .inventoryUser)
+            )
+            window.makeKeyAndVisible()
+        }
     }
     
     

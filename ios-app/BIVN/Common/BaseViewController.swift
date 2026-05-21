@@ -380,17 +380,7 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
                         } else {
                             if AccountType.generalAccount.rawValue == "TaiKhoanChung" {
                                 DispatchQueue.main.async {
-                                    guard let controllersInStack = self.navigationController?.viewControllers else { return }
-                                    if let scanVC = controllersInStack.first(where: { $0 is ScanUserIDController }) as? ScanUserIDController  {
-                                        self.navigationController?.popToViewController(scanVC, animated: true)
-                                        return
-                                    } else {
-                                        guard let vc = Storyboards.inventoryUser.instantiate() as? ScanUserIDController else {return}
-                                        let navigationController = UINavigationController(rootViewController: vc)
-                                        navigationController.modalTransitionStyle = .crossDissolve
-                                        navigationController.modalPresentationStyle = .fullScreen
-                                        self.present(navigationController, animated: true, completion: nil)
-                                    }
+                                    self.switchToInventoryUserFlow()
                                 }
                             } else if AccountType.monitoringAccount.rawValue == "TaiKhoanGiamSat" {
                                 DispatchQueue.main.async {

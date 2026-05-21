@@ -713,10 +713,7 @@ class AccepticketCController: BaseViewController, UITableViewDataSource, UITable
                     if (underlyingError as NSError).code == 13 {
                         self.showAlertConfigTimeOut()
                         DispatchQueue.main.async {
-                            for viewController in self.navigationController?.viewControllers ?? [] where viewController is ScanUserIDController {
-                                self.navigationController?.popToViewController(viewController, animated: true)
-                                return
-                            }
+                            self.switchToInventoryUserFlow()
                         }
                     }
                 }

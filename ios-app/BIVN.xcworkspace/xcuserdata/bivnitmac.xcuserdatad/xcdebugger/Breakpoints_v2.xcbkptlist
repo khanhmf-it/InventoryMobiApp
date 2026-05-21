@@ -82,6 +82,36 @@
             endingLineNumber = "309"
             landmarkName = "loginRequest(isOverride:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DB6DDDB1-BBAB-4425-9B64-A0B568B2CF90 - 857f1e8e53229401"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BIVN.LoginViewController.loginRequest(isOverride: Swift.Bool) -&gt; ()"
+                  moduleName = "BIVN.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bivnitmac/Desktop/InventoryMobiApp/ios-app/BIVN/MainModules/Login/Controller/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "309"
+                  endingLineNumber = "309">
+               </Location>
+               <Location
+                  uuid = "DB6DDDB1-BBAB-4425-9B64-A0B568B2CF90 - 6308e02b3e17ad99"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;BIVN.LoginModel, Swift.Error&gt;) -&gt; () in BIVN.LoginViewController.loginRequest(isOverride: Swift.Bool) -&gt; ()"
+                  moduleName = "BIVN.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bivnitmac/Desktop/InventoryMobiApp/ios-app/BIVN/MainModules/Login/Controller/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "309"
+                  endingLineNumber = "309">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

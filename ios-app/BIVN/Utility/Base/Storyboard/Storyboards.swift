@@ -14,8 +14,6 @@ extension Storyboards {
             return "Main"
         case .filterInventory, .sheetsInventory, .acctionInventory, .historyInventoryDetail, .waitConfirmMonitor:
             return "AccessoryMonitor"
-        case .inventoryUser:
-            return "InventoryUser"
         case .AccepticketC:
             return "AccepticketC"
         case .ballotCount, .filterTicketC, .sheetPresentation, .waitConfirmationC, .detailHistoryTicketC, .chooseModelDoc, .scanTicketB, .accessoryNotInventory, .scanTicketC:
@@ -38,7 +36,6 @@ extension Storyboards {
         case .sheetPresentation: return SheetPresentationViewController.identifier
         case .filterInventory: return FilterMonitorSheetsViewController.identifier
         case .sheetsInventory: return SheetsInventoryViewController.identifier
-        case .inventoryUser: return ScanUserIDController.identifier
         case .qrInventory: return QRInventoryVC.identifier
         case .waitConfirmationC: return WaitConfirmationViewController.identifier
         case .scanCodeMC: return ScanCodeMCViewController.identifier

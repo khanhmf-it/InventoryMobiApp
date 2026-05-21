@@ -3223,13 +3223,12 @@ struct _R {
     var totalItemTableViewCell: RswiftResources.ReuseIdentifier<TotalItemTableViewCell> { .init(identifier: "TotalItemTableViewCell") }
   }
 
-  /// This `_R.storyboard` struct is generated, and contains static references to 8 storyboards.
+  /// This `_R.storyboard` struct is generated, and contains static references to 7 storyboards.
   struct storyboard {
     let bundle: Foundation.Bundle
     var accepticketC: accepticketC { .init(bundle: bundle) }
     var accessory: accessory { .init(bundle: bundle) }
     var accessoryMonitor: accessoryMonitor { .init(bundle: bundle) }
-    var inventoryUser: inventoryUser { .init(bundle: bundle) }
     var launchScreen: launchScreen { .init(bundle: bundle) }
     var listError: listError { .init(bundle: bundle) }
     var main: main { .init(bundle: bundle) }
@@ -3242,9 +3241,6 @@ struct _R {
       .init(bundle: bundle)
     }
     func accessoryMonitor(bundle: Foundation.Bundle) -> accessoryMonitor {
-      .init(bundle: bundle)
-    }
-    func inventoryUser(bundle: Foundation.Bundle) -> inventoryUser {
       .init(bundle: bundle)
     }
     func launchScreen(bundle: Foundation.Bundle) -> launchScreen {
@@ -3263,7 +3259,6 @@ struct _R {
       try self.accepticketC.validate()
       try self.accessory.validate()
       try self.accessoryMonitor.validate()
-      try self.inventoryUser.validate()
       try self.launchScreen.validate()
       try self.listError.validate()
       try self.main.validate()
@@ -3348,25 +3343,6 @@ struct _R {
         if historyInventoryDetailViewController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'historyInventoryDetailViewController' could not be loaded from storyboard 'AccessoryMonitor' as 'HistoryInventoryDetailViewController'.") }
         if sheetsInventoryViewController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'sheetsInventoryViewController' could not be loaded from storyboard 'AccessoryMonitor' as 'SheetsInventoryViewController'.") }
         if waitConfirmMonitorViewController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'waitConfirmMonitorViewController' could not be loaded from storyboard 'AccessoryMonitor' as 'WaitConfirmMonitorViewController'.") }
-      }
-    }
-
-    /// Storyboard `InventoryUser`.
-    struct inventoryUser: RswiftResources.StoryboardReference {
-      let bundle: Foundation.Bundle
-
-      let name = "InventoryUser"
-
-      var scanUserIDController: RswiftResources.StoryboardViewControllerIdentifier<ScanUserIDController> { .init(identifier: "ScanUserIDController", storyboard: name, bundle: bundle) }
-      var sideMenuViewController: RswiftResources.StoryboardViewControllerIdentifier<SideMenuViewController> { .init(identifier: "SideMenuViewController", storyboard: name, bundle: bundle) }
-
-      func validate() throws {
-        if UIKit.UIImage(named: "ic_scan", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'ic_scan' is used in storyboard 'InventoryUser', but couldn't be loaded.") }
-        if UIKit.UIColor(named: "buttonBlue", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'buttonBlue' is used in storyboard 'InventoryUser', but couldn't be loaded.") }
-        if UIKit.UIColor(named: "textDefault", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'textDefault' is used in storyboard 'InventoryUser', but couldn't be loaded.") }
-        if UIKit.UIColor(named: "textRed", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'textRed' is used in storyboard 'InventoryUser', but couldn't be loaded.") }
-        if scanUserIDController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'scanUserIDController' could not be loaded from storyboard 'InventoryUser' as 'ScanUserIDController'.") }
-        if sideMenuViewController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'sideMenuViewController' could not be loaded from storyboard 'InventoryUser' as 'SideMenuViewController'.") }
       }
     }
 

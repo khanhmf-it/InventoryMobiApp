@@ -319,8 +319,7 @@ class LoginViewController: BaseViewController , UITextFieldDelegate{
                         print(UserDefault.shared.getDataLoginModel().mobileAccess)
                     }
                     if AccountType.generalAccount.rawValue == response.data?.accountType {
-                        guard let vc = Storyboards.inventoryUser.instantiate() as? ScanUserIDController else {return}
-                        self.navigationController?.pushViewController(vc, animated: true)
+                        self.switchToInventoryUserFlow()
                     } else if AccountType.monitoringAccount.rawValue == response.data?.accountType {
                         let vc : MainViewController = self.storyboard?.instantiateViewController(withIdentifier: R.storyboard.main.mainViewController.identifier) as! MainViewController
                         if UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.inventoryRoleType == UIViewController.inventory {

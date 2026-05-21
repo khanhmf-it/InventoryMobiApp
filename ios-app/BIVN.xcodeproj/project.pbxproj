@@ -159,8 +159,6 @@
 		F05117E32B43FCBF00DC3F6D /* HightLightTicketC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05117E22B43FCBF00DC3F6D /* HightLightTicketC.swift */; };
 		F0635C1C2D2E1B2500B13792 /* AccessoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0635C1B2D2E1B2500B13792 /* AccessoryCell.xib */; };
 		F07671EC2D2FC7B0001253C7 /* DetailTicketCController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07671EB2D2FC7B0001253C7 /* DetailTicketCController.swift */; };
-		F08B14B72B0DEB4300EB6D7C /* InventoryUser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F08B14B62B0DEB4300EB6D7C /* InventoryUser.storyboard */; };
-		F08B14B92B0DEB4D00EB6D7C /* ScanUserIDController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08B14B82B0DEB4D00EB6D7C /* ScanUserIDController.swift */; };
 		F0AA79382D2D1AAB002A5F12 /* Accessory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0AA79372D2D1AAB002A5F12 /* Accessory.storyboard */; };
 		F0AA793B2D2D1AFD002A5F12 /* AccessoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA793A2D2D1AFD002A5F12 /* AccessoryController.swift */; };
 		F0B4A2B92D2E23670072312A /* AccessoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B4A2B82D2E234F0072312A /* AccessoryCell.swift */; };
@@ -175,6 +173,17 @@
 		F0E6EB9C2D37BCDB00C882BB /* ErrorInvestigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E6EB9B2D37BCCC00C882BB /* ErrorInvestigation.swift */; };
 		F0F5CC932B2704B2004620FD /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F5CC922B2704B2004620FD /* BaseTableViewCell.swift */; };
 		F0F6AEC42D2E691B0045FACE /* AccessoryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F6AEC32D2E691B0045FACE /* AccessoryModels.swift */; };
+		C0A100000000000000000301 /* AppShellSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A100000000000000000201 /* AppShellSwiftUIView.swift */; };
+		C0A100000000000000000302 /* LoginSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A100000000000000000202 /* LoginSwiftUIView.swift */; };
+		C0A100000000000000000303 /* MainSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A100000000000000000203 /* MainSwiftUIView.swift */; };
+		C0A100000000000000000304 /* MainSwiftUIViewModel+Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A100000000000000000204 /* MainSwiftUIViewModel+Flow.swift */; };
+		C0A100000000000000000305 /* InventoryUserSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A100000000000000000205 /* InventoryUserSwiftUIView.swift */; };
+		C0A100000000000000000306 /* CodeScannerSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A100000000000000000206 /* CodeScannerSwiftUIView.swift */; };
+		C0A100000000000000000307 /* ChooseModelDocSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A100000000000000000207 /* ChooseModelDocSwiftUIView.swift */; };
+		C0A100000000000000000308 /* ListAccessoryNotInventorySwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A100000000000000000208 /* ListAccessoryNotInventorySwiftUIView.swift */; };
+		C0A100000000000000000309 /* ScanTicketBSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A100000000000000000209 /* ScanTicketBSwiftUIView.swift */; };
+		C0A10000000000000000030A /* ScanTicketCSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A10000000000000000020A /* ScanTicketCSwiftUIView.swift */; };
+		C0A10000000000000000030B /* ScanCodeMCSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A10000000000000000020B /* ScanCodeMCSwiftUIView.swift */; };
 		F2A75EC3501286CF1EBCADD1 /* Pods_BIVN_BIVNUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36FE8915263392725DAA072E /* Pods_BIVN_BIVNUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -377,8 +386,6 @@
 		F05117E22B43FCBF00DC3F6D /* HightLightTicketC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HightLightTicketC.swift; sourceTree = "<group>"; };
 		F0635C1B2D2E1B2500B13792 /* AccessoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccessoryCell.xib; sourceTree = "<group>"; };
 		F07671EB2D2FC7B0001253C7 /* DetailTicketCController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTicketCController.swift; sourceTree = "<group>"; };
-		F08B14B62B0DEB4300EB6D7C /* InventoryUser.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InventoryUser.storyboard; sourceTree = "<group>"; };
-		F08B14B82B0DEB4D00EB6D7C /* ScanUserIDController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanUserIDController.swift; sourceTree = "<group>"; };
 		F0AA79372D2D1AAB002A5F12 /* Accessory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Accessory.storyboard; sourceTree = "<group>"; };
 		F0AA793A2D2D1AFD002A5F12 /* AccessoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryController.swift; sourceTree = "<group>"; };
 		F0B4A2B82D2E234F0072312A /* AccessoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryCell.swift; sourceTree = "<group>"; };
@@ -393,6 +400,17 @@
 		F0E6EB9B2D37BCCC00C882BB /* ErrorInvestigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorInvestigation.swift; sourceTree = "<group>"; };
 		F0F5CC922B2704B2004620FD /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		F0F6AEC32D2E691B0045FACE /* AccessoryModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryModels.swift; sourceTree = "<group>"; };
+		C0A100000000000000000201 /* AppShellSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppShellSwiftUIView.swift; sourceTree = "<group>"; };
+		C0A100000000000000000202 /* LoginSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSwiftUIView.swift; sourceTree = "<group>"; };
+		C0A100000000000000000203 /* MainSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSwiftUIView.swift; sourceTree = "<group>"; };
+		C0A100000000000000000204 /* MainSwiftUIViewModel+Flow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainSwiftUIViewModel+Flow.swift"; sourceTree = "<group>"; };
+		C0A100000000000000000205 /* InventoryUserSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryUserSwiftUIView.swift; sourceTree = "<group>"; };
+		C0A100000000000000000206 /* CodeScannerSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeScannerSwiftUIView.swift; sourceTree = "<group>"; };
+		C0A100000000000000000207 /* ChooseModelDocSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseModelDocSwiftUIView.swift; sourceTree = "<group>"; };
+		C0A100000000000000000208 /* ListAccessoryNotInventorySwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAccessoryNotInventorySwiftUIView.swift; sourceTree = "<group>"; };
+		C0A100000000000000000209 /* ScanTicketBSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanTicketBSwiftUIView.swift; sourceTree = "<group>"; };
+		C0A10000000000000000020A /* ScanTicketCSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanTicketCSwiftUIView.swift; sourceTree = "<group>"; };
+		C0A10000000000000000020B /* ScanCodeMCSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanCodeMCSwiftUIView.swift; sourceTree = "<group>"; };
 		FE88D4C6AA628D0468BEB8E2 /* Pods-BIVN-BIVNUITests.debug(production).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BIVN-BIVNUITests.debug(production).xcconfig"; path = "Target Support Files/Pods-BIVN-BIVNUITests/Pods-BIVN-BIVNUITests.debug(production).xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -550,6 +568,7 @@
 			isa = PBXGroup;
 			children = (
 				B77A96162ABD9B2E000F5B01 /* Model */,
+				C0A100000000000000000105 /* SwiftUI */,
 				A43B6AA82AB3171C00818CF6 /* ScanCodeMCViewController.swift */,
 			);
 			path = ScanCodesMC;
@@ -668,7 +687,6 @@
 				F0CB54002B21769300B9F719 /* AccepticketC */,
 				B7855DEE2B1480FF00963A0D /* Monitor */,
 				A4DC33C82B0DEEDC00C39759 /* TicketC */,
-				F08B14B52B0DEB3100EB6D7C /* InventoryUser */,
 				B76399862AF1FBE300402898 /* Inventory */,
 				B7F7DD952AB80E02004A2DFF /* DetailMC */,
 				A43B6AA72AB316F900818CF6 /* ScanCodesMC */,
@@ -728,10 +746,22 @@
 			children = (
 				A4DC33CC2B0DEFCD00C39759 /* UI */,
 				A4DC33CB2B0DEFA200C39759 /* Controller */,
+				C0A100000000000000000103 /* SwiftUI */,
 				A4DC33CA2B0DEF9D00C39759 /* View */,
 				A4DC33C92B0DEF5500C39759 /* Model */,
 			);
 			path = TicketC;
+			sourceTree = "<group>";
+		};
+		C0A100000000000000000103 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				C0A100000000000000000207 /* ChooseModelDocSwiftUIView.swift */,
+				C0A100000000000000000208 /* ListAccessoryNotInventorySwiftUIView.swift */,
+				C0A100000000000000000209 /* ScanTicketBSwiftUIView.swift */,
+				C0A10000000000000000020A /* ScanTicketCSwiftUIView.swift */,
+			);
+			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 		A4DC33C92B0DEF5500C39759 /* Model */ = {
@@ -884,6 +914,7 @@
 				A47D65152AB159D0005E074B /* MainModules */,
 				A4F48A3B2AB053D7007D7A82 /* Shared */,
 				A4F48A392AB053BF007D7A82 /* Common */,
+				C0A100000000000000000104 /* SwiftUI */,
 				A4575CA72AB2AC8C00CA2134 /* Ui */,
 				A4F48A072AB052C4007D7A82 /* AppDelegate.swift */,
 				A4F48A092AB052C4007D7A82 /* SceneDelegate.swift */,
@@ -915,6 +946,7 @@
 		A4F48A392AB053BF007D7A82 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C0A100000000000000000101 /* SwiftUI */,
 				A4DB7E852B3D178F00D3723D /* Notifications */,
 				B70AB2E32AB400730070E150 /* Dropdown */,
 				B7DB152A2AB3025C008A37F6 /* NavigationBar */,
@@ -922,6 +954,42 @@
 				A4F48A3C2AB05AB7007D7A82 /* BaseViewController.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		C0A100000000000000000101 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				C0A100000000000000000102 /* Scanner */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		C0A100000000000000000102 /* Scanner */ = {
+			isa = PBXGroup;
+			children = (
+				C0A100000000000000000206 /* CodeScannerSwiftUIView.swift */,
+			);
+			path = Scanner;
+			sourceTree = "<group>";
+		};
+		C0A100000000000000000104 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				C0A100000000000000000201 /* AppShellSwiftUIView.swift */,
+				C0A100000000000000000205 /* InventoryUserSwiftUIView.swift */,
+				C0A100000000000000000202 /* LoginSwiftUIView.swift */,
+				C0A100000000000000000203 /* MainSwiftUIView.swift */,
+				C0A100000000000000000204 /* MainSwiftUIViewModel+Flow.swift */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		C0A100000000000000000105 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				C0A10000000000000000020B /* ScanCodeMCSwiftUIView.swift */,
+			);
+			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 		A4F48A3B2AB053D7007D7A82 /* Shared */ = {
@@ -1200,22 +1268,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F04EC2AB2B104AF300D2B2BA /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				F08B14B62B0DEB4300EB6D7C /* InventoryUser.storyboard */,
-			);
-			path = UI;
-			sourceTree = "<group>";
-		};
-		F04EC2AC2B104B1900D2B2BA /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				F08B14B82B0DEB4D00EB6D7C /* ScanUserIDController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		F05117E12B43FC8F00DC3F6D /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -1237,15 +1289,6 @@
 				F029CA4F2D40B38000B3DBBC /* ItemTicketCTableCell.xib */,
 			);
 			path = view;
-			sourceTree = "<group>";
-		};
-		F08B14B52B0DEB3100EB6D7C /* InventoryUser */ = {
-			isa = PBXGroup;
-			children = (
-				F04EC2AC2B104B1900D2B2BA /* Controller */,
-				F04EC2AB2B104AF300D2B2BA /* UI */,
-			);
-			path = InventoryUser;
 			sourceTree = "<group>";
 		};
 		F0AA79312D2D17CC002A5F12 /* Accessory */ = {
@@ -1481,10 +1524,8 @@
 				A4F48A112AB052C5007D7A82 /* Assets.xcassets in Resources */,
 				B7855DF82B1480FF00963A0D /* AccessoryMonitor.storyboard in Resources */,
 				A43B6AA62AB311C200818CF6 /* HomeMCTableViewCell.xib in Resources */,
-				F08B14B72B0DEB4300EB6D7C /* InventoryUser.storyboard in Resources */,
 				A4DC33EA2B0DFB7500C39759 /* PartCodeTableViewCell.xib in Resources */,
 				A4DC33EA2B0DFB7500C39759 /* PartCodeTableViewCell.xib in Resources */,
-				F08B14B72B0DEB4300EB6D7C /* InventoryUser.storyboard in Resources */,
 				F0635C1C2D2E1B2500B13792 /* AccessoryCell.xib in Resources */,
 				F0CB54042B217A3500B9F719 /* AccepticketC.storyboard in Resources */,
 				A4F48A0F2AB052C4007D7A82 /* Main.storyboard in Resources */,
@@ -1653,6 +1694,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0A100000000000000000301 /* AppShellSwiftUIView.swift in Sources */,
+				C0A100000000000000000302 /* LoginSwiftUIView.swift in Sources */,
+				C0A100000000000000000303 /* MainSwiftUIView.swift in Sources */,
+				C0A100000000000000000304 /* MainSwiftUIViewModel+Flow.swift in Sources */,
+				C0A100000000000000000305 /* InventoryUserSwiftUIView.swift in Sources */,
+				C0A100000000000000000306 /* CodeScannerSwiftUIView.swift in Sources */,
+				C0A100000000000000000307 /* ChooseModelDocSwiftUIView.swift in Sources */,
+				C0A100000000000000000308 /* ListAccessoryNotInventorySwiftUIView.swift in Sources */,
+				C0A100000000000000000309 /* ScanTicketBSwiftUIView.swift in Sources */,
+				C0A10000000000000000030A /* ScanTicketCSwiftUIView.swift in Sources */,
+				C0A10000000000000000030B /* ScanCodeMCSwiftUIView.swift in Sources */,
 				B76886342BEC8373001DD4F0 /* ListAccessoryNotInventoryABECell.swift in Sources */,
 				B7F7DDA72AB86D4D004A2DFF /* UIVIew.swift in Sources */,
 				A4F9F7D62AB06C0300681E1F /* NetworkManager.swift in Sources */,
@@ -1694,7 +1746,6 @@
 				50A56CD22D34F8EF00263DA3 /* ErrorCorrectionTableViewCell.swift in Sources */,
 				B758D7FE2AF360C300A0B55C /* NoteCell.swift in Sources */,
 				B7F7DD992AB8310E004A2DFF /* PopUpViewController.swift in Sources */,
-				F08B14B92B0DEB4D00EB6D7C /* ScanUserIDController.swift in Sources */,
 				A4B22EFE2B230BD300EBF5A6 /* DetailHistoryModel.swift in Sources */,
 				F0E6EB992D37A59B00C882BB /* HistoryItemTableViewCell.swift in Sources */,
 				B7FFC9482B16E5D200204F1A /* ActionInventoryViewController.swift in Sources */,
@@ -1889,7 +1940,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1921,7 +1972,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2027,7 +2078,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -2059,7 +2110,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2159,7 +2210,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -2191,7 +2242,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2291,7 +2342,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -2323,7 +2374,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2428,7 +2479,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -2483,7 +2534,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -2515,7 +2566,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2551,7 +2602,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

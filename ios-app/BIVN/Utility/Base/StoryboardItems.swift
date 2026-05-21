@@ -10,7 +10,6 @@ import Foundation
 // MARK: - Storyboards
 enum Storyboards {
     case login
-    case inventoryUser
     case main
     case detailHistory
     case qrInventory

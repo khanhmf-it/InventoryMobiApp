@@ -12,8 +12,6 @@ extension Storyboards {
         switch self {
         case .login, .main, .detailHistory:
             return "Main"
-        case .inventoryUser:
-            return "InventoryUser"
         }
     }
     
@@ -23,7 +21,6 @@ extension Storyboards {
         case .login: return LoginViewController.identifier
         case .main: return MainViewController.identifier
         case .detailHistory: return DetailHistoryTicketVC.identifier
-        case .inventoryUser: return ScanUserIDController.identifier
         }
     }
     
