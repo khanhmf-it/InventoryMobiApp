@@ -91,7 +91,7 @@ class FilterMonitorSheetsViewController: BaseViewController, UITableViewDataSour
         codeLabel.text = "Tất cả".localized()
     }
     
-    private func callAPI(inventoryId: String?, accountId: String?, departmentName: String?, locationName: String?, componentCode: String?) {
+    func callAPI(inventoryId: String?, accountId: String?, departmentName: String?, locationName: String?, componentCode: String?) {
         param["inventoryId"] = inventoryId ?? ""
         param["accountId"] = accountId ?? ""
         param["departmentName"] = departmentName ?? "-1"
@@ -103,6 +103,7 @@ class FilterMonitorSheetsViewController: BaseViewController, UITableViewDataSour
                 if response.code == 200 {
                     self?.listDataAudit = response.data?.auditInfoModels ?? []
                     self?.listDataFilter = response.data?.auditInfoModels ?? []
+                    self?.sortMonitorList()
                     self?.emptyData(listData: self?.listDataFilter ?? [])
                     if let finishCount = response.data?.finishCount, let totalCount = response.data?.totalCount {
                         self?.countSheets(finishCount: finishCount, totalCount: totalCount)
@@ -146,6 +147,18 @@ class FilterMonitorSheetsViewController: BaseViewController, UITableViewDataSour
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
+    }
+
+    // Sort list so that unmonitored items appear first, then monitored items; within groups sort by positionCode
+    func sortMonitorList() {
+        self.listDataFilter.sort { lhs, rhs in
+            let lhsMonitored = (lhs.status == 6 || lhs.status == 7)
+            let rhsMonitored = (rhs.status == 6 || rhs.status == 7)
+            if lhsMonitored != rhsMonitored {
+                return !lhsMonitored && rhsMonitored
+            }
+            return (lhs.positionCode ?? "") < (rhs.positionCode ?? "")
+        }
     }
     
     func passData(room: String?, area: String?, partCode: String?) {

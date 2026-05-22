@@ -139,7 +139,9 @@ class ScanUserIDController: BaseViewController {
             return
         }
         UserDefaults.standard.set(userID, forKey: "MANHANVIEN")
-        if userID.checkUserId() {
+        // kiểm tra mã nhân viên (Loại trừ với trường hợp user giám sát)
+        let isMonitor = UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.inventoryRoleType == UIViewController.monitor || UserDefault.shared.getDataLoginModel().accountType == AccountType.monitoringAccount.rawValue
+        if isMonitor || userID.checkUserId() {
             navBar.userNameLabel.text = userID
             UserDefault.shared.setUserID(userID: userID)
             navigateToMain()
@@ -221,7 +223,8 @@ class ScanUserIDController: BaseViewController {
     }
     
     private func requestGetPosition(layout: String, componentCode: String) {
-        if componentCode.checkUserId() {
+        let isMonitor = UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.inventoryRoleType == UIViewController.monitor || UserDefault.shared.getDataLoginModel().accountType == AccountType.monitoringAccount.rawValue
+        if isMonitor || componentCode.checkUserId() {
             UserDefault.shared.setUserID(userID: componentCode)
             navBar.userNameLabel.text = componentCode
             navigateToMain()
@@ -374,6 +377,10 @@ extension ScanUserIDController : UITextFieldDelegate {
         txtErrorUserID.isHidden = true
         let currentString: NSString = textField.text! as NSString
         let newString: NSString =  currentString.replacingCharacters(in: range, with: string) as NSString
+        let isMonitor = UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.inventoryRoleType == UIViewController.monitor || UserDefault.shared.getDataLoginModel().accountType == AccountType.monitoringAccount.rawValue
+        if isMonitor {
+            return true
+        }
         return newString.length <= 8
     }
 }
