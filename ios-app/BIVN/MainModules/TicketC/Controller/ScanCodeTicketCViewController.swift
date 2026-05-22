@@ -151,6 +151,9 @@ class ScanCodeTicketCViewController: BaseViewController {
         sendButton.layer.borderColor = UIColor(named: R.color.buttonBlue.name)?.cgColor
         if jobIndex == 0 {
             inventoryListLabel.text = "Danh sách phiếu chưa kiểm kê".localized()
+        } else if jobIndex == 2 {
+            inventoryListLabel.text = "Danh sách phiếu cần giám sát".localized()
+            titleLabel.text = "Quét mã cụm giám sát".localized()
         } else {
             isConfirmScan = true
             inventoryListLabel.text = "Danh sách phiếu chờ xác nhận".localized()
@@ -220,6 +223,8 @@ class ScanCodeTicketCViewController: BaseViewController {
         if self.jobIndex == 0 {
             vc.listDataDocC = self.listDocC.docCInfoModels?.filter({ $0.status == 2}) ?? []
             print(self.listDocC.docCInfoModels?.filter({ $0.status == 2}) ?? [].count)
+        } else if self.jobIndex == 2 {
+            vc.listDataDocC = self.listDocC.docCInfoModels?.filter({ ($0.status ?? 0) >= 5 }) ?? []
         } else {
             vc.listDataDocC = self.listDocC.docCInfoModels?.filter({ $0.status == 3}) ?? []
         }
@@ -435,7 +440,11 @@ class ScanCodeTicketCViewController: BaseViewController {
                     }
                     if listDocC?.count ?? 0 > 1 {
                         guard let vc = Storyboards.accessoryNotInventory.instantiate() as? ListAccessoryNotInventoryViewController else {return}
-                        vc.listDataDocC = listDocC ?? []
+                        if self.jobIndex == 2 {
+                            vc.listDataDocC = (listDocC ?? []).filter({ ($0.status ?? 0) >= 5 })
+                        } else {
+                            vc.listDataDocC = listDocC ?? []
+                        }
                         vc.titleString = self.titleNavi
                         vc.model = self.model
                         vc.machineType = self.machineType
@@ -447,6 +456,21 @@ class ScanCodeTicketCViewController: BaseViewController {
                         if self.jobIndex == 0 {
                             if isCheckBallotC {
                                 self.showAlertNoti(title: "Thông báo".localized(), message: "Đã được kiểm kê. Bạn có muốn kiểm kê lại không".localized(), cancelButton: "Hủy bỏ", acceptButton: "Đồng ý".localized(), acceptOnTap:  {
+                                    self.naviShowDetailDocC(docCInfoModels: listDocC?.first ?? DocCInfoModels())
+                                }) {
+                                    self.captureSession.startRunning()
+                                }
+                            } else {
+                                naviShowDetailDocC(docCInfoModels: listDocC?.first ?? DocCInfoModels())
+                            }
+                        } else if self.jobIndex == 2 {
+                            let status = listDocC?.first?.status ?? 0
+                            if status == 2 {
+                                self.showAlertError(title: "Lỗi".localized(), message: "Công đoạn này chưa được thực hiện kiểm kê. Vui lòng thử lại".localized(), titleButton: "Đồng ý".localized())
+                            } else if status == 3 || status == 4 {
+                                self.showAlertError(title: "Lỗi".localized(), message: "Công đoạn này chưa được thực hiện xác nhận kiểm kê. Vui lòng thử lại".localized(), titleButton: "Đồng ý".localized())
+                            } else if status == 6 {
+                                self.showAlertNoti(title: "Thông báo".localized(), message: "Đã được giám sát. Bạn có muốn giám sát lại không".localized(), cancelButton: "Hủy bỏ", acceptButton: "Đồng ý".localized(), acceptOnTap:  {
                                     self.naviShowDetailDocC(docCInfoModels: listDocC?.first ?? DocCInfoModels())
                                 }) {
                                     self.captureSession.startRunning()
@@ -502,6 +526,21 @@ class ScanCodeTicketCViewController: BaseViewController {
                 vc.viewController = 0
                 self.navigationController?.pushViewController(vc, animated: true)
             }
+        } else if jobIndex == 2 {
+            if (docCInfoModels.status ?? 0) < 5 {
+                self.showAlertError(title: "Lỗi".localized(), message: "Công đoạn này chưa được thực hiện xác nhận kiểm kê. Vui lòng thử lại".localized(), titleButton: "Đồng ý".localized())
+                return
+            }
+            if (docCInfoModels.status ?? 0) != 5 && (docCInfoModels.status ?? 0) != 6 && (docCInfoModels.status ?? 0) != 7 {
+                self.showAlertError(title: "Lỗi".localized(), message: "Công đoạn này không nằm trong danh sách giám sát. Vui lòng thử lại".localized(), titleButton: "Đồng ý".localized())
+                return
+            }
+            guard let vc = storyboard?.instantiateViewController(withIdentifier: R.storyboard.ticketC.ballotCountViewController) else {return}
+            title = ""
+            vc.documentId = docCInfoModels.id
+            vc.viewController = 2
+            vc.isMonitorMode = true
+            self.navigationController?.pushViewController(vc, animated: true)
         } else {
             if docCInfoModels.status ?? 0 > 2 {
                 if docCInfoModels.inventoryBy == currentUserID {

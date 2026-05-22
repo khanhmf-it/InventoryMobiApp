@@ -83,6 +83,14 @@ class ListAccessoryNotInventoryViewController: BaseViewController, UITableViewDa
                 titleLabel.text = "Danh sách LK chờ xác nhận".localized()
                 tableView.separatorStyle = .none
             }
+        } else if jobIndex == 2 {
+            isConfirmScan = false
+            if docType == "C" {
+                titleLabel.text = "Danh sách phiếu cần giám sát".localized()
+            } else {
+                titleLabel.text = "Danh sách LK cần giám sát".localized()
+                tableView.separatorStyle = .none
+            }
         } else {
             isConfirmScan = false
             if docType == "C" {
@@ -140,6 +148,9 @@ class ListAccessoryNotInventoryViewController: BaseViewController, UITableViewDa
     private func reloadTableViewDocC(docC: [DocCInfoModels]) {
         if self.jobIndex == 0 {
             let listDocC = docC.filter({ $0.status == 2})
+            self.listDataDocC.append(contentsOf: listDocC)
+        } else if self.jobIndex == 2 {
+            let listDocC = docC.filter({ ($0.status ?? 0) >= 5 })
             self.listDataDocC.append(contentsOf: listDocC)
         } else {
             let listDocC = docC.filter({ $0.status == 3})
@@ -607,6 +618,32 @@ class ListAccessoryNotInventoryViewController: BaseViewController, UITableViewDa
                     self.listDataDocC = []
                     getListDocC(inventoryId: UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.inventoryModel?.inventoryId ?? "", accountId: UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.accountId ?? "", machineModel: self.model, machineType: self.machineType, lineName: self.lineCode, stageName: "", modelCode: "", actionType: self.jobIndex, pageNumber: self.pageNumber)
                 }
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        } else if jobIndex == 2 {
+            if (docCInfoModels.status ?? 0) < 5 {
+                self.showAlertError(title: "Lỗi".localized(), message: "Công đoạn này chưa được thực hiện xác nhận kiểm kê. Vui lòng thử lại".localized(), titleButton: "Đồng ý".localized())
+                return
+            }
+            if (docCInfoModels.status ?? 0) != 5 && (docCInfoModels.status ?? 0) != 6 && (docCInfoModels.status ?? 0) != 7 {
+                self.showAlertError(title: "Lỗi".localized(), message: "Công đoạn này không nằm trong danh sách giám sát. Vui lòng thử lại".localized(), titleButton: "Đồng ý".localized())
+                return
+            }
+            if docCInfoModels.status == 6 {
+                self.showAlertNoti(title: "Thông báo".localized(), message: "Đã được giám sát. Bạn có muốn giám sát lại không".localized(), cancelButton: "Hủy bỏ".localized(), acceptButton: "Đồng ý".localized(), acceptOnTap: {
+                    guard let vc = self.storyboard?.instantiateViewController(withIdentifier: R.storyboard.ticketC.ballotCountViewController) else {return}
+                    self.title = ""
+                    vc.documentId = docCInfoModels.id
+                    vc.viewController = 2
+                    vc.isMonitorMode = true
+                    self.navigationController?.pushViewController(vc, animated: true)
+                })
+            } else {
+                guard let vc = storyboard?.instantiateViewController(withIdentifier: R.storyboard.ticketC.ballotCountViewController) else {return}
+                title = ""
+                vc.documentId = docCInfoModels.id
+                vc.viewController = 2
+                vc.isMonitorMode = true
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         } else {

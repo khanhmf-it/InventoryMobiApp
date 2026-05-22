@@ -90,6 +90,7 @@ class AccepticketCController: BaseViewController, UITableViewDataSource, UITable
     var isReloadDocABE: Bool = false
     var dError: Bool = true
     var index: Int = 0
+    var isMonitorMode: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -143,20 +144,34 @@ class AccepticketCController: BaseViewController, UITableViewDataSource, UITable
     }
     
     private func setupUI() {
-        buttonDeined.setTitle("Từ chối".localized(), for: .normal)
-        buttonAccept.setTitle("Xác nhận".localized(), for: .normal)
+        buttonDeined.setTitle(isMonitorMode ? "Không đạt".localized() : "Từ chối".localized(), for: .normal)
+        buttonAccept.setTitle(isMonitorMode ? "Xác nhận đạt".localized() : "Xác nhận".localized(), for: .normal)
         let origImage = UIImage(named: R.image.ic_tick.name)
         let tintedImage = origImage?.withRenderingMode(.alwaysTemplate)
         self.buttonAccept.setImage(tintedImage, for: .normal)
         self.buttonAccept.tintColor = UIColor(named: R.color.textGray.name)
         self.enableButtionDenied(isEnable: false)
-        switch self.dataInfo?.status {
-        case 4, 5, 7:
-            self.uiViewAccept.isHidden = true
-            self.uiViewUpdate.isHidden = false
-        default:
-            self.uiViewAccept.isHidden = false
-            self.uiViewUpdate.isHidden = true
+        if isMonitorMode {
+            switch self.dataInfo?.status {
+            case 5:
+                self.uiViewAccept.isHidden = false
+                self.uiViewUpdate.isHidden = true
+            case 7:
+                self.uiViewAccept.isHidden = true
+                self.uiViewUpdate.isHidden = false
+            default:
+                self.uiViewAccept.isHidden = true
+                self.uiViewUpdate.isHidden = true
+            }
+        } else {
+            switch self.dataInfo?.status {
+            case 4, 5, 7:
+                self.uiViewAccept.isHidden = true
+                self.uiViewUpdate.isHidden = false
+            default:
+                self.uiViewAccept.isHidden = false
+                self.uiViewUpdate.isHidden = true
+            }
         }
         
     }
@@ -368,6 +383,8 @@ class AccepticketCController: BaseViewController, UITableViewDataSource, UITable
             return listDocHistories.count > 0 ? 1 : 0
         case .HistoryInventoryCell:
             return listDocHistories.count == 0 ? 0 : listDocHistories.count
+        case .NoteViewCell:
+            return (isMonitorMode && dataInfo?.status == 6) ? 0 : 1
         default:
             return 1
         }
@@ -394,6 +411,7 @@ class AccepticketCController: BaseViewController, UITableViewDataSource, UITable
             guard let cell = tableView.dequeueReusableCell(withIdentifier: R.nib.infoTicketTableViewCell, for: indexPath) else {return UITableViewCell()}
             cell.delegateAddRow = self
             cell.fillData(model: dataInfo)
+            cell.addRowButton.isHidden = isMonitorMode
             cell.selectionStyle = .none
             return cell
         case .TitleInventoryCell:
@@ -403,8 +421,9 @@ class AccepticketCController: BaseViewController, UITableViewDataSource, UITable
         case .RowInventoryTableViewCell:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: R.nib.rowInventoryTableViewCell, for: indexPath) else {return UITableViewCell()}
             var totalValue = 0.0
-            cell.isShowCheck = true
-            cell.setDataToCell(data: arrayData[indexPath.row], index: indexPath.row, isLast: (arrayData.count - 1) == indexPath.row ? true : false, isCheck: arrayData[indexPath.row].isCheck ?? false)
+            let isReadOnlyMonitor = isMonitorMode && dataInfo?.status == 6
+            cell.isShowCheck = !isReadOnlyMonitor
+            cell.setDataToCell(data: arrayData[indexPath.row], index: indexPath.row, isLast: (arrayData.count - 1) == indexPath.row ? true : false, isCheck: arrayData[indexPath.row].isCheck ?? false, isHideTextField: !isReadOnlyMonitor)
             if !self.arrayData.isEmpty {
                 for item in self.arrayData {
                     let result = item.quantityPerBom ?? 0
@@ -581,6 +600,9 @@ class AccepticketCController: BaseViewController, UITableViewDataSource, UITable
             return cell
             
         case .NoteViewCell:
+            if isMonitorMode && dataInfo?.status == 6 {
+                return UITableViewCell()
+            }
             guard let cell = tableView.dequeueReusableCell(withIdentifier: R.nib.noteCell, for: indexPath) else {return UITableViewCell()}
             cell.selectionStyle = .none
             cell.isHiddenAddButton = false
@@ -659,7 +681,7 @@ class AccepticketCController: BaseViewController, UITableViewDataSource, UITable
             }
         }
         self.disableAllButton()
-        if (!dError && type == AccepticketCController.ACCEPT) || (type == AccepticketCController.DENIED) || (!dError && type == AccepticketCController.UPDATE) {
+        if (!dError && (type == AccepticketCController.ACCEPT || type == AccepticketCController.UPDATE || type == 2)) || (type == AccepticketCController.DENIED || type == 3) {
             submitTicketDocC(type: type, docABEModel: docABEModel, docCModel: docCModel, deleteOutPut: deleteOutPut, total: total)
         } else {
             self.enableAllButton()
@@ -693,6 +715,10 @@ class AccepticketCController: BaseViewController, UITableViewDataSource, UITable
                         vc.titlePopup = "Đã xác nhận kiểm kê linh kiện thành công".localized()
                     case AccepticketCController.DENIED:
                         vc.titlePopup = "Đã từ chối xác nhận kiểm kê linh kiện".localized()
+                    case 2:
+                        vc.titlePopup = "Đã đạt giám sát kiểm kê linh kiện.".localized()
+                    case 3:
+                        vc.titlePopup = "Không đạt giám sát kiểm kê linh kiện.".localized()
                     case AccepticketCController.UPDATE:
                         vc.titlePopup = "Đã cập nhật chi tiết phiếu".localized()
                     default: break
@@ -789,7 +815,8 @@ class AccepticketCController: BaseViewController, UITableViewDataSource, UITable
     }
     
     @IBAction func ontapSubmitInventory(_ sender: UIButton) {
-        submitData(type: AccepticketCController.ACCEPT, docABEModel: arrayData, docCModel: docCModelResult, deleteOutPut: idsDeleteDocOutPut, total: self.resultValueSum)
+        let type = isMonitorMode ? 2 : AccepticketCController.ACCEPT
+        submitData(type: type, docABEModel: arrayData, docCModel: docCModelResult, deleteOutPut: idsDeleteDocOutPut, total: self.resultValueSum)
     }
     @IBAction func deniedTicket(_ sender: Any) {
         arrayData = []
@@ -813,7 +840,8 @@ class AccepticketCController: BaseViewController, UITableViewDataSource, UITable
             convertC.quantityOfBom = item.quantityOfBom
             docCModelResult.append(convertC)
         }
-        submitData(type: AccepticketCController.DENIED, docABEModel: arrayData, docCModel: docCModelResult, deleteOutPut: [], total: currentTotalValueSum)
+        let type = isMonitorMode ? 3 : AccepticketCController.DENIED
+        submitData(type: type, docABEModel: arrayData, docCModel: docCModelResult, deleteOutPut: [], total: currentTotalValueSum)
     }
     @IBAction func onTapUpdate(_ sender: Any) {
         submitData(type: AccepticketCController.UPDATE, docABEModel: arrayData, docCModel: docCModelResult, deleteOutPut: idsDeleteDocOutPut, total: resultValueSum )

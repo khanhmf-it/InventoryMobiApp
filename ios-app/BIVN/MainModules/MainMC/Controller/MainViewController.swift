@@ -401,11 +401,30 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 checkShopPopupChooseDocType(jobIndex: indexPath.row)
             }
         } else if isCheckType == .monitor {
-            guard let vc = Storyboards.scanCodeMC.instantiate() as? ScanCodeMCViewController else {return}
-            vc.isHiddenMonitorView = false
-            vc.isMonitorScan = true
-            vc.titleNavi = "Giám sát".localized()
-            navigationController?.pushViewController(vc, animated: true)
+            let chooseDocType = dataDocType?.isShowChooseDocType()
+            if chooseDocType == .c || chooseDocType == .aec || chooseDocType == .bc || chooseDocType == .aebc {
+                if chooseDocType == .c {
+                    self.navigateChooseModelDoc(jobIndex: 2, titleJob: "Giám sát".localized(), docType: "C")
+                } else {
+                    self.showPopUpAlert(title: "Chọn loại phiếu".localized(), array: ["Loại phiếu A,E".localized(), "Loại phiếu C".localized()]) {} accept: { index in
+                        if index == 0 {
+                            guard let vc = Storyboards.scanCodeMC.instantiate() as? ScanCodeMCViewController else {return}
+                            vc.isHiddenMonitorView = false
+                            vc.isMonitorScan = true
+                            vc.titleNavi = "Giám sát".localized()
+                            self.navigationController?.pushViewController(vc, animated: true)
+                        } else {
+                            self.navigateChooseModelDoc(jobIndex: 2, titleJob: "Giám sát".localized(), docType: "C")
+                        }
+                    }
+                }
+            } else {
+                guard let vc = Storyboards.scanCodeMC.instantiate() as? ScanCodeMCViewController else {return}
+                vc.isHiddenMonitorView = false
+                vc.isMonitorScan = true
+                vc.titleNavi = "Giám sát".localized()
+                navigationController?.pushViewController(vc, animated: true)
+            }
             
         } else {
             let vc = storyboard?.instantiateViewController(withIdentifier: R.storyboard.main.scanCodeMCViewController)

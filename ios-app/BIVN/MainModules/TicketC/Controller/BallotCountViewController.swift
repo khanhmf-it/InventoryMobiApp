@@ -95,6 +95,15 @@ class BallotCountViewController: BaseViewController, AddRowCell {
     var reloadDataSubmit: (() -> ())?
     var index: Int = 0
     var viewController = 0
+    var isMonitorMode: Bool = false
+
+    private var isMonitorReadOnly: Bool {
+        return isMonitorMode && (dataInfo?.status == 6)
+    }
+
+    private var monitorActionType: Int {
+        return dataInfo?.status == 7 ? 4 : 2
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -145,11 +154,24 @@ class BallotCountViewController: BaseViewController, AddRowCell {
     }
     
     private func setupUI() {
-        updateButton.setTitle("Gửi".localized(), for: .normal)
+        updateButton.setTitle(isMonitorMode ? "Xác nhận đạt".localized() : "Gửi".localized(), for: .normal)
         let buttonRight = UIBarButtonItem(image:  UIImage(named: R.image.ic_camera.name), style: .plain, target: self, action: #selector(onTapCapture))
         self.navigationItem.rightBarButtonItem = buttonRight
+        if isMonitorMode {
+            self.navigationItem.rightBarButtonItem = nil
+        }
         regionUS = numberFormatter.locale.identifier == "en_US"
         self.setFontTitleNavBar()
+    }
+
+    private func applyMonitorUIState() {
+        guard isMonitorMode else { return }
+        if dataInfo?.status == 7 {
+            updateButton.setTitle("Cập nhật".localized(), for: .normal)
+        } else {
+            updateButton.setTitle("Xác nhận đạt".localized(), for: .normal)
+        }
+        buttonSend.isHidden = isMonitorReadOnly
     }
     
     private func fillDataTitleNavi() {
@@ -213,7 +235,7 @@ class BallotCountViewController: BaseViewController, AddRowCell {
     private func getAPIListPartCode(params: Dictionary<String, Any>, index: Int = 0) {
         self.index = index
         self.startLoading()
-        networkManager.getListParCode(inventoryId: UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.inventoryModel?.inventoryId ?? "", accountId: UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.accountId ?? "", documentId: self.documentId ?? "", actionId: "0", param: params, completion: { data in
+        networkManager.getListParCode(inventoryId: UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.inventoryModel?.inventoryId ?? "", accountId: UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.accountId ?? "", documentId: self.documentId ?? "", actionId: isMonitorMode ? "1" : "0", param: params, completion: { data in
             switch data {
             case .success(let response):
                 if response.code == 200 {
@@ -266,6 +288,7 @@ class BallotCountViewController: BaseViewController, AddRowCell {
                             self.listArray.append(i)
                         }
                     }
+                    self.applyMonitorUIState()
                     self.tableView.reloadData()
                     if self.tableView.numberOfRows(inSection: 0) != 0 {
                         self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
@@ -309,6 +332,9 @@ class BallotCountViewController: BaseViewController, AddRowCell {
     }
     
     func addRowCell() {
+        if isMonitorReadOnly {
+            return
+        }
         let resultContainer = DocComponentABEs(id: "")
         arrayData.append(resultContainer)
         let indexPath = IndexPath(row: arrayData.count - 1, section: SectionInventory.rowInventory.rawValue)
@@ -405,6 +431,7 @@ extension BallotCountViewController: UITableViewDataSource, UITableViewDelegate 
             guard let cell = tableView.dequeueReusableCell(withIdentifier: R.nib.infoTicketTableViewCell, for: indexPath) else {return UITableViewCell()}
             cell.delegateAddRow = self
             cell.fillData(model: dataInfo)
+            cell.addRowButton.isHidden = isMonitorMode
             cell.selectionStyle = .none
             return cell
         case .TitleInventoryCell:
@@ -414,7 +441,7 @@ extension BallotCountViewController: UITableViewDataSource, UITableViewDelegate 
         case .RowInventoryTableViewCell:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: R.nib.rowInventoryTableViewCell, for: indexPath) else {return UITableViewCell()}
             var totalValue = 0.0
-            cell.setDataToCell(data:arrayData[indexPath.row], index: indexPath.row, isLast: (arrayData.count - 1) == indexPath.row ? true : false, isCheck: false)
+            cell.setDataToCell(data:arrayData[indexPath.row], index: indexPath.row, isLast: (arrayData.count - 1) == indexPath.row ? true : false, isCheck: false, isHideTextField: !isMonitorReadOnly)
             if !self.arrayData.isEmpty {
                 for item in self.arrayData {
                     let result = item.quantityPerBom ?? 0
@@ -606,6 +633,28 @@ extension BallotCountViewController: UITableViewDataSource, UITableViewDelegate 
     }
     //Action
     @IBAction func ontapSubmitInventory(_ sender: UIButton) {
+        if isMonitorMode {
+            if isMonitorReadOnly {
+                self.showAlertNoti(title: "Thông báo".localized(), message: "Phiếu đã được giám sát và không cho phép chỉnh sửa".localized(), acceptButton: "Đồng ý".localized())
+                return
+            }
+
+            var arrayValidate = self.arrayData
+            arrayValidate.removeAll(where: { $0.quantityOfBom == nil && $0.quantityPerBom == nil })
+            if arrayValidate.isEmpty {
+                self.showAlertError(title: "Lỗi".localized(), message: "Không có dữ liệu.Vui lòng nhập dữ liệu Số lượng/thùng và Số thùng".localized(), titleButton: "Đồng ý".localized())
+                return
+            }
+            if arrayValidate.contains(where: { $0.quantityPerBom == nil || $0.quantityOfBom == nil }) {
+                self.errorValid = true
+                self.tableView.reloadData()
+                return
+            }
+
+            self.arrayData = arrayValidate
+            submitMonitorDocC()
+            return
+        }
         let isCheckError1 = arrayData.contains(where: {$0.quantityPerBom != nil || $0.quantityOfBom != nil})
         
         if self.arrayData.count == 0 || !isCheckError1 {
@@ -683,6 +732,49 @@ extension BallotCountViewController: UITableViewDataSource, UITableViewDelegate 
                                 return
                             }
                         }
+                    }
+                }
+                print(error.localizedDescription)
+            }
+        })
+    }
+
+    private func submitMonitorDocC() {
+        guard let documentId = self.documentId else { return }
+        let actionType = self.monitorActionType
+        networkManager.submitTicketCDoc(userCode: UserDefault.shared.getUserID(), comment: "", actionType: "\(actionType)", inventoryId: UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.inventoryModel?.inventoryId ?? "", accountId: UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.accountId ?? "", documentId: documentId, containerModel: arrayData, docTypeCModel: docCModelResult, image: Data(), isCheckPushImage: false, idsDeleteDocOutPut: idsDeleteDocOutPut, completion: { data in
+            self.buttonSend.isUserInteractionEnabled = true
+            switch data {
+            case .success(let response):
+                if response.code == 200 {
+                    self.dataInfo?.status = response.data?.status
+                    let vc = Storyboards.waitConfirmationC.instantiate() as! WaitConfirmationViewController
+                    vc.arrayData = self.arrayData
+                    vc.valueSum = self.resultValueSum
+                    vc.listDocComponentCs = self.listDocComponentCs
+                    vc.listDocHistories = self.listDocHistories
+                    vc.titleString = self.dataInfo?.docCode
+                    vc.dataInfo = self.dataInfo
+                    vc.titleTicket = self.titleInfo
+                    vc.note = ""
+                    vc.viewController = self.viewController
+                    vc.navigationItem.hidesBackButton = false
+                    vc.titlePopup = actionType == 4 ? "Đã cập nhật số lượng.".localized() : "Đã đạt giám sát kiểm kê linh kiện.".localized()
+                    self.navigationController?.pushViewController(vc, animated: false)
+                } else if response.code == 401 || response.code == 403 || response.code == 60 || response.code == 15 || response.code == 17 || response.code == 56 {
+                    self.showAlertExpiredToken(code: response.code) { [weak self] result in
+                        guard let self = self else { return }
+                        if result {
+                            self.submitMonitorDocC()
+                        }
+                    }
+                } else {
+                    self.showAlertNoti(title: UserDefault.shared.showErrorTitle(errorCode: response.code ?? 0), message: UserDefault.shared.showErrorText(errorCode: response.code ?? 0), cancelButton: UserDefault.shared.titleCancel(errorCode: response.code ?? 0), acceptButton: UserDefault.shared.titleAccept(errorCode: response.code ?? 0))
+                }
+            case .failure(let error):
+                if case MoyaError.underlying(let underlyingError, _) = error {
+                    if (underlyingError as NSError).code == 13 {
+                        self.showAlertConfigTimeOut()
                     }
                 }
                 print(error.localizedDescription)

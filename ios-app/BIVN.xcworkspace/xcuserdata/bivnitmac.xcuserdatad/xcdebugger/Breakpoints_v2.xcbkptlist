@@ -34,36 +34,6 @@
             endingLineNumber = "324"
             landmarkName = "loginRequest(isOverride:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "9C25376A-AC67-46B1-A498-640A60677564 - 6308e02b3e17d388"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;BIVN.LoginModel, Swift.Error&gt;) -&gt; () in BIVN.LoginViewController.loginRequest(isOverride: Swift.Bool) -&gt; ()"
-                  moduleName = "BIVN.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bivnitmac/Desktop/InventoryMobiApp/ios-app/BIVN/MainModules/Login/Controller/LoginViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "324"
-                  endingLineNumber = "324">
-               </Location>
-               <Location
-                  uuid = "9C25376A-AC67-46B1-A498-640A60677564 - 6308e02b3e17d388"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;BIVN.LoginModel, Swift.Error&gt;) -&gt; () in BIVN.LoginViewController.loginRequest(isOverride: Swift.Bool) -&gt; ()"
-                  moduleName = "BIVN.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bivnitmac/Desktop/InventoryMobiApp/ios-app/BIVN/MainModules/Login/Controller/LoginViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "324"
-                  endingLineNumber = "324">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
