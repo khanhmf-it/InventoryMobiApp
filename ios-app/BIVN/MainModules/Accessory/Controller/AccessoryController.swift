@@ -236,7 +236,11 @@ class AccessoryController : BaseViewController, UITableViewDataSource, UITableVi
             self.showAlerInternet()
             return
         }
-        param["positionCode"] = positionCode
+        let trimmedPositionCode = positionCode.trimmingCharacters(in: .whitespacesAndNewlines)
+        var param = Dictionary<String, Any>()
+        if !trimmedPositionCode.isEmpty {
+            param["positionCode"] = trimmedPositionCode
+        }
         param["docCode"] = docCode
         param["isErrorInvestigation"] = "true"
         
@@ -248,9 +252,22 @@ class AccessoryController : BaseViewController, UITableViewDataSource, UITableVi
                 guard let `self` = self else { return }
                 if response.code == 200 {
                     let responseData = response.data ?? []
-                    dataTicket = responseData.first!
+                    guard !responseData.isEmpty else {
+                        self.showAlertNoti(title: "Thông báo".localized(), message: "Không tìm thấy chi tiết phiếu".localized(), acceptButton: "Đồng ý".localized())
+                        return
+                    }
+                    let selectedTicket = responseData.first(where: { $0.inventoryDoc?.docCode == docCode }) ?? responseData.first
+                    self.dataTicket = selectedTicket ?? DetailResponseDataTicket()
+                    if docCode.first == "E", self.dataTicket.components?.isEmpty ?? true {
+                        let totalQuantityString = self.accessoryModel?.data?.documentList?.first(where: { $0.docCode == docCode })?.accountQuantity ?? "0"
+                        let totalQuantity = Double(totalQuantityString) ?? 0
+                        if totalQuantity > 0 {
+                            let fallbackComponent = DocComponentABEs(id: "", inventoryDocId: self.dataTicket.inventoryDoc?.id, quantityOfBom: 1, quantityPerBom: totalQuantity)
+                            self.dataTicket.components = [fallbackComponent]
+                        }
+                    }
                     guard let vc = Storyboards.ticketDetailA.instantiate() as? TicketDetailAViewController else {return}
-                    if let arrHistory = dataTicket.histories {
+                    if let arrHistory = self.dataTicket.histories {
                         for item in arrHistory {
                             if item.evicenceImg != nil &&  item.evicenceImg != "" {
                                 vc.evicenceImg = item.evicenceImg ?? ""
@@ -258,7 +275,7 @@ class AccessoryController : BaseViewController, UITableViewDataSource, UITableVi
                             }
                         }
                     }
-                    vc.dataTicket = dataTicket
+                    vc.dataTicket = self.dataTicket
                     vc.isConfirmScan = false
                     vc.resetInventory = true
                     vc.accessoryModel = self.accessoryModel

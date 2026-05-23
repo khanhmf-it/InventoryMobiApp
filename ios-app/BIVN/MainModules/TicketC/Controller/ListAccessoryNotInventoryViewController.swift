@@ -358,7 +358,10 @@ class ListAccessoryNotInventoryViewController: BaseViewController, UITableViewDa
             return
         }
         var param = Dictionary<String, Any>()
-        param["positionCode"] = positionCode
+        let trimmedPositionCode = positionCode.trimmingCharacters(in: .whitespacesAndNewlines)
+        if !trimmedPositionCode.isEmpty {
+            param["positionCode"] = trimmedPositionCode
+        }
         param["docCode"] = docCode
         param["isErrorInvestigation"] = "false"
         
@@ -370,6 +373,10 @@ class ListAccessoryNotInventoryViewController: BaseViewController, UITableViewDa
                 guard let `self` = self else { return }
                 if response.code == 200 {
                     let responseData = response.data ?? []
+                    guard !responseData.isEmpty else {
+                        self.showAlertNoti(title: "Thông báo".localized(), message: "Không tìm thấy chi tiết phiếu".localized(), acceptButton: "Đồng ý".localized())
+                        return
+                    }
                     self.listDataTicket = responseData
                     var arrayString = [String]()
                     var arrayStatus = [Int]()
