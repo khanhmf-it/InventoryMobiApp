@@ -10,6 +10,27 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
+
+    private func resolveMainCheckType(from loginData: DataLoginModel) -> TypeRole {
+        if let inventoryRoleType = loginData.inventoryLoggedInfo?.inventoryRoleType {
+            switch inventoryRoleType {
+            case UIViewController.inventory:
+                return .inventory
+            case UIViewController.monitor:
+                return .monitor
+            case UIViewController.promote:
+                return .inventory
+            default:
+                break
+            }
+        }
+
+        if loginData.accountType == AccountType.monitoringAccount.rawValue {
+            return .monitor
+        }
+
+        return loginData.mobileAccess == TypeRole.mc.value ? .mc : .pcb
+    }
     
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -17,14 +38,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         
-        let token = UserDefault.shared.getDataLoginModel().token ?? ""
+        let loginData = UserDefault.shared.getDataLoginModel()
+        let token = loginData.token ?? ""
         if token.count > 0 {
             if scene is UIWindowScene {
                 let storyboard = UIStoryboard(name: R.storyboard.main.name, bundle: nil)
                 let navigationController = storyboard.instantiateInitialViewController() as! UINavigationController
-                if "TaiKhoanChung" == UserDefault.shared.getDataLoginModel().accountType && UserDefault.shared.getDataLoginModel().inventoryLoggedInfo != nil {
+                let accountType = loginData.accountType
+                let isInventoryAccount = accountType == AccountType.generalAccount.rawValue || accountType == AccountType.monitoringAccount.rawValue
+
+                if isInventoryAccount && loginData.inventoryLoggedInfo != nil {
                     
-                    if UserDefault.shared.getUserID() == "" {
+                    if accountType == AccountType.generalAccount.rawValue && UserDefault.shared.getUserID() == "" {
                         let vc : LoginViewController = storyboard.instantiateViewController(withIdentifier: R.storyboard.main.loginViewController.identifier) as! LoginViewController
                         let navigationController = UINavigationController(rootViewController: vc)
                         navigationController.modalTransitionStyle = .crossDissolve
@@ -34,12 +59,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                         self.window?.makeKeyAndVisible()
                     } else {
                         let rootViewController: MainViewController = storyboard.instantiateViewController(withIdentifier: R.storyboard.main.mainViewController.identifier) as! MainViewController
-                        rootViewController.isCheckType = UserDefault.shared.getDataLoginModel().mobileAccess == TypeRole.mc.value ? .mc : .pcb
-                        if UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.inventoryRoleType == 2 {
-                            rootViewController.isCheckType = .inventory
-                        } else {
-                            rootViewController.isCheckType = UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.inventoryRoleType == 0 ? .inventory : .monitor
-                        }
+                        rootViewController.isCheckType = resolveMainCheckType(from: loginData)
                         
                         navigationController.viewControllers = [rootViewController]
                         self.window?.rootViewController = navigationController
@@ -47,8 +67,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     }
                 } else {
                     let rootViewController: MainViewController = storyboard.instantiateViewController(withIdentifier: R.storyboard.main.mainViewController.identifier) as! MainViewController
-                    print(UserDefault.shared.getDataLoginModel().mobileAccess)
-                    rootViewController.isCheckType = UserDefault.shared.getDataLoginModel().mobileAccess == TypeRole.mc.value ? .mc : .pcb
+                    print(loginData.mobileAccess)
+                    rootViewController.isCheckType = resolveMainCheckType(from: loginData)
                     navigationController.viewControllers = [rootViewController]
                     self.window?.rootViewController = navigationController
                     self.window?.makeKeyAndVisible()
