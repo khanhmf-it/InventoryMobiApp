@@ -1103,10 +1103,10 @@ struct _R {
 
       /// en translation: This part number has been monitored. Inventory check and confirmation cannot be performed again.
       ///
-      /// Key: Mã linh kiện này đã được giám sát. Không được thực hiện kiển kê và xác nhận lại.
+      /// Key: Mã linh kiện này đã được giám sát. Không được thực hiện kiểm kê và xác nhận lại.
       ///
       /// Locales: en, vi
-      var mãLinhKiệnNàyĐãĐượcGiámSátKhôngĐượcThựcHiệnKiểnKêVàXácNhậnLại: RswiftResources.StringResource { .init(key: "Mã linh kiện này đã được giám sát. Không được thực hiện kiển kê và xác nhận lại.", tableName: "Localizable", source: source, developmentValue: "This part number has been monitored. Inventory check and confirmation cannot be performed again.", comment: nil) }
+      var mãLinhKiệnNàyĐãĐượcGiámSátKhôngĐượcThựcHiệnKiểmKêVàXácNhậnLại: RswiftResources.StringResource { .init(key: "Mã linh kiện này đã được giám sát. Không được thực hiện kiểm kê và xác nhận lại.", tableName: "Localizable", source: source, developmentValue: "This part number has been monitored. Inventory check and confirmation cannot be performed again.", comment: nil) }
 
       /// en translation: UserCode
       ///

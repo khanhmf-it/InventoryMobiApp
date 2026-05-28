@@ -134,7 +134,7 @@ class UserDefault {
         case 113:
             errorString = "Mã linh kiện này chưa được kiểm kê hoặc đã được giám sát. Vui lòng thử lại.".localized()
         case 112:
-            errorString = "Mã linh kiện này đã được giám sát. Không được thực hiện kiển kê và xác nhận lại.".localized()
+            errorString = "Mã linh kiện này đã được giám sát. Không được thực hiện kiểm kê và xác nhận lại.".localized()
         default:
             errorString = "Lỗi \(errorCode)"
         }

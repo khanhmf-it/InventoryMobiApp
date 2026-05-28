@@ -407,4 +407,4 @@
 "Quét mã cụm" = "Scan the group code";
 "Vui lòng nhập tên cụm ảo." = "Please enter virtual cluster name";
 "Mã linh kiện này chưa được kiểm kê hoặc đã được giám sát. Vui lòng thử lại." = "The part number has not been inventoried or has been monitored. Please try again.";
-"Mã linh kiện này đã được giám sát. Không được thực hiện kiển kê và xác nhận lại." = "This part number has been monitored. Inventory check and confirmation cannot be performed again.";
+"Mã linh kiện này đã được giám sát. Không được thực hiện kiểm kê và xác nhận lại." = "This part number has been monitored. Inventory check and confirmation cannot be performed again.";

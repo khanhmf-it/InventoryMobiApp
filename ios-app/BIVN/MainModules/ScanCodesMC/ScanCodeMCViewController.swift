@@ -617,28 +617,14 @@ class ScanCodeMCViewController: BaseViewController {
         }
         
         let networkManager: NetworkManager = NetworkManager()
-        var param = Dictionary<String, Any>()
-        param["inventoryId"] = inventoryId
-        param["accountId"] = accountId
-        param["departmentName"] = "-1"
-        param["locationName"] = "-1"
-        param["componentCode"] = componentCode
-
-        // Use getListAudit so multi-position scan can show full list with current statuses
-        // (including already monitored positions), consistent with confirm flow popup behavior.
-        networkManager.getListAudit(param: param) { [weak self] result in
+        networkManager.getDetailMonitor(inventoryId: inventoryId, accountId: accountId, componentCode: componentCode) { [weak self] result in
             switch result {
             case .success(let response):
                 guard let `self` = self else { return }
                 self.stopLoading()
                 if response.code == 200 {
-                    listData = response.data?.auditInfoModels ?? []
-                    if listData.isEmpty {
-                        self.showAlertNoti(title: "Lỗi".localized(), message: "Không tìm thấy dữ liệu phù hợp.".localized(), acceptButton: "Đồng ý".localized(), acceptOnTap: {
-                            self.captureSession.startRunning()
-                        })
-                        return
-                    }
+                    let responseData = response.data ?? []
+                    listData = responseData
                     var arrayString = [String]()
                     var arrayStatus = [Int]()
                     
@@ -675,7 +661,7 @@ class ScanCodeMCViewController: BaseViewController {
                             }
                         }
                     }
-
+                    
                 } else if response.code == 401 || response.code == 403 || response.code == 60 || response.code == 15 || response.code == 17 || response.code == 56 {
                     self.recursiveData(inventoryId: inventoryId, accountId: accountId, componentCode: componentCode, isConfirm: false, code: response.code)
                 } else  {
