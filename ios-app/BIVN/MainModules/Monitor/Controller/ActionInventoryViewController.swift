@@ -233,7 +233,7 @@ class ActionInventoryViewController: BaseViewController, AddRowCell {
                 arrayData.append(convertABE)
             }
         }
-        networkManager.submitAudit(userCode: "M1234567", comment: self.note, inventoryId: UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.inventoryModel?.inventoryId ?? "", accountId: UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.accountId ?? "", documentId: self.documentId, containerModel: arrayData, deleteDocOutPut: actionType == 3 ? [] : arrayDelete, actionType: actionType, completion: { data in
+        networkManager.submitAudit(userCode: UserDefault.shared.getDataLoginModel().userCode ?? "M1234567", comment: self.note, inventoryId: UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.inventoryModel?.inventoryId ?? "", accountId: UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.accountId ?? "", documentId: self.documentId, containerModel: arrayData, deleteDocOutPut: actionType == 3 ? [] : arrayDelete, actionType: actionType, completion: { data in
                 switch data {
                 case .success(let response):
                     if response.code == 200 {

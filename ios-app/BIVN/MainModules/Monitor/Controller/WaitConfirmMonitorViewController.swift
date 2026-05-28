@@ -140,14 +140,27 @@ class WaitConfirmMonitorViewController: BaseViewController {
         valueStatusLabel.font = fontUtils.size14.regular
         valueSaleLabel.font = fontUtils.size14.regular
         valueNoteLabel.font = fontUtils.size14.regular
+
+        let modelCode = dataDetail?.modelCode?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let isShowModelCodeOnly = !(modelCode?.isEmpty ?? true)
+
+        titlePartCodeLabel.text = isShowModelCodeOnly ? "Model code:".localized() : "Mã linh kiện:".localized()
+        titleComponentNameLabel.text = "Tên linh kiện:".localized()
+        titleLocationLabel.text = "Vị trí:".localized()
+        titleStatusLabel.text = "Trạng thái:".localized()
+        titleSaleLabel.text = "Sales order:".localized()
+        titleNoteLabel.text = "Lưu ý:".localized()
         
-        valuePartCodeLabel.text = dataDetail?.componentCode
-        valueComponentNameLabel.text = dataDetail?.componentName
+        valuePartCodeLabel.text = isShowModelCodeOnly ? modelCode : dataDetail?.componentCode
+        valueComponentNameLabel.text = isShowModelCodeOnly ? nil : dataDetail?.componentName
         valueLocationLabel.text = dataDetail?.positionCode
         valueStatusLabel.text = self.dataDetail?.status == 6 ? "Đã đạt giám sát".localized() : "Không đạt giám sát".localized()
         valueStatusLabel.textColor = UIColor(named: self.dataDetail?.status == 6 ? R.color.textBlue.name : R.color.textRed.name)
         valueSaleLabel.text = dataDetail?.salesOrder
         valueNoteLabel.text = dataDetail?.note
+
+        titleComponentNameLabel.isHidden = isShowModelCodeOnly
+        valueComponentNameLabel.isHidden = isShowModelCodeOnly
         
         valueSaleLabel.isHidden = dataDetail?.salesOrder?.isEmpty ?? true
         valueNoteLabel.isHidden = dataDetail?.note?.isEmpty ?? true

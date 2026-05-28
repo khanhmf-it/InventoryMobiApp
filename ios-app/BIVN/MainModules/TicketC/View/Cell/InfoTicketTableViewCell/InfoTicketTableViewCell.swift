@@ -114,19 +114,25 @@ class InfoTicketTableViewCell: BaseTableViewCell {
         scanQrButton.isHidden = true
         addRowButton.isHidden = model?.status == 6
         addRowButton.setTitle("+ Thêm dòng".localized(), for: .normal)
-        titleTicketNameLabel.text = "Mã linh kiện:".localized()
+        let modelCode = model?.modelCode?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let isShowModelCodeOnly = !(modelCode?.isEmpty ?? true)
+
+        titleTicketNameLabel.text = isShowModelCodeOnly ? "Model code:".localized() : "Mã linh kiện:".localized()
         titleStatusLabel.text = "Tên linh kiện:".localized()
         titleSalesOrderLabel.text = "Vị trí:".localized()
         titleNoteLabel.text = "Trạng thái:".localized()
         titleLocationLabel.text = "Sales order:".localized()
         titleNameLabel.text = "Lưu ý:".localized()
-        ticketNameLabel.text = model?.componentCode
-        statusLabel.text = model?.componentName
+        ticketNameLabel.text = isShowModelCodeOnly ? modelCode : model?.componentCode
+        statusLabel.text = isShowModelCodeOnly ? nil : model?.componentName
         salesOrderLabel.text = model?.positionCode
         noteLabel.text = model?.getStatusPartCode()
         noteLabel.textColor = UIColor(named: model?.getColorStatus() ?? "")
         locationLabel.text = model?.salesOrder
         nameLabel.text = model?.note
+
+        titleStatusLabel.isHidden = isShowModelCodeOnly
+        statusLabel.isHidden = isShowModelCodeOnly
         
         loacationStackView.isHidden = model?.salesOrder?.isEmpty ?? true
         ticketStackView.isHidden = model?.note?.isEmpty ?? true
