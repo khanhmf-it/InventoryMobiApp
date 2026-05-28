@@ -30,6 +30,7 @@ struct AuditInfoModels: Codable {
     var locationName: String?
     var componentCode: String?
     var positionCode: String?
+    var modelCode: String?
     func getStatusMonitor() -> String {
         switch status {
         case 0:

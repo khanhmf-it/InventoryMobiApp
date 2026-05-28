@@ -7,773 +7,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "ABFB033A-22D5-4760-B5E5-61A07C185208"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BIVN/Shared/Networking/NetworkManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "loginPostRequest(isOverride:param:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DBD16408-C2E8-4B08-89E7-CDD3C57C3095"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BIVN/Shared/Networking/NetworkManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "loginPostRequest(isOverride:param:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F1DF431F-327D-4611-9006-05BD2D31F189"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BIVN/MainModules/Login/Controller/LoginViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "295"
-            endingLineNumber = "295"
-            landmarkName = "loginRequest(isOverride:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "93619895-91FA-45B9-822A-D16C83094F99"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BIVN/MainModules/Login/Controller/LoginViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "308"
-            endingLineNumber = "308"
-            landmarkName = "loginRequest(isOverride:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DB6DDDB1-BBAB-4425-9B64-A0B568B2CF90"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BIVN/MainModules/Login/Controller/LoginViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "309"
-            endingLineNumber = "309"
-            landmarkName = "loginRequest(isOverride:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7F550C6B-C2AF-485F-9356-C85A942BCE14"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BIVN/MainModules/Login/Controller/LoginViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "306"
-            endingLineNumber = "306"
-            landmarkName = "loginRequest(isOverride:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "AA83F99F-B7C3-4885-8922-A9642BB6E6F4"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BIVN/MainModules/Login/Controller/LoginViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "305"
-            endingLineNumber = "305"
-            landmarkName = "loginRequest(isOverride:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8EE00065-3A0C-46B6-914B-AC1C24B31EE9"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BIVN/MainModules/Login/Controller/LoginViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "304"
-            endingLineNumber = "304"
-            landmarkName = "loginRequest(isOverride:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B79357DB-BF80-48CD-8EA8-3EEBDBAE8E07"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BIVN/MainModules/Login/Controller/LoginViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "346"
-            endingLineNumber = "346"
-            landmarkName = "loginRequest(isOverride:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A00CC005-A688-448F-A1E7-E6759B4F9504"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BIVN/MainModules/Login/Controller/LoginViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "349"
-            endingLineNumber = "349"
-            landmarkName = "loginRequest(isOverride:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F19AA19A-65C6-4FB3-9EC1-17F7189DE1A2"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BIVN/Common/BaseViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159"
-            landmarkName = "showAlertNoti(title:message:cancelButton:acceptButton:acceptOnTap:cancelOnTap:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "FDB60963-9942-46E5-A9DD-50B899777B07"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BIVN/Common/BaseViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160"
-            landmarkName = "showAlertNoti(title:message:cancelButton:acceptButton:acceptOnTap:cancelOnTap:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3E41EA3C-D1BB-4C4A-92AC-D32EBE4377B2"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BIVN/Shared/Networking/BaseApi.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
-            landmarkName = "path"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "370370FB-562A-4F76-9A14-6F61EF5B4E2D"
+            uuid = "8365EAFC-2CAB-4F79-8A6D-764B8C3B51AD"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BIVN/MainModules/ScanCodesMC/ScanCodeMCViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "221"
-            endingLineNumber = "221"
-            landmarkName = "sendOnTap()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "0C00A23A-FB43-42FB-81D9-6D8568A4291F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BIVN/MainModules/ScanCodesMC/ScanCodeMCViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "225"
-            endingLineNumber = "225"
-            landmarkName = "sendOnTap()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "53AADC0C-0294-4666-9D11-B87540249E4D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BIVN/MainModules/TicketC/Controller/ListAccessoryNotInventoryViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "366"
-            endingLineNumber = "366"
-            landmarkName = "naviShowDetailDocAE(inventoryId:accountId:componentCode:isConfirm:positionCode:docCode:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C0AAA3EF-8AA5-48AA-86A7-C970BE889C0C"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BIVN/MainModules/Accessory/Controller/AccessoryController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "244"
-            endingLineNumber = "244"
-            landmarkName = "naviShowDetailDocAE(inventoryId:accountId:componentCode:isConfirm:positionCode:docCode:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "EB1B24B5-B3E2-4C3A-9696-882E490F5D28"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BIVN/MainModules/ScanCodesMC/ScanCodeMCViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "388"
-            endingLineNumber = "388"
-            landmarkName = "getDetailTicket(inventoryId:accountId:componentCode:isConfirm:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "EB1B24B5-B3E2-4C3A-9696-882E490F5D28 - cd2cdb0f26659356"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BIVN.ScanCodeMCViewController.getDetailTicket(inventoryId: Swift.String, accountId: Swift.String, componentCode: Swift.String, isConfirm: Swift.Bool) -&gt; ()"
-                  moduleName = "BIVN.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bivnitmac/Desktop/InventoryMobiApp/ios-app/BIVN/MainModules/ScanCodesMC/ScanCodeMCViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "388"
-                  endingLineNumber = "388">
-               </Location>
-               <Location
-                  uuid = "EB1B24B5-B3E2-4C3A-9696-882E490F5D28 - 2263470951a753f8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;BIVN.DetailTicketModel, Swift.Error&gt;) -&gt; () in BIVN.ScanCodeMCViewController.getDetailTicket(inventoryId: Swift.String, accountId: Swift.String, componentCode: Swift.String, isConfirm: Swift.Bool) -&gt; ()"
-                  moduleName = "BIVN.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bivnitmac/Desktop/InventoryMobiApp/ios-app/BIVN/MainModules/ScanCodesMC/ScanCodeMCViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "388"
-                  endingLineNumber = "388">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9EFEECF8-3560-4BDC-A5D1-E5A0DBFC76E8"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BIVN/Common/BaseViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "234"
-            endingLineNumber = "234"
-            landmarkName = "showAlertExpiredToken(isLogin:code:completion:completionHandler:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "9EFEECF8-3560-4BDC-A5D1-E5A0DBFC76E8 - f8d28a0a88f3a82e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BIVN.BaseViewController.showAlertExpiredToken(isLogin: Swift.Bool, code: Swift.Optional&lt;Swift.Int&gt;, completion: (Swift.Bool) -&gt; (), completionHandler: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; ()"
-                  moduleName = "BIVN.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bivnitmac/Desktop/InventoryMobiApp/ios-app/BIVN/Common/BaseViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "234"
-                  endingLineNumber = "234">
-               </Location>
-               <Location
-                  uuid = "9EFEECF8-3560-4BDC-A5D1-E5A0DBFC76E8 - 4586782f886694ed"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #3 () -&gt; () in BIVN.BaseViewController.showAlertExpiredToken(isLogin: Swift.Bool, code: Swift.Optional&lt;Swift.Int&gt;, completion: (Swift.Bool) -&gt; (), completionHandler: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; ()"
-                  moduleName = "BIVN.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bivnitmac/Desktop/InventoryMobiApp/ios-app/BIVN/Common/BaseViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "235"
-                  endingLineNumber = "235">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E47642CB-94B6-4A5E-8B00-A3AD21518914"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BIVN/Common/BaseViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "235"
-            endingLineNumber = "235"
-            landmarkName = "showAlertExpiredToken(isLogin:code:completion:completionHandler:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "283AB546-398E-4032-A7A5-8192CCA3DFED"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BIVN/MainModules/Accessory/Controller/AccessoryController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "163"
-            endingLineNumber = "163"
-            landmarkName = "tableView(_:didSelectRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "625AA7AC-DBEE-499B-A7D7-E333B7E967AC"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BIVN/MainModules/Accessory/Controller/AccessoryController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "165"
-            endingLineNumber = "165"
-            landmarkName = "tableView(_:didSelectRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "EC3CE37A-D1EF-4A14-8755-9A7213C39CE5"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BIVN/MainModules/Accessory/Controller/AccessoryController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
-            landmarkName = "tableView(_:didSelectRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "55DC1227-CCBB-4A89-9291-260B4EDACE50"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BIVN/MainModules/Accessory/Controller/AccessoryController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
-            landmarkName = "tableView(_:didSelectRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "37823A4A-5D33-4313-B21E-5BD104D392FC"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BIVN/MainModules/Accessory/Controller/AccessoryController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "242"
-            endingLineNumber = "242"
-            landmarkName = "naviShowDetailDocAE(inventoryId:accountId:componentCode:isConfirm:positionCode:docCode:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "0E86D395-B614-4118-9657-50B48A16C12B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BIVN/MainModules/Accessory/Controller/AccessoryController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "252"
-            endingLineNumber = "252"
-            landmarkName = "naviShowDetailDocAE(inventoryId:accountId:componentCode:isConfirm:positionCode:docCode:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7A16D723-3CA6-4E76-A28F-22314BC4A2F1"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BIVN/MainModules/Accessory/Controller/AccessoryController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "253"
-            endingLineNumber = "253"
-            landmarkName = "naviShowDetailDocAE(inventoryId:accountId:componentCode:isConfirm:positionCode:docCode:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5DD2B318-7B59-4202-8234-3762B4B45EBC"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BIVN/MainModules/Accessory/Controller/AccessoryController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "274"
-            endingLineNumber = "274"
-            landmarkName = "naviShowDetailDocAE(inventoryId:accountId:componentCode:isConfirm:positionCode:docCode:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2A5A9228-61E1-4322-A867-D463154CE586"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BIVN/MainModules/Accessory/Controller/AccessoryController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "275"
-            endingLineNumber = "275"
-            landmarkName = "naviShowDetailDocAE(inventoryId:accountId:componentCode:isConfirm:positionCode:docCode:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "232C7DEB-EB54-4C19-9A54-E53AFD462966"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BIVN/MainModules/Accessory/Controller/AccessoryController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "263"
-            endingLineNumber = "263"
-            landmarkName = "naviShowDetailDocAE(inventoryId:accountId:componentCode:isConfirm:positionCode:docCode:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "099595C4-15A3-4FAA-9F37-6B3C53AD35C4"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BIVN/MainModules/Accessory/Controller/AccessoryController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "259"
-            endingLineNumber = "259"
-            landmarkName = "naviShowDetailDocAE(inventoryId:accountId:componentCode:isConfirm:positionCode:docCode:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "099595C4-15A3-4FAA-9F37-6B3C53AD35C4 - 758f2030917d5a90"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;BIVN.DetailTicketModel, Swift.Error&gt;) -&gt; () in BIVN.AccessoryController.naviShowDetailDocAE(inventoryId: Swift.String, accountId: Swift.String, componentCode: Swift.String, isConfirm: Swift.Bool, positionCode: Swift.String, docCode: Swift.String) -&gt; ()"
-                  moduleName = "BIVN.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bivnitmac/Desktop/InventoryMobiApp/ios-app/BIVN/MainModules/Accessory/Controller/AccessoryController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "259"
-                  endingLineNumber = "259">
-               </Location>
-               <Location
-                  uuid = "099595C4-15A3-4FAA-9F37-6B3C53AD35C4 - 825b3e4b9c07bf72"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (BIVN.DetailResponseDataTicket) -&gt; Swift.Bool in closure #1 (Swift.Result&lt;BIVN.DetailTicketModel, Swift.Error&gt;) -&gt; () in BIVN.AccessoryController.naviShowDetailDocAE(inventoryId: Swift.String, accountId: Swift.String, componentCode: Swift.String, isConfirm: Swift.Bool, positionCode: Swift.String, docCode: Swift.String) -&gt; ()"
-                  moduleName = "BIVN.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bivnitmac/Desktop/InventoryMobiApp/ios-app/BIVN/MainModules/Accessory/Controller/AccessoryController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "259"
-                  endingLineNumber = "259">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C65CBE89-92CB-4581-A360-CA70F592767D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BIVN/MainModules/Accessory/Controller/AccessoryController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "261"
-            endingLineNumber = "261"
-            landmarkName = "naviShowDetailDocAE(inventoryId:accountId:componentCode:isConfirm:positionCode:docCode:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A9999D71-E53B-48B1-B61E-F39488667A00"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BIVN/MainModules/Accessory/Controller/AccessoryController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "284"
-            endingLineNumber = "284"
-            landmarkName = "naviShowDetailDocAE(inventoryId:accountId:componentCode:isConfirm:positionCode:docCode:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "A9999D71-E53B-48B1-B61E-F39488667A00 - 758f2030917d5949"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;BIVN.DetailTicketModel, Swift.Error&gt;) -&gt; () in BIVN.AccessoryController.naviShowDetailDocAE(inventoryId: Swift.String, accountId: Swift.String, componentCode: Swift.String, isConfirm: Swift.Bool, positionCode: Swift.String, docCode: Swift.String) -&gt; ()"
-                  moduleName = "BIVN.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bivnitmac/Desktop/InventoryMobiApp/ios-app/BIVN/MainModules/Accessory/Controller/AccessoryController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "284"
-                  endingLineNumber = "284">
-               </Location>
-               <Location
-                  uuid = "A9999D71-E53B-48B1-B61E-F39488667A00 - 758f2030917d5949"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;BIVN.DetailTicketModel, Swift.Error&gt;) -&gt; () in BIVN.AccessoryController.naviShowDetailDocAE(inventoryId: Swift.String, accountId: Swift.String, componentCode: Swift.String, isConfirm: Swift.Bool, positionCode: Swift.String, docCode: Swift.String) -&gt; ()"
-                  moduleName = "BIVN.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bivnitmac/Desktop/InventoryMobiApp/ios-app/BIVN/MainModules/Accessory/Controller/AccessoryController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "284"
-                  endingLineNumber = "284">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D41BA9E0-3443-4ABA-9DAB-D9498B0EED34"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BIVN/MainModules/Accessory/Controller/AccessoryController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "198"
-            endingLineNumber = "198"
-            landmarkName = "scanDocB(inventoryId:accountId:componentCode:machineModel:machineType:lineName:modelCode:actionType:isErrorInvestigation:docCode:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "BC593697-2249-4CB6-8743-482BBB6725E5"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BIVN/MainModules/Accessory/Controller/AccessoryController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "211"
-            endingLineNumber = "211"
-            landmarkName = "scanDocB(inventoryId:accountId:componentCode:machineModel:machineType:lineName:modelCode:actionType:isErrorInvestigation:docCode:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "0CDD1EF9-9765-43B3-B364-BBA82362633C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BIVN/MainModules/Accessory/Controller/AccessoryController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "213"
-            endingLineNumber = "213"
-            landmarkName = "scanDocB(inventoryId:accountId:componentCode:machineModel:machineType:lineName:modelCode:actionType:isErrorInvestigation:docCode:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C917F6A4-6CB8-4B1D-AD41-16C1BE7A613E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BIVN/MainModules/Accessory/Controller/AccessoryController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "215"
-            endingLineNumber = "215"
-            landmarkName = "scanDocB(inventoryId:accountId:componentCode:machineModel:machineType:lineName:modelCode:actionType:isErrorInvestigation:docCode:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "C917F6A4-6CB8-4B1D-AD41-16C1BE7A613E - fc7b465df0c4724a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;BIVN.DetailTicketModel, Swift.Error&gt;) -&gt; () in BIVN.AccessoryController.scanDocB(inventoryId: Swift.Optional&lt;Swift.String&gt;, accountId: Swift.Optional&lt;Swift.String&gt;, componentCode: Swift.Optional&lt;Swift.String&gt;, machineModel: Swift.Optional&lt;Swift.String&gt;, machineType: Swift.Optional&lt;Swift.String&gt;, lineName: Swift.Optional&lt;Swift.String&gt;, modelCode: Swift.Optional&lt;Swift.String&gt;, actionType: Swift.Optional&lt;Swift.Int&gt;, isErrorInvestigation: Swift.Bool, docCode: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
-                  moduleName = "BIVN.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bivnitmac/Desktop/InventoryMobiApp/ios-app/BIVN/MainModules/Accessory/Controller/AccessoryController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "215"
-                  endingLineNumber = "215">
-               </Location>
-               <Location
-                  uuid = "C917F6A4-6CB8-4B1D-AD41-16C1BE7A613E - 1bddbda623a3214"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (BIVN.DetailResponseDataTicket) -&gt; Swift.Bool in closure #1 (Swift.Result&lt;BIVN.DetailTicketModel, Swift.Error&gt;) -&gt; () in BIVN.AccessoryController.scanDocB(inventoryId: Swift.Optional&lt;Swift.String&gt;, accountId: Swift.Optional&lt;Swift.String&gt;, componentCode: Swift.Optional&lt;Swift.String&gt;, machineModel: Swift.Optional&lt;Swift.String&gt;, machineType: Swift.Optional&lt;Swift.String&gt;, lineName: Swift.Optional&lt;Swift.String&gt;, modelCode: Swift.Optional&lt;Swift.String&gt;, actionType: Swift.Optional&lt;Swift.Int&gt;, isErrorInvestigation: Swift.Bool, docCode: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
-                  moduleName = "BIVN.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bivnitmac/Desktop/InventoryMobiApp/ios-app/BIVN/MainModules/Accessory/Controller/AccessoryController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "215"
-                  endingLineNumber = "215">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B5B427D4-8224-41FF-B354-E68B538D9C38"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BIVN/MainModules/Accessory/Controller/AccessoryController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "216"
-            endingLineNumber = "216"
-            landmarkName = "scanDocB(inventoryId:accountId:componentCode:machineModel:machineType:lineName:modelCode:actionType:isErrorInvestigation:docCode:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DC456E64-669D-496E-8991-CA293956CF0E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BIVN/MainModules/ScanCodesMC/ScanCodeMCViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "629"
-            endingLineNumber = "629"
+            startingLineNumber = "657"
+            endingLineNumber = "657"
             landmarkName = "getDetailMonitor(inventoryId:accountId:componentCode:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -781,50 +23,20 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2C0456FF-8D8E-4CE5-BDBE-CF4CC2F23962"
+            uuid = "FFA2A5F2-7652-4591-8E26-B6B70525BCE2"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BIVN/MainModules/ScanCodesMC/ScanCodeMCViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "619"
-            endingLineNumber = "619"
-            landmarkName = "getDetailMonitor(inventoryId:accountId:componentCode:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9E168AA4-1C14-416B-9172-652CA5F3DCE9"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BIVN/MainModules/ScanCodesMC/ScanCodeMCViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "620"
-            endingLineNumber = "620"
+            startingLineNumber = "664"
+            endingLineNumber = "664"
             landmarkName = "getDetailMonitor(inventoryId:accountId:componentCode:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "9E168AA4-1C14-416B-9172-652CA5F3DCE9 - e36d19ea9fb26074"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BIVN.ScanCodeMCViewController.getDetailMonitor(inventoryId: Swift.String, accountId: Swift.String, componentCode: Swift.String) -&gt; ()"
-                  moduleName = "BIVN.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bivnitmac/Desktop/InventoryMobiApp/ios-app/BIVN/MainModules/ScanCodesMC/ScanCodeMCViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "620"
-                  endingLineNumber = "620">
-               </Location>
-               <Location
-                  uuid = "9E168AA4-1C14-416B-9172-652CA5F3DCE9 - cdfa07c8ccb36384"
+                  uuid = "FFA2A5F2-7652-4591-8E26-B6B70525BCE2 - cdfa07c8ccb36dd0"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -834,8 +46,22 @@
                   urlString = "file:///Users/bivnitmac/Desktop/InventoryMobiApp/ios-app/BIVN/MainModules/ScanCodesMC/ScanCodeMCViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "620"
-                  endingLineNumber = "620">
+                  startingLineNumber = "664"
+                  endingLineNumber = "664">
+               </Location>
+               <Location
+                  uuid = "FFA2A5F2-7652-4591-8E26-B6B70525BCE2 - 1411950f90865c2e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (Swift.Result&lt;BIVN.AuditCondensedModel, Swift.Error&gt;) -&gt; () in BIVN.ScanCodeMCViewController.getDetailMonitor(inventoryId: Swift.String, accountId: Swift.String, componentCode: Swift.String) -&gt; ()"
+                  moduleName = "BIVN.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bivnitmac/Desktop/InventoryMobiApp/ios-app/BIVN/MainModules/ScanCodesMC/ScanCodeMCViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "665"
+                  endingLineNumber = "665">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -843,15 +69,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B0F74777-CBAD-4693-8C09-274A5AD3B3FB"
+            uuid = "A44DBB20-F10A-4930-A718-DB34D3C0B6AD"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BIVN/MainModules/ScanCodesMC/ScanCodeMCViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "614"
-            endingLineNumber = "614"
+            startingLineNumber = "665"
+            endingLineNumber = "665"
             landmarkName = "getDetailMonitor(inventoryId:accountId:componentCode:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -859,49 +85,93 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F80E954C-746F-48BD-8350-AA826EB837C1"
+            uuid = "EF94506B-D36D-4D43-9300-9A68A613617D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BIVN/MainModules/ScanCodesMC/ScanCodeMCViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "223"
-            endingLineNumber = "223"
-            landmarkName = "sendOnTap()"
+            startingLineNumber = "666"
+            endingLineNumber = "666"
+            landmarkName = "getDetailMonitor(inventoryId:accountId:componentCode:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "EF94506B-D36D-4D43-9300-9A68A613617D - cdfa07c8ccb36d96"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;BIVN.AuditCondensedModel, Swift.Error&gt;) -&gt; () in BIVN.ScanCodeMCViewController.getDetailMonitor(inventoryId: Swift.String, accountId: Swift.String, componentCode: Swift.String) -&gt; ()"
+                  moduleName = "BIVN.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bivnitmac/Desktop/InventoryMobiApp/ios-app/BIVN/MainModules/ScanCodesMC/ScanCodeMCViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "666"
+                  endingLineNumber = "666">
+               </Location>
+               <Location
+                  uuid = "EF94506B-D36D-4D43-9300-9A68A613617D - 1411950f90865c09"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (Swift.Result&lt;BIVN.AuditCondensedModel, Swift.Error&gt;) -&gt; () in BIVN.ScanCodeMCViewController.getDetailMonitor(inventoryId: Swift.String, accountId: Swift.String, componentCode: Swift.String) -&gt; ()"
+                  moduleName = "BIVN.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bivnitmac/Desktop/InventoryMobiApp/ios-app/BIVN/MainModules/ScanCodesMC/ScanCodeMCViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "666"
+                  endingLineNumber = "666">
+               </Location>
+               <Location
+                  uuid = "EF94506B-D36D-4D43-9300-9A68A613617D - 5dac0ec1e6764b22"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Int) -&gt; () in closure #1 (Swift.Result&lt;BIVN.AuditCondensedModel, Swift.Error&gt;) -&gt; () in BIVN.ScanCodeMCViewController.getDetailMonitor(inventoryId: Swift.String, accountId: Swift.String, componentCode: Swift.String) -&gt; ()"
+                  moduleName = "BIVN.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bivnitmac/Desktop/InventoryMobiApp/ios-app/BIVN/MainModules/ScanCodesMC/ScanCodeMCViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "613"
+                  endingLineNumber = "613">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5D61FADC-1B92-457B-B839-EE29BDE9F5CE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BIVN/MainModules/ScanCodesMC/ScanCodeMCViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "667"
+            endingLineNumber = "667"
+            landmarkName = "getDetailMonitor(inventoryId:accountId:componentCode:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "061994E9-BE92-4DFA-A711-70A4B962AD0B"
+            uuid = "2EDC5CA3-B384-43A5-934E-15E6BB25DA9C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BIVN/Shared/Networking/BaseApi.swift"
+            filePath = "BIVN/MainModules/ScanCodesMC/ScanCodeMCViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "169"
-            endingLineNumber = "169"
-            landmarkName = "path"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "440CF277-E2AB-42B9-9488-8AE5DD566995"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BIVN/Shared/Networking/BaseApi.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
-            landmarkName = "path"
-            landmarkType = "24">
+            startingLineNumber = "649"
+            endingLineNumber = "649"
+            landmarkName = "getDetailMonitor(inventoryId:accountId:componentCode:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

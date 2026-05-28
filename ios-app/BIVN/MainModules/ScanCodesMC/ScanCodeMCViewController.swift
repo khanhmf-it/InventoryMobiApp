@@ -551,18 +551,18 @@ class ScanCodeMCViewController: BaseViewController {
                     self.removeScanCode()
                     self.queen.suspend()
                     guard let vc = Storyboards.acctionInventory.instantiate() as? ActionInventoryViewController else {return}
-                    // If sheet is free (no assigned account) and someone else already monitored it,
-                    // show specific message and resume scanning.
-                    let currentUser = UserDefault.shared.getUserID()
-                    let isFreeSheet = (assignedAccountId ?? "").isEmpty
-                    if isFreeSheet, let histories = response.data?.docHistories {
-                        if histories.contains(where: { $0.status == StatusInventory.SupervisionAchieved.rawValue && ($0.createdBy ?? "") != currentUser }) {
-                            self.showAlertNoti(title: "Thông báo".localized(), message: "Linh kiện người khác đã giám sát".localized(), acceptButton: "Đồng ý".localized(), acceptOnTap: {
-                                self.captureSession.startRunning()
-                            })
-                            return
-                        }
-                    }
+//                    // If sheet is free (no assigned account) and someone else already monitored it,
+//                    // show specific message and resume scanning.
+//                    let currentUser = UserDefault.shared.getUserID()
+//                    let isFreeSheet = (assignedAccountId ?? "").isEmpty
+//                    if isFreeSheet, let histories = response.data?.docHistories {
+//                        if histories.contains(where: { $0.status == StatusInventory.SupervisionAchieved.rawValue && ($0.createdBy ?? "") != currentUser }) {
+//                            self.showAlertNoti(title: "Thông báo".localized(), message: "Linh kiện người khác đã giám sát".localized(), acceptButton: "Đồng ý".localized(), acceptOnTap: {
+//                                self.captureSession.startRunning()
+//                            })
+//                            return
+//                        }
+//                    }
 
                     if response.data?.status == 6 {
                         self.showAlertNoti(title: "Thông báo".localized(), message: "Đã được giám sát. Bạn có muốn giám sát lại không".localized(), cancelButton: "Hủy bỏ".localized(), acceptButton: "Đồng ý".localized(), acceptOnTap:  {
@@ -636,29 +636,35 @@ class ScanCodeMCViewController: BaseViewController {
                     }
                     
                     if listData.count == 1 {
-                        // If this audit item is assigned to another account, inform the user.
-                        let assignedAccountId = listData.first?.accountId ?? ""
-                        let currentAccountId = UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.accountId ?? ""
-                        if !assignedAccountId.isEmpty && assignedAccountId != currentAccountId {
-                            self.showAlertNoti(title: "Thông báo".localized(), message: "Linh kiện thuộc danh sách giám sát của người khác".localized(), acceptButton: "Đồng ý".localized(), acceptOnTap: {
-                                self.captureSession.startRunning()
-                            })
-                        } else {
-                            self.callApiDetailMonitor(documentId: listData.first?.id ?? "", assignedAccountId: assignedAccountId)
-                        }
+//                        // If this audit item is assigned to another account, inform the user.
+//                        let assignedAccountId = listData.first?.accountId ?? ""
+//                        let currentAccountId = UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.accountId ?? ""
+//                        if !assignedAccountId.isEmpty && assignedAccountId != currentAccountId {
+//                            self.showAlertNoti(title: "Thông báo".localized(), message: "Linh kiện thuộc danh sách giám sát của người khác".localized(), acceptButton: "Đồng ý".localized(), acceptOnTap: {
+//                                self.captureSession.startRunning()
+//                            })
+//                        } else {
+//                            self.callApiDetailMonitor(documentId: listData.first?.id ?? "", assignedAccountId: assignedAccountId)
+//                        }
+                        self.callApiDetailMonitor(documentId: listData.first?.id ?? "")
                     } else {
+//                        self.showPopUpAlert(title: "Chọn vị trí".localized(), array: arrayString, status: arrayStatus) {
+//                            self.captureSession.startRunning()
+//                        } accept: { indexValue in
+//                            let assignedAccountId = listData[indexValue].accountId ?? ""
+//                            let currentAccountId = UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.accountId ?? ""
+//                            if !assignedAccountId.isEmpty && assignedAccountId != currentAccountId {
+//                                self.showAlertNoti(title: "Thông báo".localized(), message: "Linh kiện thuộc danh sách giám sát của người khác".localized(), acceptButton: "Đồng ý".localized(), acceptOnTap: {
+//                                    self.captureSession.startRunning()
+//                                })
+//                            } else {
+//                                self.callApiDetailMonitor(documentId: listData[indexValue].id ?? "", assignedAccountId: assignedAccountId)
+//                            }
+//                        }
                         self.showPopUpAlert(title: "Chọn vị trí".localized(), array: arrayString, status: arrayStatus) {
-                            self.captureSession.startRunning()
+                              self.captureSession.startRunning()
                         } accept: { indexValue in
-                            let assignedAccountId = listData[indexValue].accountId ?? ""
-                            let currentAccountId = UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.accountId ?? ""
-                            if !assignedAccountId.isEmpty && assignedAccountId != currentAccountId {
-                                self.showAlertNoti(title: "Thông báo".localized(), message: "Linh kiện thuộc danh sách giám sát của người khác".localized(), acceptButton: "Đồng ý".localized(), acceptOnTap: {
-                                    self.captureSession.startRunning()
-                                })
-                            } else {
-                                self.callApiDetailMonitor(documentId: listData[indexValue].id ?? "", assignedAccountId: assignedAccountId)
-                            }
+                            self.callApiDetailMonitor(documentId: listData[indexValue].id ?? "")
                         }
                     }
                     
