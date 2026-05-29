@@ -7,61 +7,45 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8365EAFC-2CAB-4F79-8A6D-764B8C3B51AD"
+            uuid = "CA0B058E-20DC-44BF-A0E0-DD003F5E7D30"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BIVN/MainModules/ScanCodesMC/ScanCodeMCViewController.swift"
+            filePath = "BIVN/MainModules/Monitor/Controller/ActionInventoryViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "657"
-            endingLineNumber = "657"
-            landmarkName = "getDetailMonitor(inventoryId:accountId:componentCode:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "FFA2A5F2-7652-4591-8E26-B6B70525BCE2"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BIVN/MainModules/ScanCodesMC/ScanCodeMCViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "664"
-            endingLineNumber = "664"
-            landmarkName = "getDetailMonitor(inventoryId:accountId:componentCode:)"
+            startingLineNumber = "236"
+            endingLineNumber = "236"
+            landmarkName = "onTapAction(actionType:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "FFA2A5F2-7652-4591-8E26-B6B70525BCE2 - cdfa07c8ccb36dd0"
+                  uuid = "CA0B058E-20DC-44BF-A0E0-DD003F5E7D30 - dda4983bc07afe8d"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;BIVN.AuditCondensedModel, Swift.Error&gt;) -&gt; () in BIVN.ScanCodeMCViewController.getDetailMonitor(inventoryId: Swift.String, accountId: Swift.String, componentCode: Swift.String) -&gt; ()"
+                  symbolName = "BIVN.ActionInventoryViewController.onTapAction(actionType: Swift.Int) -&gt; ()"
                   moduleName = "BIVN.debug.dylib"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bivnitmac/Desktop/InventoryMobiApp/ios-app/BIVN/MainModules/ScanCodesMC/ScanCodeMCViewController.swift"
+                  urlString = "file:///Users/bivnitmac/Downloads/InventoryMobiApp/ios-app/BIVN/MainModules/Monitor/Controller/ActionInventoryViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "664"
-                  endingLineNumber = "664">
+                  startingLineNumber = "236"
+                  endingLineNumber = "236">
                </Location>
                <Location
-                  uuid = "FFA2A5F2-7652-4591-8E26-B6B70525BCE2 - 1411950f90865c2e"
+                  uuid = "CA0B058E-20DC-44BF-A0E0-DD003F5E7D30 - 295c2b2352e520c7"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in closure #1 (Swift.Result&lt;BIVN.AuditCondensedModel, Swift.Error&gt;) -&gt; () in BIVN.ScanCodeMCViewController.getDetailMonitor(inventoryId: Swift.String, accountId: Swift.String, componentCode: Swift.String) -&gt; ()"
+                  symbolName = "closure #2 (Swift.Result&lt;BIVN.ResponseSubmitModel, Swift.Error&gt;) -&gt; () in BIVN.ActionInventoryViewController.onTapAction(actionType: Swift.Int) -&gt; ()"
                   moduleName = "BIVN.debug.dylib"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bivnitmac/Desktop/InventoryMobiApp/ios-app/BIVN/MainModules/ScanCodesMC/ScanCodeMCViewController.swift"
+                  urlString = "file:///Users/bivnitmac/Downloads/InventoryMobiApp/ios-app/BIVN/MainModules/Monitor/Controller/ActionInventoryViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "665"
-                  endingLineNumber = "665">
+                  startingLineNumber = "238"
+                  endingLineNumber = "238">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -69,109 +53,61 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A44DBB20-F10A-4930-A718-DB34D3C0B6AD"
+            uuid = "5F497311-FB5D-4BBD-AE01-31396571627E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BIVN/MainModules/ScanCodesMC/ScanCodeMCViewController.swift"
+            filePath = "BIVN/MainModules/Monitor/Controller/ActionInventoryViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "665"
-            endingLineNumber = "665"
-            landmarkName = "getDetailMonitor(inventoryId:accountId:componentCode:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "EF94506B-D36D-4D43-9300-9A68A613617D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BIVN/MainModules/ScanCodesMC/ScanCodeMCViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "666"
-            endingLineNumber = "666"
-            landmarkName = "getDetailMonitor(inventoryId:accountId:componentCode:)"
+            startingLineNumber = "237"
+            endingLineNumber = "237"
+            landmarkName = "onTapAction(actionType:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "EF94506B-D36D-4D43-9300-9A68A613617D - cdfa07c8ccb36d96"
+                  uuid = "5F497311-FB5D-4BBD-AE01-31396571627E - 295c2b2352e520c7"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;BIVN.AuditCondensedModel, Swift.Error&gt;) -&gt; () in BIVN.ScanCodeMCViewController.getDetailMonitor(inventoryId: Swift.String, accountId: Swift.String, componentCode: Swift.String) -&gt; ()"
+                  symbolName = "closure #2 (Swift.Result&lt;BIVN.ResponseSubmitModel, Swift.Error&gt;) -&gt; () in BIVN.ActionInventoryViewController.onTapAction(actionType: Swift.Int) -&gt; ()"
                   moduleName = "BIVN.debug.dylib"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bivnitmac/Desktop/InventoryMobiApp/ios-app/BIVN/MainModules/ScanCodesMC/ScanCodeMCViewController.swift"
+                  urlString = "file:///Users/bivnitmac/Downloads/InventoryMobiApp/ios-app/BIVN/MainModules/Monitor/Controller/ActionInventoryViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "666"
-                  endingLineNumber = "666">
+                  startingLineNumber = "238"
+                  endingLineNumber = "238">
                </Location>
                <Location
-                  uuid = "EF94506B-D36D-4D43-9300-9A68A613617D - 1411950f90865c09"
+                  uuid = "5F497311-FB5D-4BBD-AE01-31396571627E - 295c2b2352e520c7"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in closure #1 (Swift.Result&lt;BIVN.AuditCondensedModel, Swift.Error&gt;) -&gt; () in BIVN.ScanCodeMCViewController.getDetailMonitor(inventoryId: Swift.String, accountId: Swift.String, componentCode: Swift.String) -&gt; ()"
+                  symbolName = "closure #2 (Swift.Result&lt;BIVN.ResponseSubmitModel, Swift.Error&gt;) -&gt; () in BIVN.ActionInventoryViewController.onTapAction(actionType: Swift.Int) -&gt; ()"
                   moduleName = "BIVN.debug.dylib"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bivnitmac/Desktop/InventoryMobiApp/ios-app/BIVN/MainModules/ScanCodesMC/ScanCodeMCViewController.swift"
+                  urlString = "file:///Users/bivnitmac/Downloads/InventoryMobiApp/ios-app/BIVN/MainModules/Monitor/Controller/ActionInventoryViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "666"
-                  endingLineNumber = "666">
+                  startingLineNumber = "238"
+                  endingLineNumber = "238">
                </Location>
                <Location
-                  uuid = "EF94506B-D36D-4D43-9300-9A68A613617D - 5dac0ec1e6764b22"
+                  uuid = "5F497311-FB5D-4BBD-AE01-31396571627E - 295c2b2352e520c7"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Int) -&gt; () in closure #1 (Swift.Result&lt;BIVN.AuditCondensedModel, Swift.Error&gt;) -&gt; () in BIVN.ScanCodeMCViewController.getDetailMonitor(inventoryId: Swift.String, accountId: Swift.String, componentCode: Swift.String) -&gt; ()"
+                  symbolName = "closure #2 (Swift.Result&lt;BIVN.ResponseSubmitModel, Swift.Error&gt;) -&gt; () in BIVN.ActionInventoryViewController.onTapAction(actionType: Swift.Int) -&gt; ()"
                   moduleName = "BIVN.debug.dylib"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bivnitmac/Desktop/InventoryMobiApp/ios-app/BIVN/MainModules/ScanCodesMC/ScanCodeMCViewController.swift"
+                  urlString = "file:///Users/bivnitmac/Downloads/InventoryMobiApp/ios-app/BIVN/MainModules/Monitor/Controller/ActionInventoryViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "613"
-                  endingLineNumber = "613">
+                  startingLineNumber = "238"
+                  endingLineNumber = "238">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5D61FADC-1B92-457B-B839-EE29BDE9F5CE"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BIVN/MainModules/ScanCodesMC/ScanCodeMCViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "667"
-            endingLineNumber = "667"
-            landmarkName = "getDetailMonitor(inventoryId:accountId:componentCode:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2EDC5CA3-B384-43A5-934E-15E6BB25DA9C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BIVN/MainModules/ScanCodesMC/ScanCodeMCViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "649"
-            endingLineNumber = "649"
-            landmarkName = "getDetailMonitor(inventoryId:accountId:componentCode:)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

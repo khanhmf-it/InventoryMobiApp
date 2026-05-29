@@ -233,7 +233,7 @@ class ActionInventoryViewController: BaseViewController, AddRowCell {
                 arrayData.append(convertABE)
             }
         }
-        networkManager.submitAudit(userCode: UserDefault.shared.getDataLoginModel().userCode ?? "M1234567", comment: self.note, inventoryId: UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.inventoryModel?.inventoryId ?? "", accountId: UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.accountId ?? "", documentId: self.documentId, containerModel: arrayData, deleteDocOutPut: actionType == 3 ? [] : arrayDelete, actionType: actionType, completion: { data in
+        networkManager.submitAudit(userCode: UserDefault.shared.getDataLoginModel().username ?? "M1234567", comment: self.note, inventoryId: UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.inventoryModel?.inventoryId ?? "", accountId: UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.accountId ?? "", documentId: self.documentId, containerModel: arrayData, deleteDocOutPut: actionType == 3 ? [] : arrayDelete, actionType: actionType, completion: { data in
                 switch data {
                 case .success(let response):
                     if response.code == 200 {
@@ -270,21 +270,23 @@ class ActionInventoryViewController: BaseViewController, AddRowCell {
     
     func onTapNav(actionType: Int) {
         arrayData.removeAll(where: { $0.quantityOfBom == nil || $0.quantityPerBom == nil })
-        // After performing monitoring action, return to the monitoring list screen and refresh it.
         let inventoryId = UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.inventoryModel?.inventoryId
         let accountId = UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.accountId
 
         if let navigationController = self.navigationController {
             if let listVC = navigationController.viewControllers.first(where: { $0 is FilterMonitorSheetsViewController }) as? FilterMonitorSheetsViewController {
-                // refresh list and pop to it
                 listVC.callAPI(inventoryId: inventoryId, accountId: accountId, departmentName: "-1", locationName: "-1", componentCode: "-1")
                 navigationController.popToViewController(listVC, animated: true)
                 return
             } else {
-                // not in stack: push a new FilterMonitorSheetsViewController and let it load
                 if let vc = Storyboards.filterInventory.instantiate() as? FilterMonitorSheetsViewController {
-                    navigationController.pushViewController(vc, animated: true)
-                    vc.callAPI(inventoryId: inventoryId, accountId: accountId, departmentName: "-1", locationName: "-1", componentCode: "-1")
+                    if let scanIndex = navigationController.viewControllers.lastIndex(where: { $0 is ScanCodeMCViewController }) {
+                        var targetStack = Array(navigationController.viewControllers.prefix(scanIndex + 1))
+                        targetStack.append(vc)
+                        navigationController.setViewControllers(targetStack, animated: true)
+                    } else {
+                        navigationController.pushViewController(vc, animated: true)
+                    }
                     return
                 }
             }

@@ -115,7 +115,7 @@ class InfoTicketTableViewCell: BaseTableViewCell {
         addRowButton.isHidden = model?.status == 6
         addRowButton.setTitle("+ Thêm dòng".localized(), for: .normal)
         let modelCode = model?.modelCode?.trimmingCharacters(in: .whitespacesAndNewlines)
-        let isShowModelCodeOnly = !(modelCode?.isEmpty ?? true)
+        let isShowModelCodeOnly = model?.docComponentCs != nil && (model?.docComponentCs?.count ?? 0) > 0
 
         titleTicketNameLabel.text = isShowModelCodeOnly ? "Model code:".localized() : "Mã linh kiện:".localized()
         titleStatusLabel.text = "Tên linh kiện:".localized()

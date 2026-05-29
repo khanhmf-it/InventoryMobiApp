@@ -142,7 +142,7 @@ class WaitConfirmMonitorViewController: BaseViewController {
         valueNoteLabel.font = fontUtils.size14.regular
 
         let modelCode = dataDetail?.modelCode?.trimmingCharacters(in: .whitespacesAndNewlines)
-        let isShowModelCodeOnly = !(modelCode?.isEmpty ?? true)
+        let isShowModelCodeOnly = dataDetail?.docComponentCs != nil && (dataDetail?.docComponentCs?.count ?? 0) > 0
 
         titlePartCodeLabel.text = isShowModelCodeOnly ? "Model code:".localized() : "Mã linh kiện:".localized()
         titleComponentNameLabel.text = "Tên linh kiện:".localized()

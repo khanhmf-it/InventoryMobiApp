@@ -565,7 +565,7 @@ class ScanCodeMCViewController: BaseViewController {
 //                    }
 
                     if response.data?.status == 6 {
-                        self.showAlertNoti(title: "Thông báo".localized(), message: "Đã được giám sát. Bạn có muốn giám sát lại không".localized(), cancelButton: "Hủy bỏ".localized(), acceptButton: "Đồng ý".localized(), acceptOnTap:  {
+                        self.showAlertNoti(title: "Thông báo".localized(), message: "Đã được giám sát. Bạn có muốn xem lại thông tin giám sát không".localized(), cancelButton: "Hủy bỏ".localized(), acceptButton: "Đồng ý".localized(), acceptOnTap:  {
                             vc.documentId = documentId
                             vc.dataDetailSheets = response.data
                             vc.dataHistory = response.data?.docHistories ?? []

@@ -37,7 +37,7 @@ class ImageViewCell: UITableViewCell {
             urlLink = Environment.rootURL
         } else {
                 if ssid == "bivnioswifim01" {
-                    urlLink = URL(string: "http://172.26.248.26/gateway_inv_dev_test")
+                    urlLink = URL(string: "http://172.26.248.26/gateway_inv_test")
                 } else if ssid == "B-WINS" {
                     urlLink = Environment.rootURL
                 } else {
