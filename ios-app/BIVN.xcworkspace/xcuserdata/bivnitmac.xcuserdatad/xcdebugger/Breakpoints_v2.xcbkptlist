@@ -7,107 +7,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "CA0B058E-20DC-44BF-A0E0-DD003F5E7D30"
+            uuid = "6BF62F06-89A6-4D79-8FA9-3C8273A63405"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BIVN/MainModules/Monitor/Controller/ActionInventoryViewController.swift"
+            filePath = "BIVN/MainModules/Inventory/Controller/InventorySheetVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "236"
-            endingLineNumber = "236"
-            landmarkName = "onTapAction(actionType:)"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "setupUI()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "CA0B058E-20DC-44BF-A0E0-DD003F5E7D30 - dda4983bc07afe8d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BIVN.ActionInventoryViewController.onTapAction(actionType: Swift.Int) -&gt; ()"
-                  moduleName = "BIVN.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bivnitmac/Downloads/InventoryMobiApp/ios-app/BIVN/MainModules/Monitor/Controller/ActionInventoryViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "236"
-                  endingLineNumber = "236">
-               </Location>
-               <Location
-                  uuid = "CA0B058E-20DC-44BF-A0E0-DD003F5E7D30 - 295c2b2352e520c7"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Result&lt;BIVN.ResponseSubmitModel, Swift.Error&gt;) -&gt; () in BIVN.ActionInventoryViewController.onTapAction(actionType: Swift.Int) -&gt; ()"
-                  moduleName = "BIVN.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bivnitmac/Downloads/InventoryMobiApp/ios-app/BIVN/MainModules/Monitor/Controller/ActionInventoryViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "238"
-                  endingLineNumber = "238">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5F497311-FB5D-4BBD-AE01-31396571627E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BIVN/MainModules/Monitor/Controller/ActionInventoryViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "237"
-            endingLineNumber = "237"
-            landmarkName = "onTapAction(actionType:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "5F497311-FB5D-4BBD-AE01-31396571627E - 295c2b2352e520c7"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Result&lt;BIVN.ResponseSubmitModel, Swift.Error&gt;) -&gt; () in BIVN.ActionInventoryViewController.onTapAction(actionType: Swift.Int) -&gt; ()"
-                  moduleName = "BIVN.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bivnitmac/Downloads/InventoryMobiApp/ios-app/BIVN/MainModules/Monitor/Controller/ActionInventoryViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "238"
-                  endingLineNumber = "238">
-               </Location>
-               <Location
-                  uuid = "5F497311-FB5D-4BBD-AE01-31396571627E - 295c2b2352e520c7"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Result&lt;BIVN.ResponseSubmitModel, Swift.Error&gt;) -&gt; () in BIVN.ActionInventoryViewController.onTapAction(actionType: Swift.Int) -&gt; ()"
-                  moduleName = "BIVN.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bivnitmac/Downloads/InventoryMobiApp/ios-app/BIVN/MainModules/Monitor/Controller/ActionInventoryViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "238"
-                  endingLineNumber = "238">
-               </Location>
-               <Location
-                  uuid = "5F497311-FB5D-4BBD-AE01-31396571627E - 295c2b2352e520c7"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Result&lt;BIVN.ResponseSubmitModel, Swift.Error&gt;) -&gt; () in BIVN.ActionInventoryViewController.onTapAction(actionType: Swift.Int) -&gt; ()"
-                  moduleName = "BIVN.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bivnitmac/Downloads/InventoryMobiApp/ios-app/BIVN/MainModules/Monitor/Controller/ActionInventoryViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "238"
-                  endingLineNumber = "238">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -283,6 +283,7 @@ class FilterTicketViewController: BaseViewController, UITableViewDataSource, UIT
                     let vc = Storyboards.AccepticketC.instantiate() as! AccepticketCController
                     title = ""
                     vc.documentId = self.listDataFilter[indexPath.row].id
+                    vc.returnScreenType = 1
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
             } else {

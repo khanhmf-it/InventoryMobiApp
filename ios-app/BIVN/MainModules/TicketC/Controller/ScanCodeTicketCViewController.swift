@@ -552,6 +552,7 @@ class ScanCodeTicketCViewController: BaseViewController {
                     let vc = Storyboards.AccepticketC.instantiate() as! AccepticketCController
                     title = ""
                     vc.documentId = docCInfoModels.id
+                    vc.returnScreenType = 0
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
             } else {

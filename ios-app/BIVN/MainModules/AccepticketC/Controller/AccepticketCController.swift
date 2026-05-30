@@ -20,9 +20,10 @@ enum Accepticket {
     case PartCodeTableViewCell
     case PageTBCell
     case NoteViewCell
+    case ImageViewCell
     case TitleHistoryCell
     case HistoryInventoryCell
-    static let all = [InfoTicket, TitleInventoryCell, RowInventoryTableViewCell, TotalItemTableViewCell, ErrorTableViewCell, SearchCodeTableViewCell, ContentSheetTBCell, PartCodeTableViewCell, PageTBCell, NoteViewCell, TitleHistoryCell,  HistoryInventoryCell]
+    static let all = [InfoTicket, TitleInventoryCell, RowInventoryTableViewCell, TotalItemTableViewCell, ErrorTableViewCell, SearchCodeTableViewCell, ContentSheetTBCell, PartCodeTableViewCell, PageTBCell, NoteViewCell, ImageViewCell, TitleHistoryCell,  HistoryInventoryCell]
 }
 
 
@@ -31,6 +32,8 @@ class AccepticketCController: BaseViewController, UITableViewDataSource, UITable
     private static let ACCEPT : Int = 1
     private static let DENIED : Int = 0
     private static let UPDATE : Int = 4
+    private static let RETURN_TO_SCAN : Int = 0
+    private static let RETURN_TO_LIST : Int = 1
     
     @IBOutlet weak var tableView: UITableView! {
         didSet {
@@ -44,6 +47,7 @@ class AccepticketCController: BaseViewController, UITableViewDataSource, UITable
             tableView.register(R.nib.partCodeTableViewCell)
             tableView.register(R.nib.pageTBCell)
             tableView.register(R.nib.noteCell)
+            tableView.register(R.nib.imageViewCell)
             tableView.register(R.nib.titleHistoryCell)
             tableView.register(R.nib.historyInventoryCell)
         }
@@ -91,6 +95,10 @@ class AccepticketCController: BaseViewController, UITableViewDataSource, UITable
     var dError: Bool = true
     var index: Int = 0
     var isMonitorMode: Bool = false
+    var returnScreenType: Int = RETURN_TO_SCAN
+    private var evidenceImagePath: String {
+        return listDocHistories.first(where: { !($0.evicenceImg ?? "").isEmpty })?.evicenceImg ?? ""
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,8 +117,24 @@ class AccepticketCController: BaseViewController, UITableViewDataSource, UITable
     
     @objc func backToInitial() {
         showAlertNoti(title: "Xác nhận thoát".localized(), message: "Bạn có chắc chắn muốn thoát không? Nếu bạn thoát khi đã nhập dữ liệu thì dữ liệu đó sẽ không được lưu".localized(), cancelButton: "Không".localized(), acceptButton: "Có".localized(), acceptOnTap: {
-            self.navigationController?.popViewController(animated: true)
+            self.navigateBackToSourceScreen()
         })
+    }
+
+    private func navigateBackToSourceScreen() {
+        guard let navigationController = self.navigationController else { return }
+        if self.returnScreenType == AccepticketCController.RETURN_TO_SCAN {
+            for viewController in navigationController.viewControllers.reversed() where viewController is ScanCodeTicketCViewController {
+                navigationController.popToViewController(viewController, animated: true)
+                return
+            }
+        } else {
+            for viewController in navigationController.viewControllers.reversed() where viewController is ListAccessoryNotInventoryViewController || viewController is FilterTicketViewController {
+                navigationController.popToViewController(viewController, animated: true)
+                return
+            }
+        }
+        navigationController.popViewController(animated: true)
     }
     
     private func setupTableView() {
@@ -141,7 +165,7 @@ class AccepticketCController: BaseViewController, UITableViewDataSource, UITable
     
     private func fillDataTitleNavi() {
         self.navigationItem.title = dataInfo?.docCode
-    }
+    }///
     
     private func setupUI() {
         buttonDeined.setTitle(isMonitorMode ? "Không đạt".localized() : "Từ chối".localized(), for: .normal)
@@ -352,7 +376,7 @@ class AccepticketCController: BaseViewController, UITableViewDataSource, UITable
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return EnumBallotCount.all.count
+        return Accepticket.all.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -362,6 +386,8 @@ class AccepticketCController: BaseViewController, UITableViewDataSource, UITable
         case .PageTBCell:
             return 40
         case .NoteViewCell: return self.isHidenNote ? UITableView.automaticDimension : 150
+        case .ImageViewCell:
+            return 200
         default:
             return UITableView.automaticDimension
         }
@@ -385,6 +411,8 @@ class AccepticketCController: BaseViewController, UITableViewDataSource, UITable
             return listDocHistories.count == 0 ? 0 : listDocHistories.count
         case .NoteViewCell:
             return (isMonitorMode && dataInfo?.status == 6) ? 0 : 1
+        case .ImageViewCell:
+            return evidenceImagePath.isEmpty ? 0 : 1
         default:
             return 1
         }
@@ -619,6 +647,21 @@ class AccepticketCController: BaseViewController, UITableViewDataSource, UITable
                 self.enableButtionDenied(isEnable: !note.isEmpty)
             }
             return cell
+        case .ImageViewCell:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: R.nib.imageViewCell, for: indexPath) else {return UITableViewCell()}
+            let modifiedString = evidenceImagePath.replacingOccurrences(of: "\\", with: "/")
+            cell.fillDataHistoryDetail(url: modifiedString)
+            cell.containerView.addTapGestureRecognizer(action: {
+                guard !self.evidenceImagePath.isEmpty else { return }
+                let vc = ShowImageDetailVC()
+                vc.disPlayDetailHistory = true
+                vc.titleString = "Ảnh kiểm kê".localized()
+                vc.url = "\(Environment.rootURL)/\(self.evidenceImagePath)"
+                vc.modalPresentationStyle = .fullScreen
+                self.navigationController?.present(vc, animated: true)
+            })
+            cell.selectionStyle = .none
+            return cell
         case .TitleHistoryCell:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: R.nib.titleHistoryCell, for: indexPath) else {return UITableViewCell()}
             cell.selectionStyle = .none
@@ -707,6 +750,7 @@ class AccepticketCController: BaseViewController, UITableViewDataSource, UITable
                     vc.dataInfo = self.dataInfo
                     vc.totalPage = self.totalPage
                     vc.titleTicket = self.titleTicketName
+                    vc.viewController = self.returnScreenType
                     vc.navigationItem.hidesBackButton = true
                     self.title = ""
                     vc.note = self.note
