@@ -309,7 +309,7 @@ class ListErrorController: BaseViewController, UITableViewDelegate, UITableViewD
                         return
                     }
                     guard let historyVC = Storyboards.historyAccessory.instantiate() as? HistoryController else { return }
-                     historyVC.resultModel = resultErrorModel
+                    historyVC.resultModel = resultErrorModel
                     historyVC.historyData = historyData
                     self?.navigationController?.pushViewController(historyVC, animated: true)
                 }

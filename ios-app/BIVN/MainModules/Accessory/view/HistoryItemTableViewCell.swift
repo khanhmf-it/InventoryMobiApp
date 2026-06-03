@@ -55,6 +55,10 @@ class HistoryItemTableViewCell: UITableViewCell {
     }
     
     func combineURLImage(path: String) -> URL? {
+        if let absoluteURL = URL(string: path), absoluteURL.scheme != nil {
+            return absoluteURL
+        }
+
         let ssid = UserDefaults.standard.string(forKey: "nameWifi")
         var domain: URL
 
@@ -70,7 +74,17 @@ class HistoryItemTableViewCell: UITableViewCell {
             return nil
         }
         let pathEdit = path.replacingOccurrences(of: "\\", with: "/")
-        components.path = pathEdit.hasPrefix("/") ? pathEdit : "/\(pathEdit)"
+            .trimmingCharacters(in: CharacterSet(charactersIn: "/"))
+        if pathEdit.isEmpty {
+            return components.url
+        }
+
+        let basePath = components.path.trimmingCharacters(in: CharacterSet(charactersIn: "/"))
+        if basePath.isEmpty {
+            components.path = "/\(pathEdit)"
+        } else {
+            components.path = "/\(basePath)/\(pathEdit)"
+        }
         return components.url
     }
 }
