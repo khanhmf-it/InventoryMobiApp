@@ -122,17 +122,15 @@ class ListErrorController: BaseViewController, UITableViewDelegate, UITableViewD
     }
     
     @objc private func updateStatusLocally(_ notification: Notification) {
-        guard let componentCode = notification.userInfo?["componentCode"] as? String else { return }
+        refreshLatestErrorList()
+    }
 
-        if let index = listErrorModel.firstIndex(where: { $0.componentCode == componentCode }) {
-            listErrorModel[index].status = StatusEnum.NotInvestigated.rawValue
-            _ = listErrorModel.remove(at: index)
-            fetchInvestigatedErrors { [weak self] newData in
-                guard let self = self else { return }
-                self.listErrorModel = newData
-                self.tableView.reloadData()
-            }
-        }
+    private func refreshLatestErrorList() {
+        currentPage = 1
+        hasMoreData = true
+        listErrorModel = []
+        tableView.reloadData()
+        callAPI(inventoryId: UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.inventoryModel?.inventoryId ?? "")
     }
 
     deinit {

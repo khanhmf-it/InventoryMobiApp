@@ -170,7 +170,7 @@ extension API: TargetType {
             return "api/inventory/\(inventoryId)/account/\(accountId)/audit/scan/\(componentCode)"
         case .getHightlight:
             return "api/inventory/ishightlight-check"
-        case .getInvestigationDetail(let inventoryID, let componentCode, let param):
+        case .getInvestigationDetail(let inventoryID, let componentCode, _):
             return "api/error-investigation/inventory/\(inventoryID)/componentCode/\(componentCode)/documents"
         case .getListErrorTotal(let inventoryId, _):
             return "/api/error-investigation/inventory/\(inventoryId)"
@@ -182,7 +182,7 @@ extension API: TargetType {
             return "/api/error-investigation/inventory/\(inventoryId)/componentCode/\(componentCode)/histories"
         case .updateStatus(let inventoryId, let componentCode):
             return "/api/error-investigation/inventory/\(inventoryId)/componentCode/\(componentCode)/status"
-        case .documentCheck(let inventoryId, let componentCode, let params):
+        case .documentCheck(let inventoryId, let componentCode, _):
             return "/api/error-investigation/web/inventory/\(inventoryId)/componentCode/\(componentCode)/documents-check"
         case .errorCategory:
             return "/api/error-investigation/web/management/error-category"

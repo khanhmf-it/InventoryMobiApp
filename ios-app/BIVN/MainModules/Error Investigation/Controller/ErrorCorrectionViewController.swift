@@ -273,18 +273,15 @@ class ErrorCorrectionViewController: BaseViewController, UITableViewDelegate, UI
         })
     }
     
-    private func callAPIUpdateStatus(inventoryId: String, componentCode: String) {
+    private func callAPIUpdateStatus(inventoryId: String, componentCode: String, shouldNavigateBack: Bool = true) {
         networkManager.updateStatus(inventoryId: inventoryId, componentCode: componentCode, completion: { [weak self] data in
             guard let self = self else { return }
             self.isLoading = false
             switch data {
             case .success(let response):
                 if response.code == 200 {
-                    DispatchQueue.main.async {
-                        for viewController in self.navigationController?.viewControllers ?? [] where viewController is ListErrorController {
-                            self.navigationController?.popToViewController(viewController, animated: true)
-                            return
-                        }
+                    if shouldNavigateBack {
+                        self.navigateBackSafely()
                     }
                 } else {
                     self.showAlertNoti(
@@ -303,6 +300,24 @@ class ErrorCorrectionViewController: BaseViewController, UITableViewDelegate, UI
                 print(error.localizedDescription)
             }
         })
+    }
+
+    private func navigateBackSafely() {
+        DispatchQueue.main.async {
+            if let navigationController = self.navigationController {
+                if let listErrorController = navigationController.viewControllers.first(where: { $0 is ListErrorController }) {
+                    navigationController.popToViewController(listErrorController, animated: true)
+                    return
+                }
+
+                if navigationController.viewControllers.count > 1 {
+                    navigationController.popViewController(animated: true)
+                    return
+                }
+            }
+
+            self.dismiss(animated: true)
+        }
     }
     
     
@@ -588,20 +603,22 @@ class ErrorCorrectionViewController: BaseViewController, UITableViewDelegate, UI
                 acceptOnTap: { [weak self] in
                     guard let self = self else { return }
                     if accessoryModel?.data?.status != 2 {
-                        callAPIUpdateStatus(inventoryId: UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.inventoryModel?.inventoryId ?? "", componentCode: self.componentCode ?? "")
-                    } else {
-                        DispatchQueue.main.async {
-                            for viewController in self.navigationController?.viewControllers ?? [] where viewController is ListErrorController {
-                                self.navigationController?.popToViewController(viewController, animated: true)
-                                return
-                            }
-                        }
+                        callAPIUpdateStatus(
+                            inventoryId: UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.inventoryModel?.inventoryId ?? "",
+                            componentCode: self.componentCode ?? "",
+                            shouldNavigateBack: false
+                        )
                     }
+
+                    NotificationCenter.default.post(name: NSNotification.Name("UpdateStatusSuccess"), object: nil)
+
+                    self.navigateBackSafely()
                 },
                 cancelOnTap: nil
             )
         } else {
-            self.navigationController?.popViewController(animated: true)
+            NotificationCenter.default.post(name: NSNotification.Name("UpdateStatusSuccess"), object: nil)
+            self.navigateBackSafely()
         }
         
     }
