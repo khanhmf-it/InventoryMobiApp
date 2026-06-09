@@ -21,5 +21,7 @@ class ResultErrorModel: Codable {
     var status: Int?
     var positionCode: String?
     var componentName: String?
+    var plant: String?
+    var wareHouseLocation: String?
 }
 

@@ -220,6 +220,8 @@ class ListErrorController: BaseViewController, UITableViewDelegate, UITableViewD
                 if response.code == 200 {
                     guard let vc = Storyboards.accessory.instantiate() as? AccessoryController else {return}
                     vc.componentCode = itemData.componentCode
+                    vc.selectedPlant = itemData.plant
+                    vc.selectedWarehouseLocation = itemData.wareHouseLocation
                     navigationController?.pushViewController(vc, animated: true)
                 } else {
                     self.showAlertNoti(
@@ -446,7 +448,7 @@ class ListErrorController: BaseViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 140
+        return 170
     }
 }
 

@@ -13,6 +13,8 @@ import SwiftUI
 class ListErrorTableViewCell: UITableViewCell {
     @IBOutlet weak var partNumberLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var plantLabel: UILabel!
+    @IBOutlet weak var warehouseLabel: UILabel!
     @IBOutlet weak var valueLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var quantityLabel: UILabel!
@@ -22,6 +24,8 @@ class ListErrorTableViewCell: UITableViewCell {
     @IBOutlet weak var moneyValueLabel: UILabel!
     @IBOutlet weak var statusValueLabel: UILabel!
     @IBOutlet weak var locationValueLabel: UILabel!
+    @IBOutlet weak var plantValueLabel: UILabel!
+    @IBOutlet weak var warehouseValueLabel: UILabel!
     @IBOutlet weak var detailButton: UIButton!
     @IBOutlet weak var arowImage: UIImageView!
     @IBOutlet weak var contentViewtotal: UIView!
@@ -44,7 +48,12 @@ class ListErrorTableViewCell: UITableViewCell {
         moneyValueLabel.font = fontUtils.size14.medium
         statusValueLabel.font = fontUtils.size14.medium
         locationValueLabel.font = fontUtils.size14.medium
-        //locationLabel.text = "Giá trị".localized()
+        plantValueLabel.font = fontUtils.size14.medium
+        warehouseValueLabel.font = fontUtils.size14.medium
+        locationLabel.text = "Vị trí".localized()
+        plantLabel.text = "Plant".localized()
+        warehouseLabel.text = "Kho".localized()
+        //locationLabel.text = "Giá trị".localized() //
         detailButton.setTitle("Xem lịch sử".localized(), for: .normal)
         detailButton.titleLabel?.font = fontUtils.size9.medium
 
@@ -69,7 +78,7 @@ class ListErrorTableViewCell: UITableViewCell {
         resultErrorModel = listErrorModel
         detailButton.isHidden = false
         arowImage.isHidden = false
-        partNumberValueLabel.text = listErrorModel?.componentCode!.uppercased(with: .autoupdatingCurrent) ?? ""
+        partNumberValueLabel.text = listErrorModel?.componentCode?.uppercased(with: .autoupdatingCurrent) ?? ""
         if let status = StatusDisplayError(rawValue: Int(listErrorModel?.status ?? 0)) {
             statusValueLabel.text = status.displayName
             statusValueLabel.textColor = status.color
@@ -85,7 +94,13 @@ class ListErrorTableViewCell: UITableViewCell {
         } else {
             quantityValueLabel.textColor = UIColor.gray
         }
-        locationValueLabel.text = listErrorModel?.positionCode ?? ""
+        let position = listErrorModel?.positionCode?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let plant = listErrorModel?.plant?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let warehouse = listErrorModel?.wareHouseLocation?.trimmingCharacters(in: .whitespacesAndNewlines)
+
+        locationValueLabel.text = (position?.isEmpty == false) ? position : "-"
+        plantValueLabel.text = (plant?.isEmpty == false) ? plant : "-"
+        warehouseValueLabel.text = (warehouse?.isEmpty == false) ? warehouse : "-"
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

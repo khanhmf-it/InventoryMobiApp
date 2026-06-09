@@ -24,6 +24,8 @@ class AccessoryController : BaseViewController, UITableViewDataSource, UITableVi
     var dataTicket = DetailResponseDataTicket()
     var param = Dictionary<String, Any>()
     var employeeID: String?
+    var selectedPlant: String?
+    var selectedWarehouseLocation: String?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -46,6 +48,8 @@ class AccessoryController : BaseViewController, UITableViewDataSource, UITableVi
     private func getData(){
         self.startLoading()
         param["userCode"] = employeeID
+        param["plant"] = selectedPlant?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        param["wareHouseLocation"] = selectedWarehouseLocation?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         networkManager.getInvestigationDetail(inventoryID: getInventoryID(), componentCode: componentCode ?? "", params: param, completion: { data in
             switch data {
             case .success(let response):
