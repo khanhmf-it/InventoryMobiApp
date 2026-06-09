@@ -695,7 +695,7 @@ class ErrorCorrectionViewController: BaseViewController, UITableViewDelegate, UI
     }
     
     func submitError(inventoryId: String, componentCode: String, type : Int, quantity : Double, errorCategory: Int, errorDetails: String, image1: Data?, image2: Data?, isDeleteImage1: Bool, isDeleteImage2: Bool, userCode: String) {
-        self.startLoading()
+        self.startLoading()//
         
         networkManager.submitErrorCorrection(inventoryId: inventoryId, componentCode: componentCode, type: type, quantity: quantity, errorCategory: errorCategory, errorDetails: errorDetails, confirmationImage1: image1 ?? Data(), confirmationImage2: image2 ?? Data(), isDeleteImage1: isDeleteImage1, isDeleteImage2: isDeleteImage2, userCode: userCode, completion: { [self] data in
             switch data {

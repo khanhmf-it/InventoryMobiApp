@@ -135,6 +135,8 @@ class AccessoryController : BaseViewController, UITableViewDataSource, UITableVi
             resultModel?.status = accessoryModel?.data?.status ?? 0
             resultModel?.positionCode = accessoryModel?.data?.position ?? ""
             resultModel?.errorMoneyAbs = accessoryModel?.data?.errorMonyAbs
+            resultModel?.plant = accessoryModel?.data?.plant ?? selectedPlant
+            resultModel?.wareHouseLocation = accessoryModel?.data?.wareHouseLocation ?? selectedWarehouseLocation
             cell.fillData(listErrorModel: resultModel)
             cell.hidenButton()
             cell.selectionStyle = .none
@@ -166,7 +168,7 @@ class AccessoryController : BaseViewController, UITableViewDataSource, UITableVi
             case "A", "E":
         naviShowDetailDocAE(inventoryId: UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.inventoryModel?.inventoryId ?? "", accountId: UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.accountId ?? "", componentCode: accessoryModel?.data?.componentCode ?? "", isConfirm: false, positionCode: accessoryModel?.data?.position ?? "", docCode: itemData?.docCode ?? "")
             case "B":
-                self.scanDocB(inventoryId: UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.inventoryModel?.inventoryId ?? "", accountId: UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.accountId ?? "", componentCode: accessoryModel?.data?.componentCode ?? "", machineModel: "", machineType:"", lineName:  "", modelCode: "", actionType: 1, isErrorInvestigation: true, docCode: accessoryModel?.data?.documentList?[indexPath.row].docCode ?? "")
+                self.scanDocB(inventoryId: UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.inventoryModel?.inventoryId ?? "", accountId: UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.accountId ?? "", componentCode: accessoryModel?.data?.componentCode ?? "", machineModel: "", machineType:"", lineName:  "", modelCode: "", actionType: 1, isErrorInvestigation: true, docCode: accessoryModel?.data?.documentList?[indexPath.row].docCode ?? "",docId: itemData?.docId ?? "" )
             default:
                 break
             }
@@ -176,7 +178,7 @@ class AccessoryController : BaseViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row{
         case 0:
-            return 100
+            return 170
         default: return 70
         }
     }
@@ -198,7 +200,8 @@ class AccessoryController : BaseViewController, UITableViewDataSource, UITableVi
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    private func scanDocB(inventoryId: String?, accountId: String?, componentCode: String?, machineModel: String?, machineType: String?, lineName: String?, modelCode: String?, actionType: Int?, isErrorInvestigation: Bool, docCode: String?) {
+    private func scanDocB(inventoryId: String?, accountId: String?, componentCode: String?, machineModel: String?, machineType: String?, lineName: String?, modelCode: String?, actionType: Int?, isErrorInvestigation: Bool, docCode: String?,
+                          docId: String?) {
         self.startLoading()
         param["inventoryId"] = inventoryId ?? ""
         param["accountId"] = accountId ?? ""
@@ -209,6 +212,7 @@ class AccessoryController : BaseViewController, UITableViewDataSource, UITableVi
         param["modelCode"] = modelCode ?? ""
         param["actionType"] = actionType
         param["isErrorInvestigation"] = true
+        param["docId"] = docId ?? ""
         networkManager.scanDocB(isErrorInvestigation: isErrorInvestigation, param: param) { [weak self] result in
             switch result {
             case .success(let response):
@@ -216,7 +220,7 @@ class AccessoryController : BaseViewController, UITableViewDataSource, UITableVi
                 if response.code == 200 {
                     self.stopLoading()
                     let responseData = response.data ?? []
-                    var docCodeList = responseData.filter({$0.inventoryDoc?.docCode == docCode})
+                    var docCodeList = responseData //responseData.filter({$0.inventoryDoc?.docCode == docCode})
                     if let docCodeList = docCodeList.first {
                         self.dataTicket = docCodeList
                     }
@@ -247,7 +251,13 @@ class AccessoryController : BaseViewController, UITableViewDataSource, UITableVi
         }
         param["docCode"] = docCode
         param["isErrorInvestigation"] = "true"
-        
+        let plant = accessoryModel?.data?.plant?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let warehouseLocation = accessoryModel?.data?.wareHouseLocation?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let fallbackPlant = selectedPlant?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let fallbackWarehouse = selectedWarehouseLocation?.trimmingCharacters(in: .whitespacesAndNewlines)
+
+        param["plant"] = (plant?.isEmpty == false) ? plant : (fallbackPlant ?? "")
+        param["wareHouseLocation"] = (warehouseLocation?.isEmpty == false) ? warehouseLocation : (fallbackWarehouse ?? "")
         let networkManager: NetworkManager = NetworkManager()
         networkManager.getDetailTicket(inventoryId: inventoryId, accountId: accountId, componentCode: componentCode, isConfirm: isConfirm, param: param) { [weak self] result in
             self?.stopLoading()

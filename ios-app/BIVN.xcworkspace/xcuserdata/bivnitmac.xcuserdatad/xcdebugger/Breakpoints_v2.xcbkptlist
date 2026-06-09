@@ -7,65 +7,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DA0F5DDF-198D-44A1-ACAA-1F7CAF51F23D"
+            uuid = "678BF9C1-3AFD-4E8D-9F9C-349A672F12A9"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BIVN/MainModules/Accessory/Controller/AccessoryController.swift"
+            filePath = "BIVN/MainModules/Error Investigation/Controller/ErrorCorrectionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "getData()"
+            startingLineNumber = "700"
+            endingLineNumber = "700"
+            landmarkName = "submitError(inventoryId:componentCode:type:quantity:errorCategory:errorDetails:image1:image2:isDeleteImage1:isDeleteImage2:userCode:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C3DFD5CE-08A7-4A5D-9701-B330817AC5D0"
+            uuid = "C62C0A61-5348-41C7-82CA-CECA0E035EFE"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BIVN/MainModules/Accessory/Controller/AccessoryController.swift"
+            filePath = "BIVN/MainModules/Error Investigation/Controller/ErrorCorrectionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "getData()"
+            startingLineNumber = "543"
+            endingLineNumber = "543"
+            landmarkName = "submitButtonTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "266B31D0-52AF-41EC-9B4D-DF8086A5EA03"
+            uuid = "9437EC31-9C39-4E37-98CC-815E71A83A52"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BIVN/Shared/Networking/NetworkManager.swift"
+            filePath = "BIVN/MainModules/Error Investigation/Controller/ErrorCorrectionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "172"
-            endingLineNumber = "172"
-            landmarkName = "getInvestigationDetail(inventoryID:componentCode:params:completion:)"
+            startingLineNumber = "697"
+            endingLineNumber = "697"
+            landmarkName = "submitError(inventoryId:componentCode:type:quantity:errorCategory:errorDetails:image1:image2:isDeleteImage1:isDeleteImage2:userCode:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5F857463-A230-4334-8618-B0E868D81694"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BIVN/Shared/Networking/BaseApi.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "174"
-            endingLineNumber = "174"
-            landmarkName = "path"
-            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

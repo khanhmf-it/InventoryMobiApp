@@ -22,6 +22,8 @@ class DataClass: Codable {
     var position: String?
     var documentList: [DocumentList]?
     var errorMonyAbs: String?
+    var plant: String?
+    var wareHouseLocation: String?
 }
 
 
