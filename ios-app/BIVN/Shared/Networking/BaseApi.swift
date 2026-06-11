@@ -50,7 +50,7 @@ enum API {
     case getInvestigationDetail(inventoryID: String, componentCode: String, params: Dictionary<String, Any>)
     case getListErrorTotal(inventoryId: String, params: Dictionary<String, Any>)
     case getViewDetailError(inventoryId: String, componentCode: String)
-    case submitErrorCorrection(inventoryId: String,componentCode: String, type: Int, quantity: Double, errorCategory: Int, errorDetails: String, confirmationImage1: Data, confirmationImage2: Data, isDeleteImage1: Bool, isDeleteImage2: Bool,userCode: String)
+    case submitErrorCorrection(inventoryId: String,componentCode: String, type: Int, quantity: Double, errorCategory: Int, errorDetails: String, confirmationImage1: Data, confirmationImage2: Data, isDeleteImage1: Bool, isDeleteImage2: Bool,userCode: String, plant: String, wareHouseLocation: String)
     case getHistoryInvestigation(inventoryId: String, componentCode: String)
     case updateStatus(inventoryId: String, componentCode: String)
     case errorCategory
@@ -176,7 +176,7 @@ extension API: TargetType {
             return "/api/error-investigation/inventory/\(inventoryId)"
         case .getViewDetailError(inventoryId: let inventoryId, componentCode: let componentCode):
             return "/api/error-investigation/inventory/\(inventoryId)/componentCode/\(componentCode)/view-detail"
-        case .submitErrorCorrection(let inventoryId, let componentCode, let type,_,_,_,_,_,_,_,_):
+        case .submitErrorCorrection(let inventoryId, let componentCode, let type,_,_,_,_,_,_,_,_,_,_):
             return "/api/error-investigation/inventory/\(inventoryId)/componentCode/\(componentCode)/type/\(type)"
         case .getHistoryInvestigation(let inventoryId, let componentCode):
             return "/api/error-investigation/inventory/\(inventoryId)/componentCode/\(componentCode)/histories"
@@ -334,7 +334,7 @@ extension API: TargetType {
             return .requestParameters(parameters: params, encoding: JSONEncoding.default)
         case .getViewDetailError(inventoryId: _, componentCode: _):
             return .requestPlain
-        case .submitErrorCorrection(_,_,_, let quantity, let errorCategory, let errorDetails, let confirmationImage1, let confirmationImage2, let isDeleteImage1, let isDeleteImage2, let userCode):
+        case .submitErrorCorrection(_,_,_, let quantity, let errorCategory, let errorDetails, let confirmationImage1, let confirmationImage2, let isDeleteImage1, let isDeleteImage2, let userCode, let plant, let wareHouseLocation):
             var formData: [Moya.MultipartFormData] = []
             let quantityString = String(quantity)
             let isDeleteImage1String = isDeleteImage1 ? "true" : "false"
@@ -344,6 +344,8 @@ extension API: TargetType {
             formData.append(Moya.MultipartFormData(provider: .data(errorCategoryString.data(using: .utf8)!), name: "ErrorCategory"))
             formData.append(Moya.MultipartFormData(provider: .data(errorDetails.data(using: .utf8)!), name: "ErrorDetails"))
             formData.append(Moya.MultipartFormData(provider: .data(userCode.data(using: .utf8)!), name: "UserCode"))
+            formData.append(Moya.MultipartFormData(provider: .data(plant.data(using: .utf8)!), name: "plant"))
+            formData.append(Moya.MultipartFormData(provider: .data(wareHouseLocation.data(using: .utf8)!), name: "wareHouseLocation"))
             formData.append(Moya.MultipartFormData(provider: .data(isDeleteImage1String.data(using: .utf8)!), name: "IsDeleteImage1"))
             formData.append(Moya.MultipartFormData(provider: .data(isDeleteImage2String.data(using: .utf8)!), name: "IsDeleteImage2"))
             if !confirmationImage1.isEmpty {

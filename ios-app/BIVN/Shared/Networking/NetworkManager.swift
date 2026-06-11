@@ -178,8 +178,8 @@ protocol Networkable {
          request(target: .getViewDetailError(inventoryId: inventoryId, componentCode: componentCode),completion: completion)
      }
      
-     func submitErrorCorrection(inventoryId: String, componentCode: String, type: Int, quantity: Double, errorCategory: Int, errorDetails: String, confirmationImage1: Data, confirmationImage2: Data, isDeleteImage1: Bool, isDeleteImage2: Bool, userCode: String, completion: @escaping (Result<ResponseSubmitModel, Error>) -> ()) {
-         request(target: .submitErrorCorrection(inventoryId: inventoryId, componentCode: componentCode, type: type, quantity: quantity, errorCategory: errorCategory, errorDetails: errorDetails, confirmationImage1: confirmationImage1, confirmationImage2: confirmationImage2 , isDeleteImage1: isDeleteImage1, isDeleteImage2: isDeleteImage2, userCode: userCode), completion: completion)
+     func submitErrorCorrection(inventoryId: String, componentCode: String, type: Int, quantity: Double, errorCategory: Int, errorDetails: String, confirmationImage1: Data, confirmationImage2: Data, isDeleteImage1: Bool, isDeleteImage2: Bool, userCode: String, plant: String, wareHouseLocation: String, completion: @escaping (Result<ResponseSubmitModel, Error>) -> ()) {
+         request(target: .submitErrorCorrection(inventoryId: inventoryId, componentCode: componentCode, type: type, quantity: quantity, errorCategory: errorCategory, errorDetails: errorDetails, confirmationImage1: confirmationImage1, confirmationImage2: confirmationImage2 , isDeleteImage1: isDeleteImage1, isDeleteImage2: isDeleteImage2, userCode: userCode, plant: plant, wareHouseLocation: wareHouseLocation), completion: completion)
      }
      
      func getHistoryInvestigation(inventoryId: String, componentCode: String, completion: @escaping (Result<HistoryAccessoryModels, Error>) -> ()){

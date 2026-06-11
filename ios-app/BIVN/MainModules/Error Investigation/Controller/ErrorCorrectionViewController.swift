@@ -695,9 +695,11 @@ class ErrorCorrectionViewController: BaseViewController, UITableViewDelegate, UI
     }
     
     func submitError(inventoryId: String, componentCode: String, type : Int, quantity : Double, errorCategory: Int, errorDetails: String, image1: Data?, image2: Data?, isDeleteImage1: Bool, isDeleteImage2: Bool, userCode: String) {
-        self.startLoading()//
+        self.startLoading()
+        let plant = accessoryModel?.data?.plant?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        let wareHouseLocation = accessoryModel?.data?.wareHouseLocation?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         
-        networkManager.submitErrorCorrection(inventoryId: inventoryId, componentCode: componentCode, type: type, quantity: quantity, errorCategory: errorCategory, errorDetails: errorDetails, confirmationImage1: image1 ?? Data(), confirmationImage2: image2 ?? Data(), isDeleteImage1: isDeleteImage1, isDeleteImage2: isDeleteImage2, userCode: userCode, completion: { [self] data in
+        networkManager.submitErrorCorrection(inventoryId: inventoryId, componentCode: componentCode, type: type, quantity: quantity, errorCategory: errorCategory, errorDetails: errorDetails, confirmationImage1: image1 ?? Data(), confirmationImage2: image2 ?? Data(), isDeleteImage1: isDeleteImage1, isDeleteImage2: isDeleteImage2, userCode: userCode, plant: plant, wareHouseLocation: wareHouseLocation, completion: { [self] data in
             switch data {
             case .success(let response):
                 self.stopLoading()
