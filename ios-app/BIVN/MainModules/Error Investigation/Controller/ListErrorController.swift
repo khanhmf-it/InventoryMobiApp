@@ -91,6 +91,8 @@ enum StatusDisplayError: Int, CaseIterable {
 class ListErrorController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var statusTextField: UITextField!
     @IBOutlet weak var eventTextField: UITextField!
+    @IBOutlet weak var plantTextField: UITextField!
+    @IBOutlet weak var warehouseLocationTextField: UITextField!
     @IBOutlet weak var statusButton: UIButton!
     @IBOutlet weak var hideButton: UIButton!
     @IBOutlet weak var tableView: UITableView! {
@@ -170,6 +172,8 @@ class ListErrorController: BaseViewController, UITableViewDelegate, UITableViewD
         errorLabel.font = fontUtils.size14.medium
         statusTextField.text = "Tất cả".localized()
         eventTextField.placeholder = "Nhập mã linh kiện...".localized()
+        plantTextField.placeholder = "Nhập plant...".localized()
+        warehouseLocationTextField.placeholder = "Nhập warehouse location...".localized()
         eventTextField.text?.uppercased()
         statusButton.setTitle("", for: .normal)
         addDropdownImage(textField: statusTextField)
@@ -184,8 +188,12 @@ class ListErrorController: BaseViewController, UITableViewDelegate, UITableViewD
         eventTextField.rightView = contentView
         eventTextField.rightViewMode = .always
         eventTextField.clearButtonMode = .whileEditing
-        eventTextField.addTarget(self, action: #selector(onSearchComponentCode), for: .editingDidEndOnExit)
-        eventTextField.addTarget(self, action: #selector(onSearchComponentCode), for: .editingDidEnd)
+        eventTextField.addTarget(self, action: #selector(onSearchFilters), for: .editingDidEndOnExit)
+        eventTextField.addTarget(self, action: #selector(onSearchFilters), for: .editingDidEnd)
+        plantTextField.addTarget(self, action: #selector(onSearchFilters), for: .editingDidEndOnExit)
+        plantTextField.addTarget(self, action: #selector(onSearchFilters), for: .editingDidEnd)
+        warehouseLocationTextField.addTarget(self, action: #selector(onSearchFilters), for: .editingDidEndOnExit)
+        warehouseLocationTextField.addTarget(self, action: #selector(onSearchFilters), for: .editingDidEnd)
         loadingIndicator = UIActivityIndicatorView(style: .large)
         loadingIndicator.color = .gray
         loadingIndicator.center = self.view.center
@@ -193,7 +201,7 @@ class ListErrorController: BaseViewController, UITableViewDelegate, UITableViewD
         
     }
     
-    @objc private func onSearchComponentCode() {
+    @objc private func onSearchFilters() {
         self.currentPage = 1
         self.listErrorModel = []
         self.hasMoreData = true
@@ -222,6 +230,7 @@ class ListErrorController: BaseViewController, UITableViewDelegate, UITableViewD
                     vc.componentCode = itemData.componentCode
                     vc.selectedPlant = itemData.plant
                     vc.selectedWarehouseLocation = itemData.wareHouseLocation
+                    vc.selectedPositionCode = itemData.positionCode
                     navigationController?.pushViewController(vc, animated: true)
                 } else {
                     self.showAlertNoti(
@@ -245,6 +254,8 @@ class ListErrorController: BaseViewController, UITableViewDelegate, UITableViewD
     private func fetchInvestigatedErrors(completion: @escaping ([ResultErrorModel]) -> Void) {
         self.param["status"] = StatusEnum.NotInvestigated.rawValue
         self.param["componentCode"] = eventTextField.text?.uppercased().trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        self.param["plant"] = plantTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        self.param["wareHouseLocation"] = warehouseLocationTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         self.param["pageNum"] = currentPage
         self.param["pageSize"] = 20
         
@@ -383,6 +394,8 @@ class ListErrorController: BaseViewController, UITableViewDelegate, UITableViewD
     
     private func callAPI(inventoryId: String?) {
         self.param["componentCode"] = eventTextField.text?.uppercased().trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        self.param["plant"] = plantTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        self.param["wareHouseLocation"] = warehouseLocationTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         self.param["pageNum"] = currentPage
         self.param["pageSize"] = 20
         loadingIndicator.startAnimating()

@@ -26,6 +26,7 @@ class AccessoryController : BaseViewController, UITableViewDataSource, UITableVi
     var employeeID: String?
     var selectedPlant: String?
     var selectedWarehouseLocation: String?
+    var selectedPositionCode: String?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -50,6 +51,12 @@ class AccessoryController : BaseViewController, UITableViewDataSource, UITableVi
         param["userCode"] = employeeID
         param["plant"] = selectedPlant?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         param["wareHouseLocation"] = selectedWarehouseLocation?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        let positionCode = selectedPositionCode?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        if positionCode.isEmpty {
+            param.removeValue(forKey: "positionCode")
+        } else {
+            param["positionCode"] = positionCode
+        }
         networkManager.getInvestigationDetail(inventoryID: getInventoryID(), componentCode: componentCode ?? "", params: param, completion: { data in
             switch data {
             case .success(let response):
@@ -82,8 +89,8 @@ class AccessoryController : BaseViewController, UITableViewDataSource, UITableVi
         })
     }
     
-    private func callAPIUpdateStatus(inventoryId: String, componentCode: String) {
-        networkManager.updateStatus(inventoryId: inventoryId, componentCode: componentCode, completion: { [weak self] data in
+    private func callAPIUpdateStatus(inventoryId: String, componentCode: String, plant: String, wareHouseLocation: String) {
+        networkManager.updateStatus(inventoryId: inventoryId, componentCode: componentCode, plant: plant, wareHouseLocation: wareHouseLocation, completion: { [weak self] data in
             guard let self = self else { return }
             self.isLoading = false
             switch data {
@@ -112,8 +119,15 @@ class AccessoryController : BaseViewController, UITableViewDataSource, UITableVi
         emptyDataLabel.font = fontUtils.size14.medium
     }
     
-    @objc private func onTapBack() {
-        callAPIUpdateStatus(inventoryId: UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.inventoryModel?.inventoryId ?? "", componentCode: componentCode ?? "")
+    @objc private func onTapBack() { //
+        let plant = (accessoryModel?.data?.plant ?? selectedPlant ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
+        let wareHouseLocation = (accessoryModel?.data?.wareHouseLocation ?? selectedWarehouseLocation ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
+        callAPIUpdateStatus(
+            inventoryId: UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.inventoryModel?.inventoryId ?? "",
+            componentCode: componentCode ?? "",
+            plant: plant,
+            wareHouseLocation: wareHouseLocation
+        )
         navigationController?.popViewController(animated: true)
     }
     

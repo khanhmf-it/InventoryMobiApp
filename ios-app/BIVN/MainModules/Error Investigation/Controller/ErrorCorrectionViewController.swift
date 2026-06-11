@@ -273,8 +273,8 @@ class ErrorCorrectionViewController: BaseViewController, UITableViewDelegate, UI
         })
     }
     
-    private func callAPIUpdateStatus(inventoryId: String, componentCode: String, shouldNavigateBack: Bool = true) {
-        networkManager.updateStatus(inventoryId: inventoryId, componentCode: componentCode, completion: { [weak self] data in
+    private func callAPIUpdateStatus(inventoryId: String, componentCode: String, plant: String, wareHouseLocation: String, shouldNavigateBack: Bool = true) {
+        networkManager.updateStatus(inventoryId: inventoryId, componentCode: componentCode, plant: plant, wareHouseLocation: wareHouseLocation, completion: { [weak self] data in
             guard let self = self else { return }
             self.isLoading = false
             switch data {
@@ -603,9 +603,13 @@ class ErrorCorrectionViewController: BaseViewController, UITableViewDelegate, UI
                 acceptOnTap: { [weak self] in
                     guard let self = self else { return }
                     if accessoryModel?.data?.status != 2 {
+                        let plant = (self.accessoryModel?.data?.plant ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
+                        let wareHouseLocation = (self.accessoryModel?.data?.wareHouseLocation ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
                         callAPIUpdateStatus(
                             inventoryId: UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.inventoryModel?.inventoryId ?? "",
                             componentCode: self.componentCode ?? "",
+                            plant: plant,
+                            wareHouseLocation: wareHouseLocation,
                             shouldNavigateBack: false
                         )
                     }

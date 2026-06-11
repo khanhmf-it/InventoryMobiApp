@@ -186,9 +186,9 @@ protocol Networkable {
          request(target: .getHistoryInvestigation(inventoryId: inventoryId, componentCode: componentCode), completion: completion)
      }
      
-     func updateStatus(inventoryId: String, componentCode: String, completion: @escaping (Result<StatusModel, Error>) -> ()){
-         request(target: .updateStatus(inventoryId: inventoryId, componentCode: componentCode), completion: completion)
-     }
+     func updateStatus(inventoryId: String, componentCode: String, plant: String, wareHouseLocation: String, completion: @escaping (Result<StatusModel, Error>) -> ()){
+         request(target: .updateStatus(inventoryId: inventoryId, componentCode: componentCode, plant: plant, wareHouseLocation: wareHouseLocation), completion: completion)
+     }//
      
      func documentCheck(inventoryId: String, componentCode: String,param: Dictionary<String, Any>, completion: @escaping (Result<StatusModel, Error>) -> ()){
          request(target: .documentCheck(inventoryId: inventoryId, componentCode: componentCode, params: param), completion: completion)

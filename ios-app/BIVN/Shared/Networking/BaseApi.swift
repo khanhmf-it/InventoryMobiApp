@@ -52,7 +52,7 @@ enum API {
     case getViewDetailError(inventoryId: String, componentCode: String)
     case submitErrorCorrection(inventoryId: String,componentCode: String, type: Int, quantity: Double, errorCategory: Int, errorDetails: String, confirmationImage1: Data, confirmationImage2: Data, isDeleteImage1: Bool, isDeleteImage2: Bool,userCode: String, plant: String, wareHouseLocation: String)
     case getHistoryInvestigation(inventoryId: String, componentCode: String)
-    case updateStatus(inventoryId: String, componentCode: String)
+    case updateStatus(inventoryId: String, componentCode: String, plant: String, wareHouseLocation: String)
     case errorCategory
     case documentCheck(inventoryId: String, componentCode: String, params: Dictionary<String, Any>)
 }
@@ -180,7 +180,7 @@ extension API: TargetType {
             return "/api/error-investigation/inventory/\(inventoryId)/componentCode/\(componentCode)/type/\(type)"
         case .getHistoryInvestigation(let inventoryId, let componentCode):
             return "/api/error-investigation/inventory/\(inventoryId)/componentCode/\(componentCode)/histories"
-        case .updateStatus(let inventoryId, let componentCode):
+        case .updateStatus(let inventoryId, let componentCode, _, _):
             return "/api/error-investigation/inventory/\(inventoryId)/componentCode/\(componentCode)/status"
         case .documentCheck(let inventoryId, let componentCode, _):
             return "/api/error-investigation/web/inventory/\(inventoryId)/componentCode/\(componentCode)/documents-check"
@@ -222,7 +222,7 @@ extension API: TargetType {
                         "isErrorInvestigation": isErrorInvestigation ? "true" : "false"
                     ]
                 )
-        case .userDetail, .getPosition, .getListDropdownModel, .getListDropdownModelB, .getListDropdownMachines, .getListDropdownMachinesB, .getListDropdownModelCodeB, .getlistLines, .getlistLinesB, .getListDropdownDepartment, .getListDropdownLocation, .getListDropdownComponent, .getDocType, .getDetailSheetsMonitor, .getDetailMonitor, .getHistoryInvestigation, .updateStatus:
+        case .userDetail, .getPosition, .getListDropdownModel, .getListDropdownModelB, .getListDropdownMachines, .getListDropdownMachinesB, .getListDropdownModelCodeB, .getlistLines, .getlistLinesB, .getListDropdownDepartment, .getListDropdownLocation, .getListDropdownComponent, .getDocType, .getDetailSheetsMonitor, .getDetailMonitor, .getHistoryInvestigation:
             return .requestPlain
         case .login(let params), .loginOverride(let params):
             return .requestParameters(parameters: params, encoding: JSONEncoding.default)
@@ -357,6 +357,12 @@ extension API: TargetType {
             
             formData.append(Moya.MultipartFormData(provider: .data(confirmationImage2), name: "ConfirmationImage2", fileName: "ConfirmationImage2.jpg", mimeType: "image/jpeg"))
             return .uploadMultipart(formData)
+        case .updateStatus(_, _, let plant, let wareHouseLocation):
+            let params: [String: Any] = [
+                "plant": plant,
+                "wareHouseLocation": wareHouseLocation
+            ]
+            return .requestParameters(parameters: params, encoding: JSONEncoding.default)
         }
     }
 }
