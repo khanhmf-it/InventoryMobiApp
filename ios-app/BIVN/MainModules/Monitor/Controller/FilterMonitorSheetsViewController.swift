@@ -33,18 +33,28 @@ class FilterMonitorSheetsViewController: BaseViewController, UITableViewDataSour
     let myDropDown = DropDown()
     let viewcontroller = Storyboards.sheetsInventory.instantiate() as? SheetsInventoryViewController
     var countTotal: String = ""
+    private var selectedIsDocC: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        callAPI(inventoryId: UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.inventoryModel?.inventoryId, accountId: UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.accountId, departmentName: "-1", locationName: "-1", componentCode: "-1")
         setupView()
         addSearch()
         setupTableView()
+        loadMonitorDataBySelectedDocType()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         viewcontroller?.close()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if self.isMovingFromParent,
+           let previousVC = self.navigationController?.viewControllers.last,
+           (previousVC is ScanCodeMCViewController || previousVC is MainViewController) {
+            UserDefault.shared.removeMonitorDocType()
+        }
     }
     
     private func setupView() {
@@ -90,13 +100,47 @@ class FilterMonitorSheetsViewController: BaseViewController, UITableViewDataSour
         areaLabel.text = "Tất cả".localized()
         codeLabel.text = "Tất cả".localized()
     }
+
+    private func loadMonitorDataBySelectedDocType() {
+        if let savedIsDocC = UserDefault.shared.getMonitorDocType() {
+            selectedIsDocC = savedIsDocC
+            self.callAPI(inventoryId: UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.inventoryModel?.inventoryId,
+                         accountId: UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.accountId,
+                         departmentName: "-1",
+                         locationName: "-1",
+                         componentCode: "-1",
+                         isDocC: savedIsDocC)
+            return
+        }
+        showChooseMonitorDocTypePopup()
+    }
     
-    func callAPI(inventoryId: String?, accountId: String?, departmentName: String?, locationName: String?, componentCode: String?) {
+    private func showChooseMonitorDocTypePopup() {
+        self.showPopUpAlert(title: "Chọn loại phiếu".localized(), array: ["Loại phiếu A,B,E".localized(), "Loại phiếu C".localized()]) { [weak self] in
+            self?.navigationController?.popViewController(animated: true)
+        } accept: { [weak self] index in
+            guard let self = self else { return }
+            let isDocC = index == 1
+            self.selectedIsDocC = isDocC
+            UserDefault.shared.setMonitorDocType(isDocC: isDocC)
+            self.callAPI(inventoryId: UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.inventoryModel?.inventoryId,
+                         accountId: UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.accountId,
+                         departmentName: "-1",
+                         locationName: "-1",
+                         componentCode: "-1",
+                         isDocC: isDocC)
+        }
+    }
+
+    func callAPI(inventoryId: String?, accountId: String?, departmentName: String?, locationName: String?, componentCode: String?, isDocC: Bool? = nil) {
+        let monitorDocC = isDocC ?? selectedIsDocC
+        selectedIsDocC = monitorDocC
         param["inventoryId"] = inventoryId ?? ""
         param["accountId"] = accountId ?? ""
         param["departmentName"] = departmentName ?? "-1"
         param["locationName"] = locationName ?? "-1"
         param["componentCode"] = componentCode ?? "-1"
+        param["IsDocC"] = monitorDocC
         networkManager.getListAudit(param: param) {[weak self] data in
             switch data {
             case .success(let response):
@@ -114,7 +158,7 @@ class FilterMonitorSheetsViewController: BaseViewController, UITableViewDataSour
                     self?.showAlertExpiredToken(code: response.code) { [weak self] result in
                         guard let self = self else { return }
                         if result {
-                            self.callAPI(inventoryId: inventoryId, accountId: accountId, departmentName: departmentName, locationName: locationName, componentCode: componentCode)
+                            self.callAPI(inventoryId: inventoryId, accountId: accountId, departmentName: departmentName, locationName: locationName, componentCode: componentCode,isDocC: isDocC)
                         }
                     }
                 } else {
@@ -165,7 +209,7 @@ class FilterMonitorSheetsViewController: BaseViewController, UITableViewDataSour
         self.roomLabel.text = room
         self.areaLabel.text = area
         self.codeLabel.text = partCode
-        self.callAPI(inventoryId: UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.inventoryModel?.inventoryId, accountId: UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.accountId, departmentName: room == "Tất cả".localized() ? "-1" : room, locationName: area == "Tất cả".localized() ? "-1" : area, componentCode: partCode == "Tất cả".localized() ? "-1" : partCode)
+        self.callAPI(inventoryId: UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.inventoryModel?.inventoryId, accountId: UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.accountId, departmentName: room == "Tất cả".localized() ? "-1" : room, locationName: area == "Tất cả".localized() ? "-1" : area, componentCode: partCode == "Tất cả".localized() ? "-1" : partCode, isDocC: selectedIsDocC)
     }
     
     @IBAction func onTapFilter(_ sender: UIButton) {

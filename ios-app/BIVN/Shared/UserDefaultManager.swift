@@ -15,6 +15,7 @@ class UserDefault {
     private let MACHINE = "MACHINE"
     private let LINE = "LINE"
     private let RELOAD = "RELOAD"
+    private let MONITOR_DOC_TYPE = "MONITOR_DOC_TYPE"
     
     private init() {
         
@@ -274,6 +275,19 @@ class UserDefault {
     func getReload() -> Bool {
         let reload = UserDefaults.standard.bool(forKey: RELOAD)
         return reload
+    }
+
+    func setMonitorDocType(isDocC: Bool) {
+        UserDefaults.standard.set(isDocC ? 1 : 0, forKey: MONITOR_DOC_TYPE)
+    }
+
+    func getMonitorDocType() -> Bool? {
+        guard UserDefaults.standard.object(forKey: MONITOR_DOC_TYPE) != nil else { return nil }
+        return UserDefaults.standard.integer(forKey: MONITOR_DOC_TYPE) == 1
+    }
+
+    func removeMonitorDocType() {
+        UserDefaults.standard.removeObject(forKey: MONITOR_DOC_TYPE)
     }
     
     func removeModel() {

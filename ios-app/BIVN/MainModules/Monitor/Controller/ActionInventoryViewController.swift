@@ -274,22 +274,18 @@ class ActionInventoryViewController: BaseViewController, AddRowCell {
         let accountId = UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.accountId
 
         if let navigationController = self.navigationController {
-            if let listVC = navigationController.viewControllers.first(where: { $0 is FilterMonitorSheetsViewController }) as? FilterMonitorSheetsViewController {
+            if let listVC = navigationController.viewControllers.last(where: { $0 is FilterMonitorSheetsViewController }) as? FilterMonitorSheetsViewController {
                 listVC.callAPI(inventoryId: inventoryId, accountId: accountId, departmentName: "-1", locationName: "-1", componentCode: "-1")
                 navigationController.popToViewController(listVC, animated: true)
                 return
-            } else {
-                if let vc = Storyboards.filterInventory.instantiate() as? FilterMonitorSheetsViewController {
-                    if let scanIndex = navigationController.viewControllers.lastIndex(where: { $0 is ScanCodeMCViewController }) {
-                        var targetStack = Array(navigationController.viewControllers.prefix(scanIndex + 1))
-                        targetStack.append(vc)
-                        navigationController.setViewControllers(targetStack, animated: true)
-                    } else {
-                        navigationController.pushViewController(vc, animated: true)
-                    }
-                    return
-                }
             }
+
+            if let scanVC = navigationController.viewControllers.last(where: { $0 is ScanCodeMCViewController }) {
+                navigationController.popToViewController(scanVC, animated: true)
+                return
+            }
+
+            navigationController.popViewController(animated: true)
         }
     }
     
