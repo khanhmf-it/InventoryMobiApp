@@ -71,7 +71,10 @@ class ListAccessoryNotInventoryViewController: BaseViewController, UITableViewDa
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if UserDefault.shared.getReload() {
+            pageNumber = 1
+            isCheckLoadMore = true
             listDataDocC = []
+            tableView.reloadData()
             getListDocC(inventoryId: UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.inventoryModel?.inventoryId ?? "", accountId: UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.accountId ?? "", machineModel: self.model, machineType: self.machineType, lineName: self.lineCode, stageName: "", modelCode: "", actionType: self.jobIndex, pageNumber: self.pageNumber)
             UserDefault.shared.setReload(isReload: false)
         }
@@ -156,6 +159,7 @@ class ListAccessoryNotInventoryViewController: BaseViewController, UITableViewDa
             let listDocC = docC.filter({ $0.status == 3})
             self.listDataDocC.append(contentsOf: listDocC)
         }
+        errorDataLabel.isHidden = !self.listDataDocC.isEmpty
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.tableView.reloadData()
         }
@@ -265,6 +269,7 @@ class ListAccessoryNotInventoryViewController: BaseViewController, UITableViewDa
                         self.reloadTableViewDocC(docC: docC)
                     } else {
                         self.isCheckLoadMore = false
+                        self.reloadTableViewDocC(docC: docC)
                     }
                 } else if response.code == 401 || response.code == 403 || response.code == 60 || response.code == 15 || response.code == 17 || response.code == 56 {
                     self.showAlertExpiredToken(code: response.code) { [weak self] result in
