@@ -34,6 +34,7 @@ class ActionInventoryViewController: BaseViewController, AddRowCell {
     private var regionUS: Bool = false
     var errorValid: Bool = false
     var arrayData2: [ConvertDocComponentABEs] = []
+    private var listDocComponentCs: [DocComponentCs] = []
     var hideError: Bool = false
     var lastRow = -1
     var isTapSubmit: Bool = false
@@ -41,6 +42,9 @@ class ActionInventoryViewController: BaseViewController, AddRowCell {
     var actionType: Int?
     var evicenceImg: String?
     private var imageCapture: UIImage?
+    private var isDocCMonitor: Bool {
+        return dataDetailSheets?.docComponentCs != nil
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,6 +74,7 @@ class ActionInventoryViewController: BaseViewController, AddRowCell {
         actionButtonView.isHidden = true
         
         var totalValue: Double = 0.0
+        listDocComponentCs = dataDetailSheets?.docComponentCs ?? []
         if arrayData.count != 0 {
             for item in arrayData {
                 var convertABE = ConvertDocComponentABEs()
@@ -125,6 +130,8 @@ class ActionInventoryViewController: BaseViewController, AddRowCell {
         tableView.register(R.nib.infoTicketTableViewCell)
         tableView.register(R.nib.titleInventoryCell)
         tableView.register(R.nib.invenTableViewCell)
+        tableView.register(R.nib.contentSheetTBCell)
+        tableView.register(R.nib.itemTicketCTableCell)
         tableView.register(R.nib.totalItemTableViewCell)
         tableView.register(R.nib.imageViewCell)
         tableView.register(R.nib.errorTableViewCell)
@@ -326,31 +333,49 @@ class ActionInventoryViewController: BaseViewController, AddRowCell {
 
 extension ActionInventoryViewController: UITableViewDataSource, UITableViewDelegate {
     
+    private enum DisplaySection: Int {
+        case info = 0
+        case oldTitle = 1
+        case oldRows = 2
+        case oldSum = 3
+        case error = 4
+        case cTitle = 5
+        case cRows = 6
+        case note = 7
+        case image = 8
+        case historyTitle = 9
+        case historyRows = 10
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 10
+        return 11
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch SectionInventory(rawValue: section) {
-        case .titleInventory,
-                .sumInventory:
+        switch DisplaySection(rawValue: section) {
+        case .oldTitle,
+                .oldSum:
             return 1
-        case .rowInventory:
+        case .oldRows:
             return arrayData.count
-        case .titleHistory,
-                .infoSheet:
+        case .cTitle:
+            return isDocCMonitor ? 1 : 0
+        case .cRows:
+            return isDocCMonitor ? (listDocComponentCs.count == 0 ? 1 : listDocComponentCs.count) : 0
+        case .historyTitle,
+                .info:
             return 1
-        case .imageViewCell:
+        case .image:
             if evicenceImg?.count ?? 0 > 0 {
                 return 1
             } else {
                 return 0
             }
-        case .historyInventory:
+        case .historyRows:
             return dataHistory.count
-        case .noteInventory:
+        case .note:
             return self.dataDetailSheets?.status == 6 ? 0 : 1
-        case .errorTable:
+        case .error:
             return !errorValid ? 0 : 1
         default:
             return 0
@@ -358,19 +383,19 @@ extension ActionInventoryViewController: UITableViewDataSource, UITableViewDeleg
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch SectionInventory(rawValue: indexPath.section) {
-        case .infoSheet:
+        switch DisplaySection(rawValue: indexPath.section) {
+        case .info:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: R.nib.infoTicketTableViewCell, for: indexPath) else {return UITableViewCell()}
             cell.delegateAddRow = self
             cell.fillDataMonitor(model: dataDetailSheets)
             cell.addRowButton.isHidden = true
             cell.selectionStyle = .none
             return cell
-        case .titleInventory:
+        case .oldTitle:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: R.nib.titleInventoryCell, for: indexPath) else {return UITableViewCell()}
             cell.selectionStyle = .none
             return cell
-        case .rowInventory:
+        case .oldRows:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: R.nib.invenTableViewCell, for: indexPath) else {return UITableViewCell()}
             cell.selectionStyle = .none
             cell.setDataToCellMonitor(data: arrayData[indexPath.row],index: indexPath.row, isLast: (arrayData.count - 1) == indexPath.row ? true : false, isHiddenCheckBox: dataDetailSheets?.status == 6, isHideTextField: false)
@@ -418,18 +443,43 @@ extension ActionInventoryViewController: UITableViewDataSource, UITableViewDeleg
                 self.changeColorButton()
             }
             return cell
-        case .sumInventory:
+        case .cTitle:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: R.nib.contentSheetTBCell, for: indexPath) as? ContentSheetTBCell else { return UITableViewCell() }
+            cell.selectionStyle = .none
+            cell.setDataToCell(isContent: false, index: indexPath.row)
+            cell.sttLabel.text = "STT".localized()
+            cell.codeLabel.text = "Mã linh kiện".localized()
+            cell.bomLabel.text = "Bom".localized()
+            cell.numberLabel.text = "Số lượng".localized()
+            return cell
+        case .cRows:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: R.nib.itemTicketCTableCell, for: indexPath) else { return UITableViewCell() }
+            cell.selectionStyle = .none
+            if self.listDocComponentCs.count == 0 {
+                cell.emptyDataLabel.isHidden = false
+                cell.containerView.isHidden = true
+                cell.emptyDataLabel.text = "Không có dữ liệu".localized()
+            } else {
+                cell.emptyDataLabel.isHidden = true
+                cell.containerView.isHidden = false
+                cell.dataTest = listDocComponentCs[indexPath.row]
+                cell.sttLabel.text = "\(indexPath.row + 1)"
+                cell.regionUS = self.regionUS
+                cell.fillDataQuality()
+            }
+            return cell
+        case .oldSum:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: R.nib.totalItemTableViewCell, for: indexPath) else {return UITableViewCell()}
             cell.selectionStyle = .none
             
             cell.setDataToCell(totalValue: valueSumTest)
             
             return cell
-        case .errorTable:
+        case .error:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: R.nib.errorTableViewCell, for: indexPath) else {return UITableViewCell()}
             cell.selectionStyle = .none
             return cell
-        case .noteInventory:
+        case .note:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: R.nib.noteCell, for: indexPath) else {return UITableViewCell()}
             cell.selectionStyle = .none
             if self.dataDetailSheets?.status != 6 {
@@ -453,13 +503,13 @@ extension ActionInventoryViewController: UITableViewDataSource, UITableViewDeleg
                 cell.setDataForHistory(note: self.dataDetailSheets?.note ?? "")
             }
             return cell
-        case .titleHistory:
+        case .historyTitle:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: R.nib.noteCell, for: indexPath) else {return UITableViewCell()}
             cell.selectionStyle = .none
             cell.isHiddenAddButton = true
             cell.setDataForTitle()
             return cell
-        case .imageViewCell:
+        case .image:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: R.nib.imageViewCell, for: indexPath) else {return UITableViewCell()}
             cell.selectionStyle = .none
             if evicenceImg != nil {
@@ -475,7 +525,7 @@ extension ActionInventoryViewController: UITableViewDataSource, UITableViewDeleg
                 }
             }
             return cell
-        case .historyInventory:
+        case .historyRows:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: R.nib.historyInventoryCell, for: indexPath) else {return UITableViewCell()}
             cell.selectionStyle = .none
             cell.fillDataDocC(data: self.dataHistory[indexPath.row])
@@ -483,6 +533,45 @@ extension ActionInventoryViewController: UITableViewDataSource, UITableViewDeleg
         default:
             return UITableViewCell()
         }
+    }
+
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        guard let displaySection = DisplaySection(rawValue: section) else {
+            return .leastNonzeroMagnitude
+        }
+
+        switch displaySection {
+        case .oldSum:
+            return isDocCMonitor ? 44 : .leastNonzeroMagnitude
+        default:
+            return .leastNonzeroMagnitude
+        }
+    }
+
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        guard let displaySection = DisplaySection(rawValue: section),
+              displaySection == .oldSum,
+              isDocCMonitor else {
+            return nil
+        }
+
+        let footerView = UIView()
+        footerView.backgroundColor = .clear
+
+        let titleLabel = UILabel()
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.text = "Chi tiết".localized()
+        titleLabel.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        titleLabel.textColor = UIColor(named: R.color.textDefault.name)
+
+        footerView.addSubview(titleLabel)
+        NSLayoutConstraint.activate([
+            titleLabel.leadingAnchor.constraint(equalTo: footerView.leadingAnchor, constant: 16),
+            titleLabel.trailingAnchor.constraint(lessThanOrEqualTo: footerView.trailingAnchor, constant: -16),
+            titleLabel.bottomAnchor.constraint(equalTo: footerView.bottomAnchor, constant: -8)
+        ])
+
+        return footerView
     }
     
     func updateRejectButtonState() {
@@ -508,12 +597,14 @@ extension ActionInventoryViewController: UITableViewDataSource, UITableViewDeleg
 
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch SectionInventory(rawValue: indexPath.section) {
-        case .noteInventory:
+        switch DisplaySection(rawValue: indexPath.section) {
+        case .note:
             return self.isHiddenReason ? UITableView.automaticDimension : 130
-        case .titleHistory:
+        case .historyTitle:
             return 50
-        case .rowInventory, .sumInventory, .titleInventory:
+        case .cTitle, .cRows:
+            return 60
+        case .oldRows, .oldSum, .oldTitle:
             return 60
         default:
             return UITableView.automaticDimension
@@ -521,8 +612,8 @@ extension ActionInventoryViewController: UITableViewDataSource, UITableViewDeleg
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch SectionInventory(rawValue: indexPath.section) {
-        case .historyInventory:
+        switch DisplaySection(rawValue: indexPath.section) {
+        case .historyRows:
             guard let vc = Storyboards.historyInventoryDetail.instantiate() as? HistoryInventoryDetailViewController else {return}
             vc.componentCode = dataDetailSheets?.componentCode ?? ""
             vc.componentName = dataDetailSheets?.componentName ?? ""
