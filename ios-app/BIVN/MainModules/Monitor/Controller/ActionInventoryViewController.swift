@@ -43,7 +43,8 @@ class ActionInventoryViewController: BaseViewController, AddRowCell {
     var evicenceImg: String?
     private var imageCapture: UIImage?
     private var isDocCMonitor: Bool {
-        return dataDetailSheets?.docComponentCs != nil
+        let isSelectedDocC = UserDefault.shared.getMonitorDocType() ?? false
+        return isSelectedDocC && dataDetailSheets?.docComponentCs != nil
     }
     
     override func viewDidLoad() {
