@@ -115,24 +115,25 @@ class InfoTicketTableViewCell: BaseTableViewCell {
         addRowButton.isHidden = model?.status == 6
         addRowButton.setTitle("+ Thêm dòng".localized(), for: .normal)
         let modelCode = model?.modelCode?.trimmingCharacters(in: .whitespacesAndNewlines)
-        let isShowModelCodeOnly = model?.docComponentCs != nil && (model?.docComponentCs?.count ?? 0) > 0
+        let isDocCDetail = model?.docComponentCs != nil && (model?.docComponentCs?.count ?? 0) > 0
+        let virtualClusterName = "\(model?.machineModel ?? "") - \(model?.machineType ?? "") - \(model?.lineName ?? "") - \(model?.stageName ?? "")"
 
-        titleTicketNameLabel.text = isShowModelCodeOnly ? "Model code:".localized() : "Mã linh kiện:".localized()
-        titleStatusLabel.text = "Tên linh kiện:".localized()
+        titleTicketNameLabel.text = isDocCDetail ? "Model code:".localized() : "Mã linh kiện:".localized()
+        titleStatusLabel.text = isDocCDetail ? "Tên cụm ảo:".localized() : "Tên linh kiện:".localized()
         titleSalesOrderLabel.text = "Vị trí:".localized()
         titleNoteLabel.text = "Trạng thái:".localized()
         titleLocationLabel.text = "Sales order:".localized()
         titleNameLabel.text = "Lưu ý:".localized()
-        ticketNameLabel.text = isShowModelCodeOnly ? modelCode : model?.componentCode
-        statusLabel.text = isShowModelCodeOnly ? nil : model?.componentName
+        ticketNameLabel.text = isDocCDetail ? modelCode : model?.componentCode
+        statusLabel.text = isDocCDetail ? virtualClusterName : model?.componentName
         salesOrderLabel.text = model?.positionCode
         noteLabel.text = model?.getStatusPartCode()
         noteLabel.textColor = UIColor(named: model?.getColorStatus() ?? "")
         locationLabel.text = model?.salesOrder
         nameLabel.text = model?.note
 
-        titleStatusLabel.isHidden = isShowModelCodeOnly
-        statusLabel.isHidden = isShowModelCodeOnly
+        titleStatusLabel.isHidden = false
+        statusLabel.isHidden = false
         
         loacationStackView.isHidden = model?.salesOrder?.isEmpty ?? true
         ticketStackView.isHidden = model?.note?.isEmpty ?? true
