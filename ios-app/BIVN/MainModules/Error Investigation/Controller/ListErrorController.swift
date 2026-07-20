@@ -205,6 +205,9 @@ class ListErrorController: BaseViewController, UITableViewDelegate, UITableViewD
         self.currentPage = 1
         self.listErrorModel = []
         self.hasMoreData = true
+        self.errorLabel.isHidden = true
+        self.tableView.isHidden = false
+        self.tableView.reloadData()
         callAPI(inventoryId: UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.inventoryModel?.inventoryId ?? "")
     }
     
@@ -455,7 +458,8 @@ class ListErrorController: BaseViewController, UITableViewDelegate, UITableViewD
         }
         return cell
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {///
+        guard indexPath.row >= 0, indexPath.row < listErrorModel.count else { return }
         let itemData = listErrorModel[indexPath.row]
         self.callAPIDocumentCheck(inventoryId: UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.inventoryModel?.inventoryId ?? "", componentCode: itemData.componentCode ?? "", itemData: itemData)
     }

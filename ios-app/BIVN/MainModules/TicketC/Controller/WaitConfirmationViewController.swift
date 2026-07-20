@@ -128,6 +128,7 @@ class WaitConfirmationViewController: BaseViewController, UITableViewDataSource,
                     }
                     self.listDocComponentCs = response.data?.docComponentCs ?? []
                     self.listDocHistories = response.data?.docHistories ?? []
+                    self.sortHighlightedRows()
                     self.title = response.data?.docCode ?? ""
                     self.titleTicket = "\(response.data?.machineModel ?? "") - \(response.data?.machineType ?? "") - \(response.data?.lineName ?? "") - \(response.data?.stageName ?? "")"
                     self.dataInfo = response.data ?? ResultData()
@@ -187,6 +188,17 @@ class WaitConfirmationViewController: BaseViewController, UITableViewDataSource,
         if let titleString = titleString {
             title = titleString
         }
+    }
+    
+    private func sortHighlightedRows() {
+        self.listDocComponentCs = self.listDocComponentCs.enumerated().sorted { lhs, rhs in
+            let lhsHighlight = (lhs.element.isHighLight ?? false) || (lhs.element.isHighLightLocal ?? false)
+            let rhsHighlight = (rhs.element.isHighLight ?? false) || (rhs.element.isHighLightLocal ?? false)
+            if lhsHighlight != rhsHighlight {
+                return lhsHighlight && !rhsHighlight
+            }
+            return lhs.offset < rhs.offset
+        }.map { $0.element }
     }
     
     private func showToast() {

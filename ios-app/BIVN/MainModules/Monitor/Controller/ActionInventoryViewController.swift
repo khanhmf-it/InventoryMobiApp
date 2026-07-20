@@ -76,6 +76,7 @@ class ActionInventoryViewController: BaseViewController, AddRowCell {
         
         var totalValue: Double = 0.0
         listDocComponentCs = dataDetailSheets?.docComponentCs ?? []
+        sortHighlightedRows()
         if arrayData.count != 0 {
             for item in arrayData {
                 var convertABE = ConvertDocComponentABEs()
@@ -151,6 +152,17 @@ class ActionInventoryViewController: BaseViewController, AddRowCell {
         
         self.valueSumTest = totalValue
         self.tableView.reloadSections(IndexSet(integer: SectionInventory.sumInventory.rawValue), with: .none)
+    }
+
+    private func sortHighlightedRows() {
+        self.listDocComponentCs = self.listDocComponentCs.enumerated().sorted { lhs, rhs in
+            let lhsHighlight = (lhs.element.isHighLight ?? false) || (lhs.element.isHighLightLocal ?? false)
+            let rhsHighlight = (rhs.element.isHighLight ?? false) || (rhs.element.isHighLightLocal ?? false)
+            if lhsHighlight != rhsHighlight {
+                return lhsHighlight && !rhsHighlight
+            }
+            return lhs.offset < rhs.offset
+        }.map { $0.element }
     }
     
     @objc private func onTapBack() {
