@@ -11,7 +11,7 @@ import Moya
 import IQKeyboardManagerSwift
 import Localize_Swift
 
-class ScanCodeTicketCViewController: BaseViewController {
+class ScanCodeTicketCViewController: BaseViewController {//
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var errorEmptyComponentLabel: UILabel!
@@ -21,6 +21,7 @@ class ScanCodeTicketCViewController: BaseViewController {
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var heightStackViewContrain: NSLayoutConstraint!
+    @IBOutlet weak var scannerViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var stageNameTextField: UITextField!
     @IBOutlet weak var virtualClusterNameTextField: UITextField!
     @IBOutlet weak var totalCountView: UIView!
@@ -86,6 +87,7 @@ class ScanCodeTicketCViewController: BaseViewController {
         errorEmptyComponentLabel.isHidden = true
         errorEmptyComponentLabel.text = "Vui lòng nhập tên cụm ảo.".localized()
         contentLabel.text = "Đưa camera hướng về mã linh kiện".localized()
+        adjustLayoutForSmallScreen()
         setupFinishCount()
     }
     
@@ -95,6 +97,20 @@ class ScanCodeTicketCViewController: BaseViewController {
             percentLabel.text = "\(finishCount) / \(totalCount)"
             let percentWidth = totalCountView.frame.width
             widthFinishCountConstraint.constant = CGFloat(percent) * percentWidth
+        }
+    }
+
+    private func adjustLayoutForSmallScreen() {
+        let screenHeight = UIScreen.main.bounds.height
+        let isCompactScreen = screenHeight <= 667
+
+        if isCompactScreen {
+            scannerViewHeightConstraint.constant = 220
+            contentLabel.numberOfLines = 2
+            contentLabel.font = UIFont.systemFont(ofSize: 13)
+            titleLabel.font = UIFont.boldSystemFont(ofSize: 15)
+            sendButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+            inventoryListLabel.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         }
     }
 

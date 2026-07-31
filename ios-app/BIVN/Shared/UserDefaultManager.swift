@@ -139,7 +139,7 @@ class UserDefault {
         case 114:
             errorString = "Linh kiện người khác đã giám sát. Vui lòng thử lại.".localized()
         case 115:
-            errorString = "Link kiện thuộc danh sách giám sát của người khác. Vui lòng thử lại".localized()
+            errorString = "Linh kiện thuộc danh sách giám sát của người khác. Vui lòng thử lại".localized()
         default:
             errorString = "Lỗi \(errorCode)"
         }

@@ -1335,23 +1335,23 @@
                                                 <rect key="frame" x="37.666666666666657" y="55.333333333333314" width="315" height="315"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="315" id="hx3-3J-hrd"/>
-                                                    <constraint firstAttribute="width" constant="315" id="kPe-Ek-D0z"/>
+                                                    <constraint firstAttribute="height" constant="280" id="hx3-3J-hrd"/>
+                                                    <constraint firstAttribute="width" constant="280" id="kPe-Ek-D0z"/>
                                                 </constraints>
                                             </view>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_scan" translatesAutoresizingMaskIntoConstraints="NO" id="hes-Cu-Q76">
                                                 <rect key="frame" x="32.666666666666657" y="50.333333333333314" width="325" height="325"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="325" id="2vS-6Y-xIB"/>
-                                                    <constraint firstAttribute="width" constant="325" id="6vX-jf-CGe"/>
+                                                    <constraint firstAttribute="height" constant="280" id="2vS-6Y-xIB"/>
+                                                    <constraint firstAttribute="width" constant="280" id="6vX-jf-CGe"/>
                                                 </constraints>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TjE-yY-mB0">
                                                 <rect key="frame" x="37.666666666666657" y="55.333333333333314" width="315" height="315"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="315" id="MFe-JD-ChM"/>
-                                                    <constraint firstAttribute="height" constant="315" id="ocG-sI-zzD"/>
+                                                    <constraint firstAttribute="width" constant="280" id="MFe-JD-ChM"/>
+                                                    <constraint firstAttribute="height" constant="280" id="ocG-sI-zzD"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đưa camera hướng về mã linh kiện" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCa-vA-Gqv">
@@ -1484,15 +1484,15 @@
                                             <constraint firstItem="7Kq-bL-pub" firstAttribute="trailing" secondItem="hes-Cu-Q76" secondAttribute="trailing" id="WDu-0n-oHW"/>
                                             <constraint firstItem="TjE-yY-mB0" firstAttribute="centerX" secondItem="KRp-dV-kjN" secondAttribute="centerX" id="X1Y-7c-Hp3"/>
                                             <constraint firstItem="mCa-vA-Gqv" firstAttribute="centerX" secondItem="KRp-dV-kjN" secondAttribute="centerX" id="ZK7-V3-aeh"/>
-                                            <constraint firstItem="SVz-Os-6XU" firstAttribute="top" secondItem="ZPC-h2-7bE" secondAttribute="bottom" constant="20" id="dOQ-Hg-ghB"/>
+                                            <constraint firstItem="SVz-Os-6XU" firstAttribute="top" secondItem="ZPC-h2-7bE" secondAttribute="bottom" constant="12" id="dOQ-Hg-ghB"/>
                                             <constraint firstItem="SVz-Os-6XU" firstAttribute="centerX" secondItem="KRp-dV-kjN" secondAttribute="centerX" id="ePb-qL-6mu"/>
                                             <constraint firstItem="VX7-14-dbB" firstAttribute="leading" secondItem="hes-Cu-Q76" secondAttribute="leading" id="f8b-xq-7Gq"/>
                                             <constraint firstItem="ZT5-YN-2fM" firstAttribute="leading" secondItem="hes-Cu-Q76" secondAttribute="leading" id="iTI-ju-Q9K"/>
                                             <constraint firstItem="CF4-u2-wIv" firstAttribute="leading" secondItem="hes-Cu-Q76" secondAttribute="leading" id="mJ4-Rv-liv"/>
                                             <constraint firstItem="7Kq-bL-pub" firstAttribute="top" secondItem="hes-Cu-Q76" secondAttribute="bottom" constant="8" id="mz1-aK-SIb"/>
-                                            <constraint firstItem="TjE-yY-mB0" firstAttribute="top" secondItem="ZPC-h2-7bE" secondAttribute="bottom" constant="20" id="tBR-rI-pKZ"/>
-                                            <constraint firstItem="KPs-Hb-Nkr" firstAttribute="top" secondItem="CF4-u2-wIv" secondAttribute="bottom" constant="10" id="tdM-h0-GOW"/>
-                                            <constraint firstItem="ZPC-h2-7bE" firstAttribute="top" secondItem="KRp-dV-kjN" secondAttribute="top" constant="16" id="uHB-bx-UZv"/>
+                                            <constraint firstItem="TjE-yY-mB0" firstAttribute="top" secondItem="ZPC-h2-7bE" secondAttribute="bottom" constant="12" id="tBR-rI-pKZ"/>
+                                            <constraint firstItem="KPs-Hb-Nkr" firstAttribute="top" secondItem="CF4-u2-wIv" secondAttribute="bottom" constant="8" id="tdM-h0-GOW"/>
+                                            <constraint firstItem="ZPC-h2-7bE" firstAttribute="top" secondItem="KRp-dV-kjN" secondAttribute="top" constant="12" id="uHB-bx-UZv"/>
                                             <constraint firstItem="CF4-u2-wIv" firstAttribute="trailing" secondItem="hes-Cu-Q76" secondAttribute="trailing" id="zgC-NL-WAx"/>
                                             <constraint firstItem="ZPC-h2-7bE" firstAttribute="centerX" secondItem="KRp-dV-kjN" secondAttribute="centerX" id="zys-rb-TpK"/>
                                         </constraints>
@@ -1501,7 +1501,7 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="KRp-dV-kjN" secondAttribute="trailing" id="NUx-59-KgQ"/>
                                     <constraint firstItem="KRp-dV-kjN" firstAttribute="width" secondItem="HzZ-o1-rfK" secondAttribute="width" id="UPt-B6-fmO"/>
-                                    <constraint firstItem="KRp-dV-kjN" firstAttribute="height" secondItem="HzZ-o1-rfK" secondAttribute="height" priority="999" id="Uhq-Dg-nhX"/>
+                                    <constraint firstItem="KRp-dV-kjN" firstAttribute="height" secondItem="HzZ-o1-rfK" secondAttribute="height" relation="greaterThanOrEqual" priority="999" id="Uhq-Dg-nhX"/>
                                     <constraint firstItem="KRp-dV-kjN" firstAttribute="leading" secondItem="HzZ-o1-rfK" secondAttribute="leading" id="Ymo-tu-1RT"/>
                                     <constraint firstAttribute="bottom" secondItem="KRp-dV-kjN" secondAttribute="bottom" id="p6J-E1-vN0"/>
                                     <constraint firstItem="KRp-dV-kjN" firstAttribute="top" secondItem="HzZ-o1-rfK" secondAttribute="top" id="u3T-PD-05z"/>
@@ -1526,6 +1526,7 @@
                         <outlet property="inventoryListLabel" destination="KPs-Hb-Nkr" id="xR0-kp-9YO"/>
                         <outlet property="percentLabel" destination="kDN-DU-JLD" id="Zp2-Hu-YwN"/>
                         <outlet property="scanerView" destination="SVz-Os-6XU" id="ZU4-rg-Glv"/>
+                        <outlet property="scannerViewHeightConstraint" destination="hx3-3J-hrd" id="Qw3-7u-2mP"/>
                         <outlet property="sendButton" destination="VX7-14-dbB" id="XME-5h-FTZ"/>
                         <outlet property="stageNameTextField" destination="O7t-Wv-XKM" id="oiD-KZ-AOe"/>
                         <outlet property="titleLabel" destination="ZPC-h2-7bE" id="87j-Lf-17I"/>

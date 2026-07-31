@@ -357,7 +357,7 @@ class ListAccessoryNotInventoryViewController: BaseViewController, UITableViewDa
     
     var listDataTicket = [DetailResponseDataTicket]()
     private func naviShowDetailDocAE(inventoryId: String, accountId: String, componentCode: String, isConfirm: Bool, positionCode: String, docCode: String) {
-        self.startLoading()
+        self.startLoading()//
         guard InternetManager.isConnected() else {
             self.showAlerInternet()
             return
@@ -373,9 +373,10 @@ class ListAccessoryNotInventoryViewController: BaseViewController, UITableViewDa
         let networkManager: NetworkManager = NetworkManager()
         networkManager.getDetailTicket(inventoryId: inventoryId, accountId: accountId, componentCode: componentCode, isConfirm: isConfirm, param: param) { [weak self] result in
             self?.stopLoading()
+            guard let self = self else { return }
+            self.tableView.isUserInteractionEnabled = true
             switch result {
             case .success(let response):
-                guard let `self` = self else { return }
                 if response.code == 200 {
                     let responseData = response.data ?? []
                     guard !responseData.isEmpty else {
@@ -486,7 +487,7 @@ class ListAccessoryNotInventoryViewController: BaseViewController, UITableViewDa
             case .failure(let error):
                 if case MoyaError.underlying(let underlyingError, _) = error {
                     if (underlyingError as NSError).code == 13 {
-                        self?.showAlertConfigTimeOut()
+                        self.showAlertConfigTimeOut()
                     }
                 }
                 print(error.localizedDescription)
@@ -504,9 +505,10 @@ class ListAccessoryNotInventoryViewController: BaseViewController, UITableViewDa
         param["modelCode"] = modelCode ?? ""
         param["actionType"] = isConfirm
         networkManager.scanDocB(isErrorInvestigation: isErrorInvestigation,param: param) { [weak self] result in
+            guard let self = self else { return }
+            self.tableView.isUserInteractionEnabled = true
             switch result {
             case .success(let response):
-                guard let `self` = self else { return }
                 if response.code == 200 {
                     let responseData = response.data ?? []
                     self.listDataTicket = responseData
@@ -574,7 +576,7 @@ class ListAccessoryNotInventoryViewController: BaseViewController, UITableViewDa
             case .failure(let error):
                 if case MoyaError.underlying(let underlyingError, _) = error {
                     if (underlyingError as NSError).code == 13 {
-                        self?.showAlertConfigTimeOut()
+                        self.showAlertConfigTimeOut()
                     }
                 }
                 print(error.localizedDescription)
