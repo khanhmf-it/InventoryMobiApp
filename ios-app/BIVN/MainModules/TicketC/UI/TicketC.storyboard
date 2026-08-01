@@ -1469,7 +1469,7 @@
                                         <constraints>
                                             <constraint firstItem="7Kq-bL-pub" firstAttribute="leading" secondItem="hes-Cu-Q76" secondAttribute="leading" id="2Tq-Jb-TwA"/>
                                             <constraint firstItem="kDN-DU-JLD" firstAttribute="centerX" secondItem="X57-VV-uvt" secondAttribute="centerX" id="2tP-1J-uQp"/>
-                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="7Kq-bL-pub" secondAttribute="bottom" constant="60" id="43W-fB-C19"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="KPs-Hb-Nkr" secondAttribute="bottom" constant="20" id="43W-fB-C19"/>
                                             <constraint firstItem="KPs-Hb-Nkr" firstAttribute="trailing" secondItem="hes-Cu-Q76" secondAttribute="trailing" id="4jP-Za-Ceg"/>
                                             <constraint firstItem="KPs-Hb-Nkr" firstAttribute="leading" secondItem="hes-Cu-Q76" secondAttribute="leading" id="88W-Rr-nj9"/>
                                             <constraint firstItem="VX7-14-dbB" firstAttribute="top" secondItem="ZT5-YN-2fM" secondAttribute="bottom" constant="6" id="Axx-1F-tGE"/>
@@ -1518,15 +1518,20 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="animationViewHeightConstraint" destination="ocG-sI-zzD" id="lYJ-T2-7mG"/>
+                        <outlet property="animationViewWidthConstraint" destination="MFe-JD-ChM" id="zRy-rS-FKD"/>
                         <outlet property="animationView" destination="TjE-yY-mB0" id="RCy-Ob-RN2"/>
                         <outlet property="contentLabel" destination="mCa-vA-Gqv" id="bDi-hj-yyd"/>
                         <outlet property="errorEmptyComponentLabel" destination="ZT5-YN-2fM" id="xAQ-ZI-JMG"/>
                         <outlet property="heightStackViewContrain" destination="43W-fB-C19" id="7h5-dW-SUK"/>
+                        <outlet property="imageScanViewHeightConstraint" destination="2vS-6Y-xIB" id="doz-4L-ztj"/>
+                        <outlet property="imageScanViewWidthConstraint" destination="6vX-jf-CGe" id="kqY-uD-ajT"/>
                         <outlet property="imageScanView" destination="hes-Cu-Q76" id="MTr-Sn-He2"/>
                         <outlet property="inventoryListLabel" destination="KPs-Hb-Nkr" id="xR0-kp-9YO"/>
                         <outlet property="percentLabel" destination="kDN-DU-JLD" id="Zp2-Hu-YwN"/>
                         <outlet property="scanerView" destination="SVz-Os-6XU" id="ZU4-rg-Glv"/>
                         <outlet property="scannerViewHeightConstraint" destination="hx3-3J-hrd" id="Qw3-7u-2mP"/>
+                        <outlet property="scannerViewWidthConstraint" destination="kPe-Ek-D0z" id="Df4-Q3-8n4"/>
                         <outlet property="sendButton" destination="VX7-14-dbB" id="XME-5h-FTZ"/>
                         <outlet property="stageNameTextField" destination="O7t-Wv-XKM" id="oiD-KZ-AOe"/>
                         <outlet property="titleLabel" destination="ZPC-h2-7bE" id="87j-Lf-17I"/>

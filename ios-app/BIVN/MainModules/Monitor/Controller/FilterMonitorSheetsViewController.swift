@@ -116,20 +116,67 @@ class FilterMonitorSheetsViewController: BaseViewController, UITableViewDataSour
     }
     
     private func showChooseMonitorDocTypePopup() {
-        self.showPopUpAlert(title: "Chọn loại phiếu".localized(), array: ["Loại phiếu A,B,E".localized(), "Loại phiếu C".localized()]) { [weak self] in
-            self?.navigationController?.popViewController(animated: true)
-        } accept: { [weak self] index in
+        let inventoryId = UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.inventoryModel?.inventoryId
+        let accountId = UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.accountId
+
+        loadMonitorDocTypeCounts(inventoryId: inventoryId, accountId: accountId) { [weak self] countABE, countC in
             guard let self = self else { return }
-            let isDocC = index == 1
-            self.selectedIsDocC = isDocC
-            UserDefault.shared.setMonitorDocType(isDocC: isDocC)
-            self.callAPI(inventoryId: UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.inventoryModel?.inventoryId,
-                         accountId: UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.accountId,
-                         departmentName: "-1",
-                         locationName: "-1",
-                         componentCode: "-1",
-                         isDocC: isDocC)
+            let popupData = [
+                self.monitorDocTypeOptionTitle(baseTitle: "Loại phiếu A,B,E".localized(), count: countABE),
+                self.monitorDocTypeOptionTitle(baseTitle: "Loại phiếu C".localized(), count: countC)
+            ]
+            self.showPopUpAlert(title: "Chọn loại phiếu".localized(), array: popupData) { [weak self] in
+                self?.navigationController?.popViewController(animated: true)
+            } accept: { [weak self] index in
+                guard let self = self else { return }
+                let isDocC = index == 1
+                self.selectedIsDocC = isDocC
+                UserDefault.shared.setMonitorDocType(isDocC: isDocC)
+                self.callAPI(inventoryId: inventoryId,
+                             accountId: accountId,
+                             departmentName: "-1",
+                             locationName: "-1",
+                             componentCode: "-1",
+                             isDocC: isDocC)
+            }
         }
+    }
+
+    private func loadMonitorDocTypeCounts(inventoryId: String?, accountId: String?, completion: @escaping (Int?, Int?) -> Void) {
+        let group = DispatchGroup()
+        var countABE: Int?
+        var countC: Int?
+
+        group.enter()
+        callAPICount(inventoryId: inventoryId,
+                     accountId: accountId,
+                     departmentName: "-1",
+                     locationName: "-1",
+                     componentCode: "-1",
+                     isDocC: false) { count in
+            countABE = count
+            group.leave()
+        }
+
+        group.enter()
+        callAPICount(inventoryId: inventoryId,
+                     accountId: accountId,
+                     departmentName: "-1",
+                     locationName: "-1",
+                     componentCode: "-1",
+                     isDocC: true) { count in
+            countC = count
+            group.leave()
+        }
+
+        group.notify(queue: .main) {
+            completion(countABE, countC)
+        }
+    }
+
+    private func monitorDocTypeOptionTitle(baseTitle: String, count: Int?) -> String {
+        guard let count = count else { return baseTitle }
+        return "\(baseTitle) (\(count))"
     }
 
     func callAPI(inventoryId: String?, accountId: String?, departmentName: String?, locationName: String?, componentCode: String?, isDocC: Bool? = nil) {
@@ -177,7 +224,50 @@ class FilterMonitorSheetsViewController: BaseViewController, UITableViewDataSour
             }
         }
     }
-    
+    // Lấy dữ liệu count cho từng loại phiếu để hiển thị khi chọn loại phiếu
+    func callAPICount(inventoryId: String?, accountId: String?, departmentName: String?, locationName: String?, componentCode: String?, isDocC: Bool? = nil, completion: ((Int?) -> Void)? = nil) {
+        let monitorDocC = isDocC ?? selectedIsDocC
+        var countParam = Dictionary<String, Any>()
+        countParam["inventoryId"] = inventoryId ?? ""
+        countParam["accountId"] = accountId ?? ""
+        countParam["departmentName"] = departmentName ?? "-1"
+        countParam["locationName"] = locationName ?? "-1"
+        countParam["componentCode"] = componentCode ?? "-1"
+        countParam["IsDocC"] = monitorDocC
+        networkManager.getCountListAudit(param: countParam) {[weak self] data in
+            switch data {
+            case .success(let response):
+                if response.code == 200 {
+                    completion?(response.data?.totalCount)
+                } else if response.code == 401 || response.code == 403 || response.code == 60 || response.code == 15 || response.code == 17 || response.code == 56 {
+                    self?.showAlertExpiredToken(code: response.code) { [weak self] result in
+                        guard let self = self else { return }
+                        if result {
+                            self.callAPICount(inventoryId: inventoryId,
+                                              accountId: accountId,
+                                              departmentName: departmentName,
+                                              locationName: locationName,
+                                              componentCode: componentCode,
+                                              isDocC: isDocC,
+                                              completion: completion)
+                        } else {
+                            completion?(nil)
+                        }
+                    }
+                } else {
+                    completion?(nil)
+                }
+            case .failure(let error):
+                if case MoyaError.underlying(let underlyingError, _) = error {
+                    if (underlyingError as NSError).code == 13 {
+                        self?.showAlertConfigTimeOut()
+                    }
+                }
+                print(error.localizedDescription)
+                completion?(nil)
+            }
+        }
+    }
     private func emptyData(listData: [AuditInfoModels]) {
         if listData.count == 0 {
             self.emptyLabel.isHidden = false

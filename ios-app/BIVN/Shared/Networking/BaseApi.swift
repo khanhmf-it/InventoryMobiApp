@@ -36,6 +36,7 @@ enum API {
     case getListDropdownLocation(inventoryId: String, accountId: String, departmentName: String)
     case getListDropdownComponent(inventoryId: String, accountId: String, departmentName: String, locationName: String)
     case getListAudit(params: Dictionary<String, Any>)
+    case getCountListAudit(params: Dictionary<String, Any>)
     case getListParCode(inventoryId: String, accountId: String, documentId: String, action: String, params: Dictionary<String, Any>)
     case submitInventory(userCode: String, inventoryId: String, accountId: String, documentId: String,containerModel: [DocComponentABEs], docTypeCModel: [DocComponentCs], image: Data, isCheckPushImage: Bool, isCheckPushDocC: Bool, idsDeleteDocOutPut: [String])
     case getDetailTicket(inventoryId: String, accountId: String, componentCode: String, isConfirm: Bool, params: Dictionary<String, Any>)
@@ -148,6 +149,8 @@ extension API: TargetType {
             return "/api/inventory/\(inventoryId)/account/\(accountId)/dropdown/department/\(departmentName)/location/\(locationName)/component"
         case .getListAudit:
             return "/api/inventory/list-audit"
+        case .getCountListAudit:
+            return "/api/inventory/count-audit-docs"
         case .getListParCode(let inventoryId, let accountId, let documentId, let action, _):
             return "/api/inventory/\(inventoryId)/account/\(accountId)/document/\(documentId)/action/\(action)"
         case .submitInventory(_,let inventoryId, let accountId, let documentId, _,_,_,_,_,_):
@@ -197,7 +200,7 @@ extension API: TargetType {
             return .post
         case .getStorage, .getPosition, .getDocType, .getInvestigationDetail:
             return .get
-        case .getListdocC, .getListAudit, .getListdocB, .scanDocB, .getListdocAE, .scanListDocC, .refreshToken:
+        case .getListdocC, .getListAudit, .getCountListAudit ,.getListdocB, .scanDocB, .getListdocAE, .scanListDocC, .refreshToken:
             return .post
         case .submitInventory, .submitAudit, .submitTicketCDoc, .submitErrorCorrection:
             return .post
@@ -232,7 +235,7 @@ extension API: TargetType {
             return .requestParameters(parameters: params, encoding: JSONEncoding.default)
         case .outputStorage(let params):
             return .requestParameters(parameters: params, encoding: JSONEncoding.default)
-        case .getListdocC(let params), .getListAudit(let params), .getListdocB(let params), .getListdocAE(let params), .scanListDocC(let params), .refreshToken(let params):
+        case .getListdocC(let params), .getListAudit(let params), .getCountListAudit(let params), .getListdocB(let params), .getListdocAE(let params), .scanListDocC(let params), .refreshToken(let params):
             return .requestParameters(parameters: params, encoding: JSONEncoding.default)
         case .getStorage, .errorCategory:
             return .requestPlain

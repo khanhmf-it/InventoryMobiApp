@@ -50,6 +50,16 @@ class InfoTicketTableViewCell: BaseTableViewCell {
         salesOrderLabel.font = fontUtils.size14.regular
         noteLabel.font = fontUtils.size14.regular
         noteLabel.textColor = UIColor(named: R.color.textRed.name)
+        ticketNameLabel.numberOfLines = 0
+        statusLabel.numberOfLines = 0
+        salesOrderLabel.numberOfLines = 0
+        locationLabel.numberOfLines = 0
+        nameLabel.numberOfLines = 0
+        ticketNameLabel.lineBreakMode = .byWordWrapping
+        statusLabel.lineBreakMode = .byWordWrapping
+        salesOrderLabel.lineBreakMode = .byWordWrapping
+        locationLabel.lineBreakMode = .byWordWrapping
+        nameLabel.lineBreakMode = .byWordWrapping
     }
     
     func setupTitle() {
@@ -66,6 +76,32 @@ class InfoTicketTableViewCell: BaseTableViewCell {
         scanQrButton.isHidden = true
         loacationStackView.isHidden = true
         ticketStackView.isHidden = true
+        let isDocCDetail = model?.docComponentCs != nil && (model?.docComponentCs?.count ?? 0) > 0
+
+        if isDocCDetail {
+            let modelCode = model?.modelCode?.trimmingCharacters(in: .whitespacesAndNewlines)
+            let virtualClusterName = "\(model?.machineModel ?? "") - \(model?.machineType ?? "") - \(model?.lineName ?? "") - \(model?.stageName ?? "")"
+
+            titleTicketNameLabel.text = "Model code:".localized()
+            titleStatusLabel.text = "Tên cụm ảo:".localized()
+            titleSalesOrderLabel.text = "Vị trí:".localized()
+            titleNoteLabel.text = "Trạng thái:".localized()
+            titleLocationLabel.text = "Sales order:".localized()
+            titleNameLabel.text = "Lưu ý:".localized()
+
+            ticketNameLabel.text = modelCode
+            statusLabel.text = virtualClusterName
+            salesOrderLabel.text = model?.positionCode
+            noteLabel.text = model?.getStatusPartCode()
+            noteLabel.textColor = UIColor(named: model?.getColorStatus() ?? "")
+            locationLabel.text = model?.salesOrder
+            nameLabel.text = model?.note
+
+            loacationStackView.isHidden = model?.salesOrder?.isEmpty ?? true
+            ticketStackView.isHidden = model?.note?.isEmpty ?? true
+            return
+        }
+
         ticketNameLabel.text = "\(model?.machineModel ?? "") - \(model?.machineType ?? "") - \(model?.lineName ?? "") - \(model?.stageName ?? "")"
         statusLabel.text = model?.getStatusPartCode()
         statusLabel.textColor = UIColor(named: model?.getColorStatus() ?? "")
@@ -105,6 +141,16 @@ class InfoTicketTableViewCell: BaseTableViewCell {
         locationLabel.font = fontUtils.size14.regular
         nameLabel.font = fontUtils.size14.regular
         nameLabel.textColor = UIColor(named: R.color.textRed.name)!
+        ticketNameLabel.numberOfLines = 0
+        statusLabel.numberOfLines = 0
+        salesOrderLabel.numberOfLines = 0
+        locationLabel.numberOfLines = 0
+        nameLabel.numberOfLines = 0
+        ticketNameLabel.lineBreakMode = .byWordWrapping
+        statusLabel.lineBreakMode = .byWordWrapping
+        salesOrderLabel.lineBreakMode = .byWordWrapping
+        locationLabel.lineBreakMode = .byWordWrapping
+        nameLabel.lineBreakMode = .byWordWrapping
         addRowButton.titleLabel?.font = fontUtils.size16.medium
         addRowButton.setTitle("+ Thêm dòng".localized(), for: .normal)
     }

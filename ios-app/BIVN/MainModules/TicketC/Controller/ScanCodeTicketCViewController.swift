@@ -22,12 +22,18 @@ class ScanCodeTicketCViewController: BaseViewController {//
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var heightStackViewContrain: NSLayoutConstraint!
     @IBOutlet weak var scannerViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var scannerViewWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var imageScanViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var imageScanViewWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var animationViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var animationViewWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var stageNameTextField: UITextField!
     @IBOutlet weak var virtualClusterNameTextField: UITextField!
     @IBOutlet weak var totalCountView: UIView!
     @IBOutlet weak var percentLabel: UILabel!
     @IBOutlet weak var widthFinishCountConstraint: NSLayoutConstraint!
     @IBOutlet weak var inventoryListLabel: UILabel!
+    private var defaultBottomSpacing: CGFloat = 20.0
     
     let networkManager: NetworkManager = NetworkManager()
     var type: TypeRole?
@@ -87,8 +93,16 @@ class ScanCodeTicketCViewController: BaseViewController {//
         errorEmptyComponentLabel.isHidden = true
         errorEmptyComponentLabel.text = "Vui lòng nhập tên cụm ảo.".localized()
         contentLabel.text = "Đưa camera hướng về mã linh kiện".localized()
+        inventoryListLabel.numberOfLines = 0
+        inventoryListLabel.textAlignment = .center
+        defaultBottomSpacing = heightStackViewContrain.constant
         adjustLayoutForSmallScreen()
         setupFinishCount()
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        previewLayer?.frame = scanerView.bounds
     }
     
     func setupFinishCount() {
@@ -102,16 +116,28 @@ class ScanCodeTicketCViewController: BaseViewController {//
 
     private func adjustLayoutForSmallScreen() {
         let screenHeight = UIScreen.main.bounds.height
-        let isCompactScreen = screenHeight <= 667
+        let isCompactScreen = screenHeight <= 736
 
         if isCompactScreen {
-            scannerViewHeightConstraint.constant = 220
+            applyScanAreaSize(220)
             contentLabel.numberOfLines = 2
             contentLabel.font = UIFont.systemFont(ofSize: 13)
             titleLabel.font = UIFont.boldSystemFont(ofSize: 15)
             sendButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+            stageNameTextField.font = UIFont.systemFont(ofSize: 13)
+            virtualClusterNameTextField.font = UIFont.systemFont(ofSize: 13)
             inventoryListLabel.font = UIFont.systemFont(ofSize: 15, weight: .medium)
+            inventoryListLabel.numberOfLines = 2
         }
+    }
+
+    private func applyScanAreaSize(_ size: CGFloat) {
+        scannerViewHeightConstraint.constant = size
+        scannerViewWidthConstraint.constant = size
+        imageScanViewHeightConstraint.constant = size
+        imageScanViewWidthConstraint.constant = size
+        animationViewHeightConstraint.constant = size
+        animationViewWidthConstraint.constant = size
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -145,7 +171,7 @@ class ScanCodeTicketCViewController: BaseViewController {//
             let frame = userInfo[UIResponder.keyboardFrameEndUserInfoKey]
             let keyBoardRect = frame?.cgRectValue
             if let keyBoardHeight = keyBoardRect?.height {
-                self.heightStackViewContrain.constant = keyBoardHeight + 10
+                self.heightStackViewContrain.constant = defaultBottomSpacing + keyBoardHeight + 10
                 UIView.animate(withDuration: 0.3, animations: {
                     self.view.layoutIfNeeded()
                 })
@@ -154,7 +180,7 @@ class ScanCodeTicketCViewController: BaseViewController {//
     }
     
     @objc func keyBoardWillHide(notification: Notification){
-        self.heightStackViewContrain.constant = 60.0
+        self.heightStackViewContrain.constant = defaultBottomSpacing
         UIView.animate(withDuration: 0.3, animations: {
             self.view.layoutIfNeeded()
         })
