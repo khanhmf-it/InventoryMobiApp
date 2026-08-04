@@ -142,39 +142,17 @@ class FilterMonitorSheetsViewController: BaseViewController, UITableViewDataSour
         }
     }
 
-    private func loadMonitorDocTypeCounts(inventoryId: String?, accountId: String?, completion: @escaping (Int?, Int?) -> Void) {
-        let group = DispatchGroup()
-        var countABE: Int?
-        var countC: Int?
-
-        group.enter()
+    private func loadMonitorDocTypeCounts(inventoryId: String?, accountId: String?, completion: @escaping (String?, String?) -> Void) {
         callAPICount(inventoryId: inventoryId,
                      accountId: accountId,
                      departmentName: "-1",
                      locationName: "-1",
                      componentCode: "-1",
-                     isDocC: false) { count in
-            countABE = count
-            group.leave()
-        }
-
-        group.enter()
-        callAPICount(inventoryId: inventoryId,
-                     accountId: accountId,
-                     departmentName: "-1",
-                     locationName: "-1",
-                     componentCode: "-1",
-                     isDocC: true) { count in
-            countC = count
-            group.leave()
-        }
-
-        group.notify(queue: .main) {
-            completion(countABE, countC)
-        }
+                     isDocC: false,
+                     completion: completion)
     }
 
-    private func monitorDocTypeOptionTitle(baseTitle: String, count: Int?) -> String {
+    private func monitorDocTypeOptionTitle(baseTitle: String, count: String?) -> String {
         guard let count = count else { return baseTitle }
         return "\(baseTitle) (\(count))"
     }
@@ -224,8 +202,8 @@ class FilterMonitorSheetsViewController: BaseViewController, UITableViewDataSour
             }
         }
     }
-    // Lấy dữ liệu count cho từng loại phiếu để hiển thị khi chọn loại phiếu
-    func callAPICount(inventoryId: String?, accountId: String?, departmentName: String?, locationName: String?, componentCode: String?, isDocC: Bool? = nil, completion: ((Int?) -> Void)? = nil) {
+    // Lấy dữ liệu count cho từng loại phiếu để hiển thị khi chọn loại phiếu//
+    func callAPICount(inventoryId: String?, accountId: String?, departmentName: String?, locationName: String?, componentCode: String?, isDocC: Bool? = nil, completion: ((String?, String?) -> Void)? = nil) {
         let monitorDocC = isDocC ?? selectedIsDocC
         var countParam = Dictionary<String, Any>()
         countParam["inventoryId"] = inventoryId ?? ""
@@ -238,7 +216,7 @@ class FilterMonitorSheetsViewController: BaseViewController, UITableViewDataSour
             switch data {
             case .success(let response):
                 if response.code == 200 {
-                    completion?(response.data?.totalCount)
+                    completion?(response.data?.docABECount, response.data?.docCCount)
                 } else if response.code == 401 || response.code == 403 || response.code == 60 || response.code == 15 || response.code == 17 || response.code == 56 {
                     self?.showAlertExpiredToken(code: response.code) { [weak self] result in
                         guard let self = self else { return }
@@ -251,11 +229,11 @@ class FilterMonitorSheetsViewController: BaseViewController, UITableViewDataSour
                                               isDocC: isDocC,
                                               completion: completion)
                         } else {
-                            completion?(nil)
+                            completion?(nil, nil)
                         }
                     }
                 } else {
-                    completion?(nil)
+                    completion?(nil, nil)
                 }
             case .failure(let error):
                 if case MoyaError.underlying(let underlyingError, _) = error {
@@ -264,7 +242,7 @@ class FilterMonitorSheetsViewController: BaseViewController, UITableViewDataSour
                     }
                 }
                 print(error.localizedDescription)
-                completion?(nil)
+                completion?(nil, nil)
             }
         }
     }

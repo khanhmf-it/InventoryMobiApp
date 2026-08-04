@@ -19,6 +19,8 @@ struct ArrayDataAudit: Codable {
     var auditInfoModels: [AuditInfoModels]?
     var finishCount: Int?
     var totalCount: Int?
+    var docABECount: String?
+    var docCCount: String?
 }
 
 struct AuditInfoModels: Codable {

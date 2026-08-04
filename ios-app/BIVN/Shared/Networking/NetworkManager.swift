@@ -126,7 +126,7 @@ protocol Networkable {
         request(target: .getListAudit(params: param), completion: completion)
     }
     func getCountListAudit(param: Dictionary<String, Any>, completion: @escaping (Result<AuditModel, Error>) -> ()) {
-         request(target: .getListAudit(params: param), completion: completion)
+         request(target: .getCountListAudit(params: param), completion: completion)
      }
     func getListParCode(inventoryId: String, accountId: String, documentId: String, actionId: String, param: Dictionary<String, Any>, completion: @escaping (Result<PartCodeModel, Error>) -> ()) {
         request(target: .getListParCode(inventoryId: inventoryId, accountId: accountId, documentId: documentId, action: actionId, params: param), completion: completion)
