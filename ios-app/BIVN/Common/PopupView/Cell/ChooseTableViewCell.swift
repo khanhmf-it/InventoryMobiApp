@@ -18,8 +18,12 @@ class ChooseTableViewCell: UITableViewCell {
         statusLabel.isHidden = true
     }
     
-    func setDataToCell(data: String, status: Int = -1, isSelected: Bool = false) {
-        contentLabel.attributedText = setAtribute(message1: "\(data) ", message2: getStatusPartCode(status: status) , textColor1: UIColor(named: R.color.textDefault.name) ?? UIColor.black, textColor2: UIColor(named: getColorStatus(status: status)) ?? UIColor.black)
+    func setDataToCell(data: String, status: Int = -1, isSelected: Bool = false, isAssignedTarget: Bool = false) {
+        let isPendingSupervision = isAssignedTarget && status == 5
+        let displayStatus = isPendingSupervision ? "Chưa giám sát".localized() : getStatusPartCode(status: status)
+        let statusColorName = isPendingSupervision ? R.color.textGray.name : getColorStatus(status: status)
+        contentLabel.attributedText = setAtribute(message1: "\(data) ", message2: displayStatus , textColor1: UIColor(named: R.color.textDefault.name) ?? UIColor.black, textColor2: UIColor(named: statusColorName) ?? UIColor.black)
+        contentView.backgroundColor = isAssignedTarget ? (UIColor(named: R.color.yellow.name)?.withAlphaComponent(0.6) ?? UIColor.yellow.withAlphaComponent(0.6)) : .clear
         
         imgChoice.image = isSelected ? UIImage(named: "ic_checked") : UIImage(named: "ic_emptyCheckBox")
     }
@@ -55,21 +59,21 @@ class ChooseTableViewCell: UITableViewCell {
     func getStatusPartCode(status: Int) -> String {
         switch status {
         case 0:
-            return "Chưa tiếp nhận"
+            return "Chưa tiếp nhận".localized()
         case 1:
-            return "Không kiểm kê"
+            return "Không kiểm kê".localized()
         case 2:
-            return "Chưa kiểm kê"
+            return "Chưa kiểm kê".localized()
         case 3:
-            return "Chờ xác nhận"
+            return "Chờ xác nhận".localized()
         case 4:
-            return "Cần chỉnh sửa"
+            return "Cần chỉnh sửa".localized()
         case 5:
-            return "Đã xác nhận"
+            return "Đã xác nhận".localized()
         case 6:
-            return "Đã đạt giám sát"
+            return "Đã đạt giám sát".localized()
         case 7:
-            return "Không đạt giám sát"
+            return "Không đạt giám sát".localized()
         default:
             return ""
         }

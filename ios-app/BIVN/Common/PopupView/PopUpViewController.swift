@@ -20,6 +20,7 @@ class PopUpViewController: UIViewController {
     var indexChoice = 0
     var arrayData: [String] = []
     var arrayStatus: [Int] = []
+    var arrayAssignedTarget: [Bool] = []
     var cancelClosure: (() -> Void)?
     var accpectClosure: ((Int?) -> ())?
     var titleText = ""
@@ -87,11 +88,12 @@ extension PopUpViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: R.nib.chooseTableViewCell, for: indexPath) else {return UITableViewCell()}
+        let isAssignedTarget = arrayAssignedTarget.indices.contains(indexPath.row) ? arrayAssignedTarget[indexPath.row] : false
         if !isHiddenRadio {
             if arrayStatus.count > 0 {
-                cell.setDataToCell(data: arrayData[indexPath.row], status: arrayStatus[indexPath.row], isSelected: indexChoice == indexPath.row ? true : false)
+                cell.setDataToCell(data: arrayData[indexPath.row], status: arrayStatus[indexPath.row], isSelected: indexChoice == indexPath.row ? true : false, isAssignedTarget: isAssignedTarget)
             } else {
-                cell.setDataToCell(data: arrayData[indexPath.row], isSelected: indexChoice == indexPath.row ? true : false)
+                cell.setDataToCell(data: arrayData[indexPath.row], isSelected: indexChoice == indexPath.row ? true : false, isAssignedTarget: isAssignedTarget)
             }
         } else {
             cell.isHiddenRadio(data:  arrayData[indexPath.row])

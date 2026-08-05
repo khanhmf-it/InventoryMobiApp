@@ -122,8 +122,8 @@ class FilterMonitorSheetsViewController: BaseViewController, UITableViewDataSour
         loadMonitorDocTypeCounts(inventoryId: inventoryId, accountId: accountId) { [weak self] countABE, countC in
             guard let self = self else { return }
             let popupData = [
-                self.monitorDocTypeOptionTitle(baseTitle: "Loại phiếu A,B,E".localized(), count: countABE),
-                self.monitorDocTypeOptionTitle(baseTitle: "Loại phiếu C".localized(), count: countC)
+                self.monitorDocTypeOptionTitle(baseTitle: "Loại phiếu A,B,E".localized(),mildTitle: "Giám sát".localized() , count: countABE),
+                self.monitorDocTypeOptionTitle(baseTitle: "Loại phiếu C".localized(),mildTitle: "Giám sát".localized() , count: countC)
             ]
             self.showPopUpAlert(title: "Chọn loại phiếu".localized(), array: popupData) { [weak self] in
                 self?.navigationController?.popViewController(animated: true)
@@ -152,9 +152,9 @@ class FilterMonitorSheetsViewController: BaseViewController, UITableViewDataSour
                      completion: completion)
     }
 
-    private func monitorDocTypeOptionTitle(baseTitle: String, count: String?) -> String {
+    private func monitorDocTypeOptionTitle(baseTitle: String, mildTitle: String, count: String?) -> String {
         guard let count = count else { return baseTitle }
-        return "\(baseTitle) (\(count))"
+        return "\(baseTitle) (\(mildTitle) \(count))"
     }
 
     func callAPI(inventoryId: String?, accountId: String?, departmentName: String?, locationName: String?, componentCode: String?, isDocC: Bool? = nil) {

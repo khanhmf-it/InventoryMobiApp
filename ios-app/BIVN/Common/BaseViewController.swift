@@ -124,7 +124,7 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
         self.showAlertNoti(title: "Thông báo".localized(), message: message ?? "", acceptButton: "Đồng ý".localized())
     }
     
-    func showPopUpAlert(title: String, array: [String], status: [Int] = [], cancel: @escaping () -> Void, accept: ((Int) -> ())?) -> Void {
+    func showPopUpAlert(title: String, array: [String], status: [Int] = [], assignedTargets: [Bool] = [], cancel: @escaping () -> Void, accept: ((Int) -> ())?) -> Void {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: "PopUpViewController") as! PopUpViewController
         vc.modalTransitionStyle = .crossDissolve
@@ -132,6 +132,7 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
         vc.titleText = title
         vc.arrayData = array
         vc.arrayStatus = status
+        vc.arrayAssignedTarget = assignedTargets
         vc.cancelClosure = cancel
         vc.accpectClosure = { value in
             accept?(value ?? 0)

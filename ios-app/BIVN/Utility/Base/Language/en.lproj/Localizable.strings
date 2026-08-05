@@ -180,6 +180,7 @@
 "Loại phiếu A,E" = "Sheet type A, E";
 "Loại phiếu B" = "Sheet type B";
 "Loại phiếu C" = "Sheet type C";
+"Loại phiếu A,B,E" = "Sheet type A,B,E";
 "Danh sách phiếu cần giám sát" = "List of sheets to monitor";
 "Danh sách LK chưa kiểm kê" = "List of uncounted components";
 "Danh sách LK chờ xác nhận" = "List of components pending confirmation";
@@ -269,6 +270,7 @@
 "Vui lòng chọn chuyền." = "Please select a line.";
 "Lựa chọn model code" = "Select model code";
 "Tên cụm không đúng định dạng. Vui lòng thử lại." = "The group name is in an incorrect format. Please try again.";
+"Tên cụm ảo:" = "Virtual cluster:";
 "Giám sát đạt" = "Monitoring completed successfully";
 "Lịch sử" = "History";
 "Tên phiếu:" = "Form name:";
@@ -408,3 +410,4 @@
 "Vui lòng nhập tên cụm ảo." = "Please enter virtual cluster name";
 "Mã linh kiện này chưa được kiểm kê hoặc đã được giám sát. Vui lòng thử lại." = "The part number has not been inventoried or has been monitored. Please try again.";
 "Mã linh kiện này đã được giám sát. Không được thực hiện kiểm kê và xác nhận lại." = "This part number has been monitored. Inventory check and confirmation cannot be performed again.";
+"Bộ lọc" = "Filter";

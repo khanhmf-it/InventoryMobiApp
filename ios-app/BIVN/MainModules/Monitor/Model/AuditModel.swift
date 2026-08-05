@@ -33,24 +33,25 @@ struct AuditInfoModels: Codable {
     var componentCode: String?
     var positionCode: String?
     var modelCode: String?
+    var isAssignedTarget: Bool?
     func getStatusMonitor() -> String {
         switch status {
         case 0:
-            return "Chưa tiếp nhận"
+            return "Chưa tiếp nhận".localized()
         case 1:
-            return "Không kiểm kê"
+            return "Không kiểm kê".localized()
         case 2:
-            return "Chưa kiểm kê"
+            return "Chưa kiểm kê".localized()
         case 3:
-            return "Chờ xác nhận"
+            return "Chờ xác nhận".localized()
         case 4:
-            return "Cần chỉnh sửa"
+            return "Cần chỉnh sửa".localized()
         case 5:
-            return "Đã xác nhận"
+            return "Đã xác nhận".localized()
         case 6:
-            return "Đã đạt giám sát"
+            return "Đã đạt giám sát".localized()
         case 7:
-            return "Không đạt giám sát"
+            return "Không đạt giám sát".localized()
         default:
             return ""
         }

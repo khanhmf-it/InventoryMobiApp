@@ -609,7 +609,7 @@ class ScanCodeMCViewController: BaseViewController {
     }
     
     private func getDetailMonitor(inventoryId: String, accountId: String, componentCode: String) {
-        self.startLoading()
+        self.startLoading()//
         var listData = [AuditInfoModels()]
         guard InternetManager.isConnected() else {
             self.showAlerInternet()
@@ -627,41 +627,20 @@ class ScanCodeMCViewController: BaseViewController {
                     listData = responseData
                     var arrayString = [String]()
                     var arrayStatus = [Int]()
+                    var arrayAssignedTarget = [Bool]()
                     
                     for item in listData {
                         arrayString.append(item.positionCode ?? "")
                         if let status = item.status {
                             arrayStatus.append(status)
                         }
+                        arrayAssignedTarget.append(item.isAssignedTarget ?? false)
                     }
                     
                     if listData.count == 1 {
-//                        // If this audit item is assigned to another account, inform the user.
-//                        let assignedAccountId = listData.first?.accountId ?? ""
-//                        let currentAccountId = UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.accountId ?? ""
-//                        if !assignedAccountId.isEmpty && assignedAccountId != currentAccountId {
-//                            self.showAlertNoti(title: "Thông báo".localized(), message: "Linh kiện thuộc danh sách giám sát của người khác".localized(), acceptButton: "Đồng ý".localized(), acceptOnTap: {
-//                                self.captureSession.startRunning()
-//                            })
-//                        } else {
-//                            self.callApiDetailMonitor(documentId: listData.first?.id ?? "", assignedAccountId: assignedAccountId)
-//                        }
                         self.callApiDetailMonitor(documentId: listData.first?.id ?? "")
                     } else {
-//                        self.showPopUpAlert(title: "Chọn vị trí".localized(), array: arrayString, status: arrayStatus) {
-//                            self.captureSession.startRunning()
-//                        } accept: { indexValue in
-//                            let assignedAccountId = listData[indexValue].accountId ?? ""
-//                            let currentAccountId = UserDefault.shared.getDataLoginModel().inventoryLoggedInfo?.accountId ?? ""
-//                            if !assignedAccountId.isEmpty && assignedAccountId != currentAccountId {
-//                                self.showAlertNoti(title: "Thông báo".localized(), message: "Linh kiện thuộc danh sách giám sát của người khác".localized(), acceptButton: "Đồng ý".localized(), acceptOnTap: {
-//                                    self.captureSession.startRunning()
-//                                })
-//                            } else {
-//                                self.callApiDetailMonitor(documentId: listData[indexValue].id ?? "", assignedAccountId: assignedAccountId)
-//                            }
-//                        }
-                        self.showPopUpAlert(title: "Chọn vị trí".localized(), array: arrayString, status: arrayStatus) {
+                        self.showPopUpAlert(title: "Chọn vị trí".localized(), array: arrayString, status: arrayStatus, assignedTargets: arrayAssignedTarget) {
                               self.captureSession.startRunning()
                         } accept: { indexValue in
                             self.callApiDetailMonitor(documentId: listData[indexValue].id ?? "")

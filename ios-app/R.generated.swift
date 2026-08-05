@@ -75,7 +75,7 @@ struct _R {
     }
 
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 366 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 368 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -253,6 +253,13 @@ struct _R {
       ///
       /// Locales: en, vi
       var bảngTiếnĐộKiểmKêTheoLoạiPhiếu: RswiftResources.StringResource { .init(key: "Bảng tiến độ kiểm kê theo loại phiếu", tableName: "Localizable", source: source, developmentValue: "Inventory progress table by document type", comment: nil) }
+
+      /// en translation: Filter
+      ///
+      /// Key: Bộ lọc
+      ///
+      /// Locales: en
+      var bộLọc: RswiftResources.StringResource { .init(key: "Bộ lọc", tableName: "Localizable", source: source, developmentValue: "Filter", comment: nil) }
 
       /// en translation: Details
       ///
@@ -904,6 +911,13 @@ struct _R {
       ///
       /// Locales: en, vi
       var loạiCôngĐoạn: RswiftResources.StringResource { .init(key: "Loại công đoạn", tableName: "Localizable", source: source, developmentValue: "Type of stage", comment: nil) }
+
+      /// en translation: Sheet type A,B,E
+      ///
+      /// Key: Loại phiếu A,B,E
+      ///
+      /// Locales: en
+      var loạiPhiếuABE: RswiftResources.StringResource { .init(key: "Loại phiếu A,B,E", tableName: "Localizable", source: source, developmentValue: "Sheet type A,B,E", comment: nil) }
 
       /// en translation: Sheet type A, E
       ///
@@ -1976,12 +1990,12 @@ struct _R {
       /// Locales: en, vi
       var tênCụmKhôngĐúngĐịnhDạngVuiLòngThửLại: RswiftResources.StringResource { .init(key: "Tên cụm không đúng định dạng. Vui lòng thử lại.", tableName: "Localizable", source: source, developmentValue: "The group name is in an incorrect format. Please try again.", comment: nil) }
 
-      /// en translation: Virtual group name
+      /// vi translation: Tên cụm ảo
       ///
       /// Key: Tên cụm ảo
       ///
-      /// Locales: en, vi
-      var tênCụmẢo: RswiftResources.StringResource { .init(key: "Tên cụm ảo", tableName: "Localizable", source: source, developmentValue: "Virtual group name", comment: nil) }
+      /// Locales: vi
+      var tênCụmẢo: RswiftResources.StringResource { .init(key: "Tên cụm ảo", tableName: "Localizable", source: source, developmentValue: nil, comment: nil) }
 
       /// en translation: Component Name:
       ///
