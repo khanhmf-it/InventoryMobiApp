@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Localize_Swift
 
 protocol NavigationBarProtocol {
     func menuButtonAction()
@@ -66,7 +67,7 @@ class CustomNavBar: UIView {
         codeNameLabel.textColor = UIColor(named: R.color.textGray.name)
         codeNameLabel.text = "(\(UserDefault.shared.getDataLoginModel().userCode ?? ""))"
         storageLabel.textColor = UIColor(named: R.color.textDefault.name)
-        storageLabel.text = "- Khu vực:"
+        storageLabel.text = "- \("Khu vực".localized()):"
         codeStorageLabel.textColor = UIColor(named: R.color.textGray.name)
         codeStorageLabel.text = "..."
         codeStorageView.layer.borderWidth = 1

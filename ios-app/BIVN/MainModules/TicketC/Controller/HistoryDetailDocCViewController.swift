@@ -78,11 +78,26 @@ class HistoryDetailDocCViewController: BaseViewController, UITableViewDataSource
     
     private func setupUI() {
         self.hideKeyboardWhenTappedAround()
+        localizeStaticHistoryLabels(in: view)
         let backImage = UIImage(named: R.image.ic_back.name)
         self.navigationController?.navigationBar.backIndicatorImage = backImage
         self.navigationItem.setHidesBackButton(true, animated: true)
         let buttonLeft = UIBarButtonItem(image: UIImage(named: R.image.ic_back.name), style: .plain, target: self, action: #selector(onTapBack))
         self.navigationItem.leftBarButtonItem = buttonLeft
+    }
+
+    private func localizeStaticHistoryLabels(in rootView: UIView) {
+        for subview in rootView.subviews {
+            if let label = subview as? UILabel, let text = label.text {
+                switch text {
+                case "Tên phiếu:", "Mã linh kiện:", "Tên linh kiện:":
+                    label.text = text.localized()
+                default:
+                    break
+                }
+            }
+            localizeStaticHistoryLabels(in: subview)
+        }
     }
     
     @objc private func onTapBack() {
@@ -309,7 +324,7 @@ class HistoryDetailDocCViewController: BaseViewController, UITableViewDataSource
                 self.getDetailHistory(params: self.param)
                 
             }
-            cell.textPageLabel.text = "of \(totalPage) pages"
+            cell.textPageLabel.text = String(format: "of %@ pages".localized(), "\(totalPage)")
             cell.onTapShowDropDown = { value, button in
                 self.showDropdown(text: value, size: button)
             }

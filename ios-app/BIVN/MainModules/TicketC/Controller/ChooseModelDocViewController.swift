@@ -86,8 +86,8 @@ class ChooseModelDocViewController: BaseViewController {
         requiredModelCodeLabel.isHidden = true
         requiredLineLabel.isHidden = true
         resetButton.setTitleColor(UIColor.black, for: .normal)
-        resetButton.setTitle("Reset".localized(), for: .normal)
-        confirmButton.setTitle("Confirm".localized(), for: .normal)
+        resetButton.setTitle("Cài đặt lại".localized(), for: .normal)
+        confirmButton.setTitle("Xác nhận".localized(), for: .normal)
         confirmButton.setTitleColor(UIColor(named: R.color.white.name), for: .normal)
         resetButton.layer.borderColor = UIColor(named: R.color.greyDC.name)?.cgColor
         resetButton.layer.borderWidth = 1.5

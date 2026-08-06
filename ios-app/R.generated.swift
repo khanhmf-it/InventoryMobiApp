@@ -75,7 +75,7 @@ struct _R {
     }
 
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 368 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 375 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -653,6 +653,13 @@ struct _R {
       /// Locales: en, vi
       var hủyBỏ: RswiftResources.StringResource { .init(key: "Hủy bỏ", tableName: "Localizable", source: source, developmentValue: "Cancel", comment: nil) }
 
+      /// en translation: Stock
+      ///
+      /// Key: Kho
+      ///
+      /// Locales: en
+      var kho: RswiftResources.StringResource { .init(key: "Kho", tableName: "Localizable", source: source, developmentValue: "Stock", comment: nil) }
+
       /// en translation: Area
       ///
       /// Key: Khu vực
@@ -904,6 +911,20 @@ struct _R {
       ///
       /// Locales: en, vi
       var linhKiệnLỗi: RswiftResources.StringResource { .init(key: "Linh kiện lỗi", tableName: "Localizable", source: source, developmentValue: "Defective Component", comment: nil) }
+
+      /// en translation: The component has already been inspected by someone else. Please select a different code.
+      ///
+      /// Key: Linh kiện người khác đã giám sát. Vui lòng chọn mã khác.
+      ///
+      /// Locales: en
+      var linhKiệnNgườiKhácĐãGiámSátVuiLòngChọnMãKhác: RswiftResources.StringResource { .init(key: "Linh kiện người khác đã giám sát. Vui lòng chọn mã khác.", tableName: "Localizable", source: source, developmentValue: "The component has already been inspected by someone else. Please select a different code.", comment: nil) }
+
+      /// en translation: This component is on another person's watchlist. Please select a different code.
+      ///
+      /// Key: Linh kiện thuộc danh sách giám sát của người khác. Vui lòng chọn mã khác.
+      ///
+      /// Locales: en
+      var linhKiệnThuộcDanhSáchGiámSátCủaNgườiKhácVuiLòngChọnMãKhác: RswiftResources.StringResource { .init(key: "Linh kiện thuộc danh sách giám sát của người khác. Vui lòng chọn mã khác.", tableName: "Localizable", source: source, developmentValue: "This component is on another person's watchlist. Please select a different code.", comment: nil) }
 
       /// en translation: Type of stage
       ///
@@ -1696,6 +1717,13 @@ struct _R {
       /// Locales: en, vi
       var thiếtBị: RswiftResources.StringResource { .init(key: "Thiết bị", tableName: "Localizable", source: source, developmentValue: "Device", comment: nil) }
 
+      /// en translation: Device has no camera.
+      ///
+      /// Key: Thiết bị không có camera.
+      ///
+      /// Locales: en, vi
+      var thiếtBịKhôngCóCamera: RswiftResources.StringResource { .init(key: "Thiết bị không có camera.", tableName: "Localizable", source: source, developmentValue: "Device has no camera.", comment: nil) }
+
       /// en translation: Exit
       ///
       /// Key: Thoát
@@ -2312,6 +2340,13 @@ struct _R {
       /// Locales: en, vi
       var vuiLòngĐăngNhậpLại: RswiftResources.StringResource { .init(key: "Vui lòng đăng nhập lại.", tableName: "Localizable", source: source, developmentValue: "Please log in again.", comment: nil) }
 
+      /// en translation: View
+      ///
+      /// Key: Xem
+      ///
+      /// Locales: en, vi
+      var xem: RswiftResources.StringResource { .init(key: "Xem", tableName: "Localizable", source: source, developmentValue: "View", comment: nil) }
+
       /// en translation: View Detail
       ///
       /// Key: Xem chi tiết
@@ -2374,6 +2409,13 @@ struct _R {
       ///
       /// Locales: en, vi
       var xóaPhòngBanThànhCông: RswiftResources.StringResource { .init(key: "Xóa phòng ban thành công.", tableName: "Localizable", source: source, developmentValue: "Delete department successfully", comment: nil) }
+
+      /// en translation: of %@ pages
+      ///
+      /// Key: of %@ pages
+      ///
+      /// Locales: en, vi
+      var ofPages: RswiftResources.StringResource1<String> { .init(key: "of %@ pages", tableName: "Localizable", source: source, developmentValue: "of %@ pages", comment: nil) }
 
       /// en translation: Apply
       ///
@@ -2535,6 +2577,13 @@ struct _R {
       ///
       /// Locales: en, vi
       var đãĐượcGiámSátBạnCóMuốnGiámSátLạiKhông: RswiftResources.StringResource { .init(key: "Đã được giám sát. Bạn có muốn giám sát lại không", tableName: "Localizable", source: source, developmentValue: "It has already been monitored. Do you want to monitor it again?", comment: nil) }
+
+      /// en translation: Monitoring has been performed. Would you like to review the monitoring information?
+      ///
+      /// Key: Đã được giám sát. Bạn có muốn xem lại thông tin giám sát không
+      ///
+      /// Locales: en
+      var đãĐượcGiámSátBạnCóMuốnXemLạiThôngTinGiámSátKhông: RswiftResources.StringResource { .init(key: "Đã được giám sát. Bạn có muốn xem lại thông tin giám sát không", tableName: "Localizable", source: source, developmentValue: "Monitoring has been performed. Would you like to review the monitoring information?", comment: nil) }
 
       /// en translation: It has already been inventoried. Do you want to re-inventory it?
       ///

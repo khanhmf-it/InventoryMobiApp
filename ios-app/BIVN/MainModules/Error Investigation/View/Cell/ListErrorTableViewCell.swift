@@ -53,15 +53,12 @@ class ListErrorTableViewCell: UITableViewCell {
         locationLabel.text = "Vị trí".localized()
         plantLabel.text = "Plant".localized()
         warehouseLabel.text = "Kho".localized()
-        //locationLabel.text = "Giá trị".localized() //
         detailButton.setTitle("Xem lịch sử".localized(), for: .normal)
         detailButton.titleLabel?.font = fontUtils.size9.medium
-
-//        partNumberLabel.text = "Mã linh kiện".localized()
-//        locationLabel.text = "Vị trí".localized()
-//        statusLabel.text = "Trạng thái".localized()
-//        quantityLabel.text = "Số lượng".localized()
-//        valueLabel.text = "Giá trị".localized()
+        partNumberLabel.text = "Mã linh kiện".localized()
+        statusLabel.text = "Trạng thái".localized()
+        quantityLabel.text = "Số lượng".localized()
+        valueLabel.text = "Giá trị".localized()
         partNumberLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             partNumberLabel.widthAnchor.constraint(equalToConstant: 100),

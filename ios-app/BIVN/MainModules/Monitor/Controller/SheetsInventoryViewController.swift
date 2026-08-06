@@ -53,6 +53,7 @@ class SheetsInventoryViewController: BaseViewController {
     }
     
     private func setupView() {
+        localizeStaticFilterLabels(in: view)
         buttonView.layer.masksToBounds = false
         buttonView.layer.shadowColor = UIColor.gray.cgColor
         buttonView.layer.shadowOffset = CGSize(width: 0, height: -2)
@@ -67,6 +68,20 @@ class SheetsInventoryViewController: BaseViewController {
         ]
         confirmButton.setAttributedTitle(NSAttributedString(string: "Xác nhận".localized(), attributes: attributes), for: .normal)
         settingButton.setAttributedTitle(NSAttributedString(string: "Cài đặt lại".localized(), attributes: attributes), for: .normal)
+    }
+
+    private func localizeStaticFilterLabels(in rootView: UIView) {
+        for subview in rootView.subviews {
+            if let label = subview as? UILabel, let text = label.text {
+                switch text {
+                case "Bộ lọc", "Phòng ban", "Khu vực", "Mã linh kiện":
+                    label.text = text.localized()
+                default:
+                    break
+                }
+            }
+            localizeStaticFilterLabels(in: subview)
+        }
     }
     
     private func checkIsHiddenTextField() {

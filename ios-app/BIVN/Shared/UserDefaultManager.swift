@@ -107,13 +107,13 @@ class UserDefault {
         case 404:
             errorString = "Không tìm thấy dữ liệu phù hợp.".localized()
         case 96:
-            errorString = "Đợt kiểm kê đã bị khóa"
+            errorString = "Đợt kiểm kê đã bị khóa".localized()
         case 76:
-            errorString = "Mã linh kiện này không nằm trong danh sách giám sát. Vui lòng thử lại."
+            errorString = "Mã linh kiện này không nằm trong danh sách giám sát. Vui lòng thử lại.".localized()
         case 100:
-            errorString = "Mã linh kiện không có trên hệ thống. Vui lòng thử lại."
+            errorString = "Mã linh kiện không có trên hệ thống. Vui lòng thử lại.".localized()
         case 64:
-            errorString = "Bạn không thể thay đổi trạng thái của đợt kiểm kê do chưa đến thời gian kiếm kê"
+            errorString = "Bạn không thể thay đổi trạng thái của đợt kiểm kê do chưa đến thời gian kiếm kê".localized()
         case 65:
             errorString = "Tài khoản chưa được assign vào phiếu kiểm kê".localized()
         case 101:
@@ -137,9 +137,9 @@ class UserDefault {
         case 112:
             errorString = "Mã linh kiện này đã được giám sát. Không được thực hiện kiểm kê và xác nhận lại.".localized()
         case 114:
-            errorString = "Linh kiện người khác đã giám sát. Vui lòng thử lại.".localized()
+            errorString = "Linh kiện người khác đã giám sát. Vui lòng chọn mã khác.".localized()
         case 115:
-            errorString = "Linh kiện thuộc danh sách giám sát của người khác. Vui lòng thử lại".localized()
+            errorString = "Linh kiện thuộc danh sách giám sát của người khác. Vui lòng chọn mã khác.".localized()
         default:
             errorString = "Lỗi \(errorCode)"
         }

@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import SnapKit
+import Localize_Swift
 
 extension UIView {
     
@@ -180,7 +181,7 @@ extension UIView {
         }
         if isSee {
             let see = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 20))
-            see.setTitle("Xem", for: .normal)
+            see.setTitle("Xem".localized(), for: .normal)
             see.titleLabel?.font = fontUtils.size14.regular
             see.setTitleColor(UIColor(named: R.color.buttonBlue.name), for: .normal)
             containerView.addSubview(see)

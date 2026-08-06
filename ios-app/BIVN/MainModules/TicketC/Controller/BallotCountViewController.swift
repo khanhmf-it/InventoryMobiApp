@@ -184,9 +184,9 @@ class BallotCountViewController: BaseViewController, AddRowCell {
     
     func setupImagePicker() {
         if !UIImagePickerController.isSourceTypeAvailable(.camera) {
-            let alertController = UIAlertController(title: nil, message: "Device has no camera.", preferredStyle: .alert)
+            let alertController = UIAlertController(title: nil, message: "Thiết bị không có camera.".localized(), preferredStyle: .alert)
             
-            let okAction = UIAlertAction(title: "Alright", style: .default, handler: { (alert: UIAlertAction!) in
+            let okAction = UIAlertAction(title: "Đồng ý".localized(), style: .default, handler: { (alert: UIAlertAction!) in
             })
             
             alertController.addAction(okAction)
@@ -587,7 +587,7 @@ extension BallotCountViewController: UITableViewDataSource, UITableViewDelegate 
                 self.getAPIListPartCode(params: self.param, index: indexPath.row)
                 
             }
-            cell.textPageLabel.text = "of \(totalPage) pages"
+            cell.textPageLabel.text = String(format: "of %@ pages".localized(), "\(totalPage)")
             cell.onTapShowDropDown = { value, button in
                 self.showDropdown(text: value, size: button)
             }

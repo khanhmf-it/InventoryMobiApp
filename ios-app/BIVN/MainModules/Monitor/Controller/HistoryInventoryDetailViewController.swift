@@ -41,6 +41,7 @@ class HistoryInventoryDetailViewController: BaseViewController {
     }
     
     func setupUI() {
+        localizeStaticTitleLabels(in: view)
         componentLabel.text = componentCode
         componentNameLabel.text = componentName
         let yourBackImage = UIImage(named: R.image.ic_back.name)
@@ -50,6 +51,20 @@ class HistoryInventoryDetailViewController: BaseViewController {
         let buttonLeft = UIBarButtonItem(image: UIImage(named: R.image.ic_back.name), style: .plain, target: self, action: #selector(onTapNotification))
         self.navigationItem.leftBarButtonItem = buttonLeft
         self.title = createAt
+    }
+
+    private func localizeStaticTitleLabels(in rootView: UIView) {
+        for subview in rootView.subviews {
+            if let label = subview as? UILabel, let text = label.text {
+                switch text {
+                case "Mã linh kiện:", "Tên linh kiện:", "Trạng thái:", "Mã linh kiện", "Tên linh kiện", "Trạng thái":
+                    label.text = text.localized()
+                default:
+                    break
+                }
+            }
+            localizeStaticTitleLabels(in: subview)
+        }
     }
     
     @objc private func onTapNotification(){

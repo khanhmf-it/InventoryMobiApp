@@ -57,6 +57,7 @@ class ListAccessoryNotInventoryViewController: BaseViewController, UITableViewDa
         currentUserID = UserDefault.shared.getUserID()
         tableView.delegate = self
         tableView.dataSource = self
+        errorDataLabel.text = "Không có dữ liệu".localized()
         let yourBackImage = UIImage(named: R.image.ic_back.name)
         self.navigationController?.navigationBar.backIndicatorImage = yourBackImage
         self.navigationController?.navigationBar.tintColor = UIColor.gray

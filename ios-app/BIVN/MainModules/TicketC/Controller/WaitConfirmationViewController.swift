@@ -334,7 +334,7 @@ class WaitConfirmationViewController: BaseViewController, UITableViewDataSource,
                 self.callAPIToDetail(documentId: self.documentId, params:  self.param)
                 
             }
-            cell.textPageLabel.text = "of \(totalPage) pages"
+            cell.textPageLabel.text = String(format: "of %@ pages".localized(), "\(totalPage)")
             cell.onTapShowDropDown = { value, button in
                 self.showDropdown(text: value, size: button)
             }

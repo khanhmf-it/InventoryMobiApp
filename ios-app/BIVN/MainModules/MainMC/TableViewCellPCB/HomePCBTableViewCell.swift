@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Localize_Swift
 
 class HomePCBTableViewCell: UITableViewCell {
     @IBOutlet weak var avatarMC: UIImageView!
@@ -32,19 +33,19 @@ class HomePCBTableViewCell: UITableViewCell {
             pcbView.isHidden = true
             avatarMC.image = UIImage(named: R.image.ic_home_warehouse.name)
             arrowImageMC.image = UIImage(named: R.image.ic_arrow_right.name)
-            titleMCLabel.text = "Xuất kho"
-            contentMCLabel.text = "Thực quét mã linh kiện và nhập số lượng xuất kho."
+            titleMCLabel.text = "Xuất kho".localized()
+            contentMCLabel.text = "Thực hiện quét mã linh kiện và nhập số lượng xuất kho".localized()
         } else {
             pcbView.isHidden = false
             avatarMC.image = UIImage(named: R.image.ic_home_warehouse.name)
             arrowImageMC.image = UIImage(named: R.image.ic_arrow_right.name)
             titleMCLabel.text = titleMC ?? ""
-            contentMCLabel.text = "Thực quét mã linh kiện và nhập số lượng xuất kho."
+            contentMCLabel.text = "Thực hiện quét mã linh kiện và nhập số lượng xuất kho".localized()
             
             avatarPCB.image = UIImage(named: R.image.ic_home_warehouse.name)
             arrowImagePCB.image = UIImage(named: R.image.ic_arrow_right.name)
             titlePCBLabel.text = titlePCB ?? ""
-            contentPCBLabel.text = "Thực quét mã linh kiện và nhập số lượng nhập kho."
+            contentPCBLabel.text = "Thực hiện quét mã linh kiện và nhập số lượng nhập kho".localized()
         }
     }
 }

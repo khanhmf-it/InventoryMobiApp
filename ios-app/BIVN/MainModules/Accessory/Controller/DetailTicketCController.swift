@@ -237,7 +237,7 @@ class DetailTicketCController : BaseViewController, UITableViewDataSource, UITab
                 self.param["page"] = self.pageSize
                 self.getDataDetail(params: self.param, index: indexPath.row)
             }
-            cell.textPageLabel.text = "of \(totalPage) pages"
+            cell.textPageLabel.text = String(format: "of %@ pages".localized(), "\(totalPage)")
             cell.onTapShowDropDown = { value, button in
                 self.showDropdown(text: value, size: button)
             }

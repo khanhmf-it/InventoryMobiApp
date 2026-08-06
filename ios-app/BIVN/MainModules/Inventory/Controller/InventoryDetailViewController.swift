@@ -156,9 +156,9 @@ class InventoryDetailViewController: BaseViewController {
     
     func setupImagePicker() {
         if !UIImagePickerController.isSourceTypeAvailable(.camera) {
-            let alertController = UIAlertController(title: nil, message: "Device has no camera.", preferredStyle: .alert)
+            let alertController = UIAlertController(title: nil, message: "Thiết bị không có camera.".localized(), preferredStyle: .alert)
             
-            let okAction = UIAlertAction(title: "Alright", style: .default, handler: { (alert: UIAlertAction!) in
+            let okAction = UIAlertAction(title: "Đồng ý".localized(), style: .default, handler: { (alert: UIAlertAction!) in
             })
             
             alertController.addAction(okAction)

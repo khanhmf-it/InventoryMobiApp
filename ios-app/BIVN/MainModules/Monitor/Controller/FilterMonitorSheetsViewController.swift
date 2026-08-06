@@ -58,7 +58,9 @@ class FilterMonitorSheetsViewController: BaseViewController, UITableViewDataSour
     }
     
     private func setupView() {
+        localizeStaticFilterLabels(in: view)
         emptyLabel.isHidden = true
+        emptyLabel.text = "Không có dữ liệu".localized()
         contentFilterView.addBottomShadow()
         let yourBackImage = UIImage(named: R.image.ic_back.name)
         self.navigationController?.navigationBar.backIndicatorImage = yourBackImage
@@ -68,6 +70,20 @@ class FilterMonitorSheetsViewController: BaseViewController, UITableViewDataSour
         self.statusLabel.text = "Đã giám sát:".localized()
         self.setFontTitleNavBar()
         self.title = "Danh sách phiếu cần giám sát".localized()
+    }
+
+    private func localizeStaticFilterLabels(in rootView: UIView) {
+        for subview in rootView.subviews {
+            if let label = subview as? UILabel, let text = label.text {
+                switch text {
+                case "Bộ lọc", "Phòng ban", "Khu vực", "Mã linh kiện":
+                    label.text = text.localized()
+                default:
+                    break
+                }
+            }
+            localizeStaticFilterLabels(in: subview)
+        }
     }
     
     private func countSheets(finishCount: Int?, totalCount: Int?) {

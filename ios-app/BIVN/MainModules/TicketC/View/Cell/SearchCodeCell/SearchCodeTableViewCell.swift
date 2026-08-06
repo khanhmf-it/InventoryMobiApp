@@ -17,6 +17,7 @@ class SearchCodeTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         titleLabel.text = "Chi tiết".localized()
+        searchTextField.placeholder = "Nhập mã linh kiện...".localized()
         let imageIcon = UIImageView()
         imageIcon.image = UIImage(named: R.image.ic_search.name)
         let contentView = UIView()

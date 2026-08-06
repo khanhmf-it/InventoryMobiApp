@@ -338,6 +338,9 @@
 " Xác nhận đạt" = " Confirm Pass";
 "Từ chối" = "Reject";
 "Mật khẩu phải có độ dài từ 8 - 15 ký tự,bao gồm cả ký tự chữ và số , không chứa ký tự khoảng trắng." = "Password must be 8 - 15 characters long, include both letters and numbers, and do not contain spaces.";
+"Thiết bị không có camera." = "Device has no camera.";
+"of %@ pages" = "of %@ pages";
+"Xem" = "View";
 "Lý do:" = "Reason:";
 "Danh sách phiếu" = "List of votes";
 "Tiếp tục" = "Continue";
@@ -411,3 +414,7 @@
 "Mã linh kiện này chưa được kiểm kê hoặc đã được giám sát. Vui lòng thử lại." = "The part number has not been inventoried or has been monitored. Please try again.";
 "Mã linh kiện này đã được giám sát. Không được thực hiện kiểm kê và xác nhận lại." = "This part number has been monitored. Inventory check and confirmation cannot be performed again.";
 "Bộ lọc" = "Filter";
+"Linh kiện thuộc danh sách giám sát của người khác. Vui lòng chọn mã khác." = "This component is on another person's watchlist. Please select a different code.";
+"Linh kiện người khác đã giám sát. Vui lòng chọn mã khác." = "The component has already been inspected by someone else. Please select a different code.";
+"Kho" = "Stock";
+"Đã được giám sát. Bạn có muốn xem lại thông tin giám sát không" = "Monitoring has been performed. Would you like to review the monitoring information?";

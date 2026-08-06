@@ -218,6 +218,7 @@
 		50DFB12C2D36679800B4F47C /* ViewDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDetailModel.swift; sourceTree = "<group>"; };
 		50E4C29D2D5341AE00DB456A /* StatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusModel.swift; sourceTree = "<group>"; };
 		50F5B44B2CFFFECE0054ABA7 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Main.strings; sourceTree = "<group>"; };
+		50F5B4512CFFFF500054ABA7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		50F5B44E2CFFFF140054ABA7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		50F5B4502CFFFF410054ABA7 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		584EF9C885B78D3817A3E947 /* Pods-BIVNTests.debug(production).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BIVNTests.debug(production).xcconfig"; path = "Target Support Files/Pods-BIVNTests/Pods-BIVNTests.debug(production).xcconfig"; sourceTree = "<group>"; };
@@ -1821,6 +1822,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				A4F48A0E2AB052C4007D7A82 /* Base */,
+				50F5B4512CFFFF500054ABA7 /* en */,
 				50F5B44B2CFFFECE0054ABA7 /* vi */,
 			);
 			name = Main.storyboard;

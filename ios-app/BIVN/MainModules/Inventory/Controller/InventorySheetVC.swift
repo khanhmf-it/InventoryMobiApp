@@ -33,7 +33,7 @@ class InventorySheetVC: UIViewController {
         self.navigationItem.setHidesBackButton(true, animated: true)
         let buttonLeft = UIBarButtonItem(image: UIImage(named: R.image.ic_back.name), style: .plain, target: self, action: #selector(onTapBack))
         self.navigationItem.leftBarButtonItem = buttonLeft
-        self.title = "Inventory Sheet"
+        self.title = "Kiểm kê".localized()
         addRowButton.setTitle("+ Thêm dòng".localized(), for: .normal)
         addRowButton.addTarget(self, action: #selector(addOnTap), for: .touchUpInside)
         
