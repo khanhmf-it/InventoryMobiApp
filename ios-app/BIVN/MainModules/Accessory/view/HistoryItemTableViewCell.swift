@@ -65,7 +65,7 @@ class HistoryItemTableViewCell: UITableViewCell {
         if Environment.rootURL.description.contains("tinhvan") {
             domain = Environment.rootURL
         } else if ssid == "bivnioswifim01" {
-            domain = URL(string: "http://172.26.248.26/gateway_inv_test")!
+            domain = URL(string: "http://172.26.248.26/gateway_inv")!
         } else {
             domain = Environment.rootURL
         }

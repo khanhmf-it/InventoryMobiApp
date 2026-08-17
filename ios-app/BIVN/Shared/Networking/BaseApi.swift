@@ -88,7 +88,7 @@ extension API: TargetType {
                 url = URL(string: "http://14.160.64.50:9121")
             } else {
                 if nameWifi == "bivnioswifim01" {
-                    url = URL(string: "http://172.26.248.26/gateway_inv_test")
+                    url = URL(string: "http://172.26.248.26/gateway_inv")
                 } else if nameWifi == "B-WINS" {
                     url = Environment.rootURL
                 } else {
